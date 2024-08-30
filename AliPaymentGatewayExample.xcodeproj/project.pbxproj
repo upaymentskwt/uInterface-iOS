@@ -17,7 +17,25 @@
 		351919622B5FE1AB0065BC9D /* Pods_AliPaymentGatewayExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F0C9F0A0D148BA9E65B1AF /* Pods_AliPaymentGatewayExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35304CC52BE0F0F000732B88 /* AliPaymentGateway.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35304CC32BE0F06500732B88 /* AliPaymentGateway.xcframework */; };
 		35304CC62BE0F0F000732B88 /* AliPaymentGateway.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35304CC32BE0F06500732B88 /* AliPaymentGateway.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE82A6DB2C81AE1700AE3B24 /* uInterfaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE82A6D52C81ADD900AE3B24 /* uInterfaceSDK.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE82A6D42C81ADD900AE3B24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE82A6CF2C81ADD900AE3B24 /* uInterfaceSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3512D2952BE8D31000B149C1;
+			remoteInfo = uInterfaceSDK;
+		};
+		CE82A6D62C81ADD900AE3B24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE82A6CF2C81ADD900AE3B24 /* uInterfaceSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3512D29F2BE8D31100B149C1;
+			remoteInfo = uInterfaceSDKTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0403317A2B4129DC00D6C1C0 /* Embed Frameworks */ = {
@@ -47,6 +65,7 @@
 		35304CC32BE0F06500732B88 /* AliPaymentGateway.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AliPaymentGateway.xcframework; sourceTree = "<group>"; };
 		4830F48C5FE6372DDE39FCE8 /* Pods-AliPaymentGatewayExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliPaymentGatewayExample.debug.xcconfig"; path = "Target Support Files/Pods-AliPaymentGatewayExample/Pods-AliPaymentGatewayExample.debug.xcconfig"; sourceTree = "<group>"; };
 		63F0C9F0A0D148BA9E65B1AF /* Pods_AliPaymentGatewayExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliPaymentGatewayExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE82A6CF2C81ADD900AE3B24 /* uInterfaceSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uInterfaceSDK.xcodeproj; path = "../../iOS-SDK/uInterfaceSDK.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE82A6DB2C81AE1700AE3B24 /* uInterfaceSDK.framework in Frameworks */,
 				35304CC52BE0F0F000732B88 /* AliPaymentGateway.xcframework in Frameworks */,
 				351919612B5FE1AB0065BC9D /* Pods_AliPaymentGatewayExample.framework in Frameworks */,
 			);
@@ -65,6 +85,7 @@
 		1969C9D12A7E3E680013880B = {
 			isa = PBXGroup;
 			children = (
+				CE82A6CF2C81ADD900AE3B24 /* uInterfaceSDK.xcodeproj */,
 				1969C9DC2A7E3E680013880B /* AliPaymentGatewayExample */,
 				1969C9DB2A7E3E680013880B /* Products */,
 				2E96CE3F760F9DD03C6D3FE8 /* Pods */,
@@ -102,6 +123,15 @@
 				20DFDD3B81434398CBF99DA8 /* Pods-AliPaymentGatewayExample.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE82A6D02C81ADD900AE3B24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE82A6D52C81ADD900AE3B24 /* uInterfaceSDK.framework */,
+				CE82A6D72C81ADD900AE3B24 /* uInterfaceSDKTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E76DEBA2220397A54ACF4DCC /* Frameworks */ = {
@@ -165,12 +195,35 @@
 			);
 			productRefGroup = 1969C9DB2A7E3E680013880B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE82A6D02C81ADD900AE3B24 /* Products */;
+					ProjectRef = CE82A6CF2C81ADD900AE3B24 /* uInterfaceSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1969C9D92A7E3E680013880B /* AliPaymentGatewayExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CE82A6D52C81ADD900AE3B24 /* uInterfaceSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = uInterfaceSDK.framework;
+			remoteRef = CE82A6D42C81ADD900AE3B24 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE82A6D72C81ADD900AE3B24 /* uInterfaceSDKTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = uInterfaceSDKTests.xctest;
+			remoteRef = CE82A6D62C81ADD900AE3B24 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1969C9D82A7E3E680013880B /* Resources */ = {
@@ -188,6 +241,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		38C1A89E0562AE3289D9DE55 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

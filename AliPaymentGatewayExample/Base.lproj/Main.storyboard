@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8p6-5p-ZWy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8p6-5p-ZWy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -103,7 +103,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToChargeApiBuySingleProduct:" destination="3sY-HY-8UE" eventType="touchUpInside" id="iQK-X5-dyO"/>
+                                                <action selector="btnChargeAPIBuySingleProduct_Tapped:" destination="3sY-HY-8UE" eventType="touchUpInside" id="rh0-h8-KiB"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xo-ZJ-ltJ">
@@ -117,7 +117,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToChargeApiBuyMultiProducts:" destination="3sY-HY-8UE" eventType="touchUpInside" id="ZKP-6n-2GC"/>
+                                                <action selector="tapToChargeApiBuyMultiProducts:" destination="3sY-HY-8UE" eventType="touchUpInside" id="VPX-qX-N5z"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-9g-Zda">
@@ -131,7 +131,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToGenerateInvoice:" destination="3sY-HY-8UE" eventType="touchUpInside" id="dAF-Fa-ZL2"/>
+                                                <action selector="btnCreateInvoice_Tapped:" destination="3sY-HY-8UE" eventType="touchUpInside" id="OeR-hA-r9D"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdp-Ux-UG1">
@@ -145,7 +145,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToSingleRefund:" destination="3sY-HY-8UE" eventType="touchUpInside" id="ZA3-bl-zOt"/>
+                                                <action selector="btnSingleRefund_Tapped:" destination="3sY-HY-8UE" eventType="touchUpInside" id="o2E-GA-He0"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhk-hO-7dQ">
@@ -159,7 +159,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToMultiRefund:" destination="3sY-HY-8UE" eventType="touchUpInside" id="e08-GV-9lT"/>
+                                                <action selector="btnMultiRefund_Tapped:" destination="3sY-HY-8UE" eventType="touchUpInside" id="9KX-7U-gOu"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1V-Jb-6OQ">
@@ -173,7 +173,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToSingleDeleteRefundWith_sender:" destination="3sY-HY-8UE" eventType="touchUpInside" id="LSW-3m-2E7"/>
+                                                <action selector="btnSingleDeleteRefund_Tapped:" destination="3sY-HY-8UE" eventType="touchUpInside" id="fD4-O6-dv7"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmI-Cr-XZT">
@@ -187,7 +187,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToMultiDeleteRefundWith_sender:" destination="3sY-HY-8UE" eventType="touchUpInside" id="aWX-ZI-y0c"/>
+                                                <action selector="btnMultiDeleteRefund_Tapped:" destination="3sY-HY-8UE" eventType="touchUpInside" id="InG-nC-3Ra"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbY-Sj-ww3">
@@ -201,7 +201,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToAddCard:" destination="3sY-HY-8UE" eventType="touchUpInside" id="2QX-CA-ImG"/>
+                                                <action selector="btnAddCard_Tapped:" destination="3sY-HY-8UE" eventType="touchUpInside" id="ST7-Vy-Uet"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZa-Le-pvR">
@@ -215,7 +215,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToRetriveCard:" destination="3sY-HY-8UE" eventType="touchUpInside" id="aIk-Ix-Qzf"/>
+                                                <action selector="btnRetriveCard_Tapped:" destination="3sY-HY-8UE" eventType="touchUpInside" id="vji-hp-X2Z"/>
                                             </connections>
                                         </button>
                                     </subviews>
