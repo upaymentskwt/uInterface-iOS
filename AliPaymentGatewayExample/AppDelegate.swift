@@ -2,18 +2,23 @@
 //  AppDelegate.swift
 //  AliPaymentGatewayExample
 //
-//  Created by Vijay Singh on 05/08/23.
+//  Created by user on 05/08/23.
 //
 
 import UIKit
+import uInterfaceSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    // Create an instance of the PaymentAPIManager
+    let objPaymentManager = PaymentAPIManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Setting the base URL for the default environment
+        self.objPaymentManager.setBaseURL(environment: .sandbox)
         return true
     }
 
