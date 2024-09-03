@@ -248,7 +248,7 @@ class ViewController: UIViewController {
         })
     }
     
-    // Function to initiate a payment for purchasing a single product
+    // Initiates a payment process for a single product purchase.
     func initiateSingleProductPayment() {
         
         // Create product details for the payment
@@ -259,6 +259,7 @@ class ViewController: UIViewController {
             quantity: 1
         )
         
+        // Add product details to the products array
         var products = [ProductModel]()
         products.append(productDetail)
         
@@ -275,7 +276,11 @@ class ViewController: UIViewController {
         let paymentGatewayDetail = PaymentGatewayModel(src: "knet")
         
         // Create token details for the payment
-        let tokenDetail = TokenModel(fastToken: "", creditCardToken: "", customerUniqueToken: self.customerUniqueID)
+        let tokenDetail = TokenModel(
+            fastToken: "",
+            creditCardToken: "",
+            customerUniqueToken: self.customerUniqueID
+        )
         
         // Create reference details
         let referenceDetail = ReferenceModel(referenceId: "202210101202210101")
@@ -327,30 +332,31 @@ class ViewController: UIViewController {
             device: deviceDetail
         )
         
-        // Log the payment request details
+        // Log the payment request details for debugging
         JSONUtilities.printModelAsJSON(paymentRequestDetails)
         
         // Process the payment request
-        self.objPaymentAPIManager.processPayment(isBackground: true, token: self.apiToken, paymentRequestDetails: paymentRequestDetails, controller: self, completionHandler: { (result) in
-            switch result {
-            case .success(let response):
-                // Log the payment response
-                debugPrint("Response:")
-                JSONUtilities.printModelAsJSON(response)
+        self.objPaymentAPIManager.processPayment(isBackground: true, token: self.apiToken, paymentRequestDetails: paymentRequestDetails, controller: self, completionHandler: { result in
+                switch result {
+                case .success(let response):
+                    // Log the payment response for debugging
+                    debugPrint("Response:")
+                    JSONUtilities.printModelAsJSON(response)
+                    
+                    // Extract and log the refund order ID from the response
+                    let responseDict = response.transactionDetails.toDictionary()
+                    self.orderID = responseDict["refund_order_id"] as? String ?? ""
+                    debugPrint("Refund Order ID: \(self.orderID)")
+                    
+                    // Show an alert with the payment response message
+                    self.displayAlert(status: response.message, responseMessage: response)
                 
-                // Extract and log the refund order ID from the response
-                let responseDict = response.transactionDetails.toDictionary()
-                self.orderID = responseDict["refund_order_id"] as? String ?? ""
-                debugPrint("Refund Order ID: \(self.orderID)")
-                
-                // Show an alert with the payment response message
-                self.displayAlert(status: response.message, responseMessage: response)
-            
-            case .failure(let error):
-                // Show an alert with error status and message
-                self.displayAlert(status: String(error.httpStatusCode ?? 0), responseMessage: error.reason ?? "")
+                case .failure(let error):
+                    // Show an alert with error status and message
+                    self.displayAlert(status: String(error.httpStatusCode ?? 0), responseMessage: error.reason ?? "")
+                }
             }
-        })
+        )
     }
 
     // Function to prepare invoice data for creating an invoice
@@ -428,16 +434,16 @@ class ViewController: UIViewController {
         
         // Create product details for the payment
         let mouseProductDetail = ProductModel(
-            name: "Mouse K380",
-            description: "Logitech K380 / Easy-Switch for Up to 3 Devices, Slim Bluetooth Tablet Keyboard",
-            price: 1,
+            name: "Logitech K380",
+            description: "Logitech K380 / Easy-Switch for Upto 3 Devices, Slim Bluetooth Tablet Keyboar ",
+            price: 10,
             quantity: 1
         )
         
         let laptopProductDetail = ProductModel(
-            name: "Lenovo K380",
-            description: "Logitech K380 / Easy-Switch for Up to 3 Devices, Slim Bluetooth Tablet Keyboard",
-            price: 1,
+            name: "Logitech M171 Wireless Optical Mouse",
+            description: "Logitech M171 Wireless Optical Mouse  (2.4GHz Wireless, Blue Grey)",
+            price: 10,
             quantity: 1
         )
         
@@ -459,11 +465,11 @@ class ViewController: UIViewController {
             reference: "11111991",
             description: "Purchase order received for Logitech K380 Keyboard",
             currency: "KWD",
-            amount: 0.100
+            amount: 20
         )
         
         // Create payment gateway details
-        let paymentGatewayDetail = PaymentGatewayModel(src: self.sourceValue)
+        let paymentGatewayDetail = PaymentGatewayModel(src: "knet")
         
         // Retrieve customer unique token from UserDefaults
         let customerUniqueToken = UserDefaults.standard.string(forKey: "customerUnique")
@@ -477,9 +483,9 @@ class ViewController: UIViewController {
         // Create customer details
         let customerDetail = CustomerModel(
             uniqueID: "2129879kjbljg767881",
-            name: "John Smithe",
-            email: "john.smith@upayments.com",
-            mobile: "+96512345678"
+            name: "Dharmendra Kakde",
+            email: "kakde.dharmendra@upayments.com",
+            mobile: "+96566336537"
         )
         
         // Create plugin details
@@ -517,10 +523,10 @@ class ViewController: UIViewController {
             reference: referenceDetail,
             customer: customerDetail,
             plugin: pluginDetail,
-            customerExtraData: "test data",
+            customerExtraData: "User define data",
             returnURL: "https://upayments.com/en/",
-            cancelURL: "https://www.error.com",
-            notificationURL: "https://webhook.site/ce503866-6bb3-4c58-a2f2-a0fa028f10ea",
+            cancelURL: "https://error.com",
+            notificationURL: "https://webhook.site/d7c6e1c8-b98b-4f77-8b51-b487540df336",
             device: deviceDetail
         )
 
