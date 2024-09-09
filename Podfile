@@ -6,5 +6,6 @@ target 'AliPaymentGatewayExample' do
   use_frameworks!
  pod 'DropDown'
   # Pods for AliPaymentGatewayExample
+  pod 'uInterfaceSDK'
 
 end
