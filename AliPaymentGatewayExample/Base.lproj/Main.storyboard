@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8p6-5p-ZWy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8p6-5p-ZWy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,7 +61,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Test Case Non White Label"/>
                                 <connections>
-                                    <action selector="tapToSelectNonWhiteListIpWith_sender:" destination="3sY-HY-8UE" eventType="touchUpInside" id="dav-Ac-tlX"/>
+                                    <action selector="didTapSelectNonWhiteLabelAPI:" destination="3sY-HY-8UE" eventType="touchUpInside" id="y4H-9r-L22"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igq-EO-Tp9">
@@ -73,7 +73,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Test Case White Label"/>
                                 <connections>
-                                    <action selector="tapToSelectwhiteListIpWith_sender:" destination="3sY-HY-8UE" eventType="touchUpInside" id="aDV-Y9-ZHQ"/>
+                                    <action selector="didTapSelectWhiteLabelAPI:" destination="3sY-HY-8UE" eventType="touchUpInside" id="5hV-g6-PSb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Library Cases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m52-28-Wvt">
@@ -103,7 +103,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToChargeApiBuySingleProduct:" destination="3sY-HY-8UE" eventType="touchUpInside" id="iQK-X5-dyO"/>
+                                                <action selector="didTapChargeAPIBuySingleProduct:" destination="3sY-HY-8UE" eventType="touchUpInside" id="SCg-T5-Mf7"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xo-ZJ-ltJ">
@@ -117,7 +117,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToChargeApiBuyMultiProducts:" destination="3sY-HY-8UE" eventType="touchUpInside" id="ZKP-6n-2GC"/>
+                                                <action selector="didTapChargeAPIBuyMultipleProducts:" destination="3sY-HY-8UE" eventType="touchUpInside" id="igJ-Yl-v6v"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-9g-Zda">
@@ -131,7 +131,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToGenerateInvoice:" destination="3sY-HY-8UE" eventType="touchUpInside" id="dAF-Fa-ZL2"/>
+                                                <action selector="didTapCreateInvoice:" destination="3sY-HY-8UE" eventType="touchUpInside" id="R51-u3-zmx"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdp-Ux-UG1">
@@ -145,7 +145,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToSingleRefund:" destination="3sY-HY-8UE" eventType="touchUpInside" id="ZA3-bl-zOt"/>
+                                                <action selector="didTapSingleRefund:" destination="3sY-HY-8UE" eventType="touchUpInside" id="ymA-BF-AA8"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhk-hO-7dQ">
@@ -159,7 +159,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToMultiRefund:" destination="3sY-HY-8UE" eventType="touchUpInside" id="e08-GV-9lT"/>
+                                                <action selector="didTapMultiRefund:" destination="3sY-HY-8UE" eventType="touchUpInside" id="EVm-cj-PJY"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1V-Jb-6OQ">
@@ -173,7 +173,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToSingleDeleteRefundWith_sender:" destination="3sY-HY-8UE" eventType="touchUpInside" id="LSW-3m-2E7"/>
+                                                <action selector="didTapSingleDeleteRefund:" destination="3sY-HY-8UE" eventType="touchUpInside" id="DQQ-hX-6lH"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmI-Cr-XZT">
@@ -187,7 +187,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToMultiDeleteRefundWith_sender:" destination="3sY-HY-8UE" eventType="touchUpInside" id="aWX-ZI-y0c"/>
+                                                <action selector="didTapMultiDeleteRefund:" destination="3sY-HY-8UE" eventType="touchUpInside" id="4Aq-kO-zkN"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbY-Sj-ww3">
@@ -201,7 +201,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToAddCard:" destination="3sY-HY-8UE" eventType="touchUpInside" id="2QX-CA-ImG"/>
+                                                <action selector="didTapAddCard:" destination="3sY-HY-8UE" eventType="touchUpInside" id="Wax-xw-cui"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZa-Le-pvR">
@@ -215,7 +215,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="tapToRetriveCard:" destination="3sY-HY-8UE" eventType="touchUpInside" id="aIk-Ix-Qzf"/>
+                                                <action selector="didTapRetrieveCard:" destination="3sY-HY-8UE" eventType="touchUpInside" id="xde-lE-0cV"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -287,9 +287,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="uTx-Rn-8XK"/>
                     <connections>
-                        <outlet property="btnNonWhiteListIp" destination="cDQ-3v-wMj" id="VRf-92-OQo"/>
-                        <outlet property="btnWhiteListIp" destination="Igq-EO-Tp9" id="vMH-PO-Yr6"/>
-                        <outlet property="viewShowDropDown" destination="SPC-o2-Vt4" id="ocx-fm-Zu0"/>
+                        <outlet property="btnNonWhiteListIP" destination="cDQ-3v-wMj" id="WXw-44-KON"/>
+                        <outlet property="btnWhiteListIP" destination="Igq-EO-Tp9" id="b7u-vw-h20"/>
+                        <outlet property="dropDownContainerView" destination="SPC-o2-Vt4" id="cre-YT-bhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4H-rb-xSz" sceneMemberID="firstResponder"/>

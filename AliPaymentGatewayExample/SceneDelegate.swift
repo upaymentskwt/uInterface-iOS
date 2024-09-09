@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  AliPaymentGatewayExample
 //
-//  Created by Vijay Singh on 05/08/23.
+//  Created by user on 05/08/23.
 //
 
 import UIKit
