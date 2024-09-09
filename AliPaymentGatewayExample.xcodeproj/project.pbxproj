@@ -17,22 +17,23 @@
 		351919622B5FE1AB0065BC9D /* Pods_AliPaymentGatewayExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F0C9F0A0D148BA9E65B1AF /* Pods_AliPaymentGatewayExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35304CC52BE0F0F000732B88 /* AliPaymentGateway.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35304CC32BE0F06500732B88 /* AliPaymentGateway.xcframework */; };
 		35304CC62BE0F0F000732B88 /* AliPaymentGateway.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35304CC32BE0F06500732B88 /* AliPaymentGateway.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		52B873532C83527100CE9BC0 /* uInterfaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B873502C83526000CE9BC0 /* uInterfaceSDK.framework */; };
 		CE83736C2C85904300B5F82D /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83736B2C85904300B5F82D /* JSONUtilities.swift */; };
 		CE83736F2C85907600B5F82D /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83736E2C85907600B5F82D /* UIViewController+Alerts.swift */; };
+		CEAECEFE2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAECEFD2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework */; };
+		CEAECF0A2C8ED62200A9F57C /* uInterfaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAECF072C8ED5E400A9F57C /* uInterfaceSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		52B8734F2C83526000CE9BC0 /* PBXContainerItemProxy */ = {
+		CEAECF062C8ED5E400A9F57C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 52B8734A2C83526000CE9BC0 /* uInterfaceSDK.xcodeproj */;
+			containerPortal = CEAECF012C8ED5E400A9F57C /* uInterfaceSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3512D2952BE8D31000B149C1;
 			remoteInfo = uInterfaceSDK;
 		};
-		52B873512C83526000CE9BC0 /* PBXContainerItemProxy */ = {
+		CEAECF082C8ED5E400A9F57C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 52B8734A2C83526000CE9BC0 /* uInterfaceSDK.xcodeproj */;
+			containerPortal = CEAECF012C8ED5E400A9F57C /* uInterfaceSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3512D29F2BE8D31100B149C1;
 			remoteInfo = uInterfaceSDKTests;
@@ -66,10 +67,11 @@
 		20DFDD3B81434398CBF99DA8 /* Pods-AliPaymentGatewayExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliPaymentGatewayExample.release.xcconfig"; path = "Target Support Files/Pods-AliPaymentGatewayExample/Pods-AliPaymentGatewayExample.release.xcconfig"; sourceTree = "<group>"; };
 		35304CC32BE0F06500732B88 /* AliPaymentGateway.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AliPaymentGateway.xcframework; sourceTree = "<group>"; };
 		4830F48C5FE6372DDE39FCE8 /* Pods-AliPaymentGatewayExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliPaymentGatewayExample.debug.xcconfig"; path = "Target Support Files/Pods-AliPaymentGatewayExample/Pods-AliPaymentGatewayExample.debug.xcconfig"; sourceTree = "<group>"; };
-		52B8734A2C83526000CE9BC0 /* uInterfaceSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uInterfaceSDK.xcodeproj; path = "../iOS-SDK/uInterfaceSDK.xcodeproj"; sourceTree = "<group>"; };
 		63F0C9F0A0D148BA9E65B1AF /* Pods_AliPaymentGatewayExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliPaymentGatewayExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE83736B2C85904300B5F82D /* JSONUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtilities.swift; sourceTree = "<group>"; };
 		CE83736E2C85907600B5F82D /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		CEAECEFD2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uPaymentGatewayUniversalFramework.xcframework; sourceTree = "<group>"; };
+		CEAECF012C8ED5E400A9F57C /* uInterfaceSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uInterfaceSDK.xcodeproj; path = "../iOS-SDK/uInterfaceSDK.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B873532C83527100CE9BC0 /* uInterfaceSDK.framework in Frameworks */,
+				CEAECF0A2C8ED62200A9F57C /* uInterfaceSDK.framework in Frameworks */,
+				CEAECEFE2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework in Frameworks */,
 				35304CC52BE0F0F000732B88 /* AliPaymentGateway.xcframework in Frameworks */,
 				351919612B5FE1AB0065BC9D /* Pods_AliPaymentGatewayExample.framework in Frameworks */,
 			);
@@ -89,7 +92,8 @@
 		1969C9D12A7E3E680013880B = {
 			isa = PBXGroup;
 			children = (
-				52B8734A2C83526000CE9BC0 /* uInterfaceSDK.xcodeproj */,
+				CEAECF012C8ED5E400A9F57C /* uInterfaceSDK.xcodeproj */,
+				CEAECEFB2C8ED4A300A9F57C /* SDK */,
 				1969C9DC2A7E3E680013880B /* AliPaymentGatewayExample */,
 				1969C9DB2A7E3E680013880B /* Products */,
 				2E96CE3F760F9DD03C6D3FE8 /* Pods */,
@@ -131,15 +135,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		52B8734B2C83526000CE9BC0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				52B873502C83526000CE9BC0 /* uInterfaceSDK.framework */,
-				52B873522C83526000CE9BC0 /* uInterfaceSDKTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CE83736A2C85902700B5F82D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +149,31 @@
 				CE83736E2C85907600B5F82D /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEAECEFB2C8ED4A300A9F57C /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				CEAECEFC2C8ED4A300A9F57C /* v2 */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		CEAECEFC2C8ED4A300A9F57C /* v2 */ = {
+			isa = PBXGroup;
+			children = (
+				CEAECEFD2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework */,
+			);
+			path = v2;
+			sourceTree = "<group>";
+		};
+		CEAECF022C8ED5E400A9F57C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEAECF072C8ED5E400A9F57C /* uInterfaceSDK.framework */,
+				CEAECF092C8ED5E400A9F57C /* uInterfaceSDKTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E76DEBA2220397A54ACF4DCC /* Frameworks */ = {
@@ -219,8 +239,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52B8734B2C83526000CE9BC0 /* Products */;
-					ProjectRef = 52B8734A2C83526000CE9BC0 /* uInterfaceSDK.xcodeproj */;
+					ProductGroup = CEAECF022C8ED5E400A9F57C /* Products */;
+					ProjectRef = CEAECF012C8ED5E400A9F57C /* uInterfaceSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -231,18 +251,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		52B873502C83526000CE9BC0 /* uInterfaceSDK.framework */ = {
+		CEAECF072C8ED5E400A9F57C /* uInterfaceSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = uInterfaceSDK.framework;
-			remoteRef = 52B8734F2C83526000CE9BC0 /* PBXContainerItemProxy */;
+			remoteRef = CEAECF062C8ED5E400A9F57C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		52B873522C83526000CE9BC0 /* uInterfaceSDKTests.xctest */ = {
+		CEAECF092C8ED5E400A9F57C /* uInterfaceSDKTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = uInterfaceSDKTests.xctest;
-			remoteRef = 52B873512C83526000CE9BC0 /* PBXContainerItemProxy */;
+			remoteRef = CEAECF082C8ED5E400A9F57C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
