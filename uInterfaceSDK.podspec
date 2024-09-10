@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target   = '12.0'
   s.requires_arc = true
   s.vendored_frameworks     = 'SDK/v2/uInterfaceSDK.xcframework'
-  s.public_header_files = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.h'
+  #s.public_header_files = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.h'
   s.frameworks              = 'UIKit', 'Foundation'
 end
