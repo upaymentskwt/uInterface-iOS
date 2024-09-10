@@ -1,0 +1,11 @@
+framework module uInterfaceSDK {
+  umbrella header "uInterfaceSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module uInterfaceSDK.Swift {
+  header "uInterfaceSDK-Swift.h"
+  requires objc
+}

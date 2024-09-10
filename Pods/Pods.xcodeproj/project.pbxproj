@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = uInterfaceSDK;
+			productName = uInterfaceSDK;
 		};
 /* End PBXAggregateTarget section */
 
@@ -71,8 +72,8 @@
 		8C091F197A8B63B487BA313DC6988CB4 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
 		8E813F6CF0F5BCA9E4AC954D58BFACF5 /* uInterfaceSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = uInterfaceSDK.debug.xcconfig; sourceTree = "<group>"; };
 		90D7A6D745A5DF28A970A0BD312E3123 /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
-		9B6725B782188F18CB76A740433F14E4 /* DropDown */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A786BF754C5890FC64E597EBCCF736AD /* Pods-AliPaymentGatewayExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AliPaymentGatewayExample-dummy.m"; sourceTree = "<group>"; };
 		A95704CAD24D94AF3B231AA0D5EBF704 /* uPaymentGateway-Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "uPaymentGateway-Swift.h"; path = "SDK/v2/uPaymentGatewayUniversalFramework.xcframework/ios-arm64/uPaymentGateway.framework/Headers/uPaymentGateway-Swift.h"; sourceTree = "<group>"; };
 		B29DBECE80F46F3C460FE8303099E7A0 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 				A95704CAD24D94AF3B231AA0D5EBF704 /* uPaymentGateway-Swift.h */,
 				6F87A02EDE42CA055E6D70DF0EC44932 /* Support Files */,
 			);
-			name = uInterfaceSDK;
 			path = uInterfaceSDK;
 			sourceTree = "<group>";
 		};
@@ -136,7 +136,6 @@
 				6112C92D7D995F3D14CE0A63DAE4EBE6 /* Resources */,
 				4E071DF2B180588DF3C2EF69B0874E6A /* Support Files */,
 			);
-			name = DropDown;
 			path = DropDown;
 			sourceTree = "<group>";
 		};
@@ -210,7 +209,7 @@
 		CE04F48D37C1448501C170F4E9527EE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
+				9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */,
 				2650AD3F14088A77B477BF2B76632711 /* Pods-AliPaymentGatewayExample */,
 			);
 			name = Products;
@@ -272,7 +271,7 @@
 			);
 			name = DropDown;
 			productName = DropDown;
-			productReference = 9B6725B782188F18CB76A740433F14E4 /* DropDown */;
+			productReference = 9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EE579ECC0C7FB206CC325AE59A387924 /* Pods-AliPaymentGatewayExample */ = {
@@ -636,7 +635,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,7 +670,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
