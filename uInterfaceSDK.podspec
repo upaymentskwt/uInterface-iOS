@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license                 = { :type => 'MIT', :file => 'LICENSE' }
   s.author                  = { 'upaymentskwt' => 'license@upayments.com' }
   s.source                  = { :git => 'https://github.com/upaymentskwt/uInterface-iOS.git', :tag => s.version.to_s }
-  s.source_files            = 'uInterfaceSDK/*/.{h,m}'
+  s.source_files            = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}'
   s.ios.deployment_target   = '12.0'
   s.requires_arc = true
   s.vendored_frameworks     = 'SDK/v2/uInterfaceSDK.xcframework'
