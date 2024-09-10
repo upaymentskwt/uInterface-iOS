@@ -1,20 +1,16 @@
 PODS:
   - DropDown (2.3.13)
-  - uInterfaceSDK (1.0.5)
 
 DEPENDENCIES:
   - DropDown
-  - uInterfaceSDK
 
 SPEC REPOS:
   trunk:
     - DropDown
-    - uInterfaceSDK
 
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
-  uInterfaceSDK: c599b0e20e82a2cf0569f8aead5cacbcec78bc46
 
-PODFILE CHECKSUM: f4a6b28444ecd4975141b6c7eb14c2e6d8fc3d5a
+PODFILE CHECKSUM: 21260ee49e8d4b32726079828d898fab82fe84f2
 
 COCOAPODS: 1.14.3
