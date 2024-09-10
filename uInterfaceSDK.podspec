@@ -9,10 +9,10 @@ Pod::Spec.new do |s|
   s.source                  = { :git => 'https://github.com/upaymentskwt/uInterface-iOS.git', :tag => s.version.to_s }
   # s.source_files            = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.h'
   
-  s.source_files = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}'
-  s.resource_bundles = {
-     'uInterfaceSDK' => ['SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/SDKResources.bundle/*.{html,png}']
-   }
+  s.source_files = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.h'
+  # s.resource_bundles = {
+  #    'uInterfaceSDK' => ['SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/SDKResources.bundle/*.{html,png}']
+  # }
   
    s.ios.deployment_target   = '12.0'
    s.requires_arc = true
