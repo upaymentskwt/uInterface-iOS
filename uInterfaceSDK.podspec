@@ -15,7 +15,8 @@ Pod::Spec.new do |s|
   s.requires_arc             = true
 
   # Vendored framework, include all platforms if available in xcframework
-  s.vendored_frameworks      = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework'
+  s.ios.vendored_frameworks      = 'SDK/v2/uInterfaceSDK.xcframework'
+  s.vendored_frameworks      = 'SDK/v2/uInterfaceSDK.xcframework'
 
   # Public header files from the framework (use .h if any public headers exist)
   # s.public_header_files      = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.h'
