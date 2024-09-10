@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks      = 'SDK/v2/uInterfaceSDK.xcframework'
 
   # Public header files from the framework (use .h if any public headers exist)
-  s.public_header_files      = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.h'
+  # s.public_header_files      = 'SDK/v2/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.h'
 
   # System frameworks the SDK depends on
   s.frameworks               = 'UIKit', 'Foundation'
