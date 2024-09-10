@@ -1,0 +1,6 @@
+framework module uInterfaceSDK {
+  umbrella header "uInterfaceSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

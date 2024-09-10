@@ -112,6 +112,21 @@
                   endingLineNumber = "713"
                   offsetFromSymbolStart = "4469">
                </Location>
+               <Location
+                  uuid = "8565C043-DE30-44B5-A51F-52876D8E8131 - 65969c5b6b9e36bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Dictionary&lt;Swift.String, Any&gt;, uInterfaceSDK.NetworkError&gt;) -&gt; () in AliPaymentGatewayExample.ViewController.processMultiRefundRequest(orderId: Swift.String, payloadData: Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "AliPaymentGatewayExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/10-09-24/uInterface-iOS/AliPaymentGatewayExample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "713"
+                  endingLineNumber = "713"
+                  offsetFromSymbolStart = "4469">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

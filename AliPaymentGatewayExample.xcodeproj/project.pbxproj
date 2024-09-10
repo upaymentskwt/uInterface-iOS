@@ -19,7 +19,6 @@
 		35304CC62BE0F0F000732B88 /* AliPaymentGateway.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35304CC32BE0F06500732B88 /* AliPaymentGateway.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE83736C2C85904300B5F82D /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83736B2C85904300B5F82D /* JSONUtilities.swift */; };
 		CE83736F2C85907600B5F82D /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83736E2C85907600B5F82D /* UIViewController+Alerts.swift */; };
-		CEAECEFE2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAECEFD2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework */; };
 		CEAECF0A2C8ED62200A9F57C /* uInterfaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAECF072C8ED5E400A9F57C /* uInterfaceSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +79,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAECF0A2C8ED62200A9F57C /* uInterfaceSDK.framework in Frameworks */,
-				CEAECEFE2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework in Frameworks */,
 				35304CC52BE0F0F000732B88 /* AliPaymentGateway.xcframework in Frameworks */,
 				351919612B5FE1AB0065BC9D /* Pods_AliPaymentGatewayExample.framework in Frameworks */,
 			);
