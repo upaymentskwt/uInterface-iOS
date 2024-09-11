@@ -19,6 +19,7 @@
 		35304CC62BE0F0F000732B88 /* AliPaymentGateway.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35304CC32BE0F06500732B88 /* AliPaymentGateway.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE83736C2C85904300B5F82D /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83736B2C85904300B5F82D /* JSONUtilities.swift */; };
 		CE83736F2C85907600B5F82D /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83736E2C85907600B5F82D /* UIViewController+Alerts.swift */; };
+		CE8F8E1F2C917B1B00A01EEE /* uInterfaceSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8F8E1C2C917B1A00A01EEE /* uInterfaceSDK.xcframework */; };
 		CEAECF0A2C8ED62200A9F57C /* uInterfaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAECF072C8ED5E400A9F57C /* uInterfaceSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +70,7 @@
 		63F0C9F0A0D148BA9E65B1AF /* Pods_AliPaymentGatewayExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliPaymentGatewayExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE83736B2C85904300B5F82D /* JSONUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtilities.swift; sourceTree = "<group>"; };
 		CE83736E2C85907600B5F82D /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
-		CEAECEFD2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uPaymentGatewayUniversalFramework.xcframework; sourceTree = "<group>"; };
+		CE8F8E1C2C917B1A00A01EEE /* uInterfaceSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uInterfaceSDK.xcframework; sourceTree = "<group>"; };
 		CEAECF012C8ED5E400A9F57C /* uInterfaceSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uInterfaceSDK.xcodeproj; path = "../iOS-SDK/uInterfaceSDK.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8F8E1F2C917B1B00A01EEE /* uInterfaceSDK.xcframework in Frameworks */,
 				CEAECF0A2C8ED62200A9F57C /* uInterfaceSDK.framework in Frameworks */,
 				35304CC52BE0F0F000732B88 /* AliPaymentGateway.xcframework in Frameworks */,
 				351919612B5FE1AB0065BC9D /* Pods_AliPaymentGatewayExample.framework in Frameworks */,
@@ -152,17 +154,9 @@
 		CEAECEFB2C8ED4A300A9F57C /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				CEAECEFC2C8ED4A300A9F57C /* v2 */,
+				CE8F8E1C2C917B1A00A01EEE /* uInterfaceSDK.xcframework */,
 			);
 			path = SDK;
-			sourceTree = "<group>";
-		};
-		CEAECEFC2C8ED4A300A9F57C /* v2 */ = {
-			isa = PBXGroup;
-			children = (
-				CEAECEFD2C8ED4A300A9F57C /* uPaymentGatewayUniversalFramework.xcframework */,
-			);
-			path = v2;
 			sourceTree = "<group>";
 		};
 		CEAECF022C8ED5E400A9F57C /* Products */ = {
