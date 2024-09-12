@@ -21,8 +21,8 @@ Pod::Spec.new do |spec|
   spec.requires_arc             = true
   spec.vendored_frameworks      = "SDK_Framework/uInterfaceSDK.xcframework"
   # spec.vendored_frameworks      = "SDK_Framework/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework"
-  spec.pod_target_xcconfig      = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  spec.user_target_xcconfig     = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  # spec.pod_target_xcconfig      = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  # spec.user_target_xcconfig     = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.frameworks               = "UIKit"
 end
 
