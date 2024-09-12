@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A239E742C92EF180031153A /* Pods_UInterfaceIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A239E732C92EF180031153A /* Pods_UInterfaceIOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		0A239E762C92EF5C0031153A /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A239E752C92EF5C0031153A /* DropDown.framework */; };
+		0A239E7D2C92F51C0031153A /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A239E752C92EF5C0031153A /* DropDown.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0A239E7E2C92F51C0031153A /* DropDown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A239E752C92EF5C0031153A /* DropDown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE7FFBBF2C92B4BB00DAEAC0 /* uInterfaceSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FFBBE2C92B4BB00DAEAC0 /* uInterfaceSDK.xcframework */; };
 		CE8F8E322C91C5AE00A01EEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E312C91C5AE00A01EEE /* AppDelegate.swift */; };
 		CE8F8E342C91C5AE00A01EEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */; };
@@ -19,6 +20,20 @@
 		CE8F8E712C91C77300A01EEE /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E6E2C91C77300A01EEE /* JSONUtilities.swift */; };
 		CE8F8E742C91C78E00A01EEE /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A239E7C2C92F4FC0031153A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0A239E7E2C92F51C0031153A /* DropDown.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A239E6A2C92EECB0031153A /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,9 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A239E762C92EF5C0031153A /* DropDown.framework in Frameworks */,
 				0A239E742C92EF180031153A /* Pods_UInterfaceIOS.framework in Frameworks */,
 				CE7FFBBF2C92B4BB00DAEAC0 /* uInterfaceSDK.xcframework in Frameworks */,
+				0A239E7D2C92F51C0031153A /* DropDown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +160,7 @@
 				CE8F8E2B2C91C5AE00A01EEE /* Frameworks */,
 				CE8F8E2C2C91C5AE00A01EEE /* Resources */,
 				5A2BE11EFDD736ECF68BC4C2 /* [CP] Embed Pods Frameworks */,
+				0A239E7C2C92F4FC0031153A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,7 +421,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X45UVM4CFQ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -437,7 +453,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X45UVM4CFQ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;

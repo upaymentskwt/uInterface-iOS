@@ -1,0 +1,68 @@
+{
+  "" : {
+    "diagnostics" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UInterfaceIOS-master.dia",
+    "emit-module-dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UInterfaceIOS-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UInterfaceIOS-master-emit-module.dia",
+    "swift-dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UInterfaceIOS-master.swiftdeps"
+  },
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/UInterfaceIOS/AppDelegate.swift" : {
+    "const-values" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/AppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/AppDelegate.d",
+    "diagnostics" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/AppDelegate.dia",
+    "index-unit-output-path" : "/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/AppDelegate.o",
+    "llvm-bc" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/AppDelegate.bc",
+    "object" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/AppDelegate.o",
+    "swift-dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/AppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/AppDelegate~partial.swiftmodule"
+  },
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/UInterfaceIOS/Extensions/UIViewController+Alerts.swift" : {
+    "const-values" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UIViewController+Alerts.swiftconstvalues",
+    "dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UIViewController+Alerts.d",
+    "diagnostics" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UIViewController+Alerts.dia",
+    "index-unit-output-path" : "/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UIViewController+Alerts.o",
+    "llvm-bc" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UIViewController+Alerts.bc",
+    "object" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UIViewController+Alerts.o",
+    "swift-dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UIViewController+Alerts.swiftdeps",
+    "swiftmodule" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/UIViewController+Alerts~partial.swiftmodule"
+  },
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/UInterfaceIOS/SceneDelegate.swift" : {
+    "const-values" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/SceneDelegate.swiftconstvalues",
+    "dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/SceneDelegate.d",
+    "diagnostics" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/SceneDelegate.dia",
+    "index-unit-output-path" : "/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/SceneDelegate.o",
+    "llvm-bc" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/SceneDelegate.bc",
+    "object" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/SceneDelegate.o",
+    "swift-dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/SceneDelegate.swiftdeps",
+    "swiftmodule" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/SceneDelegate~partial.swiftmodule"
+  },
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/UInterfaceIOS/Utilities/JSONUtilities.swift" : {
+    "const-values" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/JSONUtilities.swiftconstvalues",
+    "dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/JSONUtilities.d",
+    "diagnostics" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/JSONUtilities.dia",
+    "index-unit-output-path" : "/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/JSONUtilities.o",
+    "llvm-bc" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/JSONUtilities.bc",
+    "object" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/JSONUtilities.o",
+    "swift-dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/JSONUtilities.swiftdeps",
+    "swiftmodule" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/JSONUtilities~partial.swiftmodule"
+  },
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/UInterfaceIOS/ViewController.swift" : {
+    "const-values" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/ViewController.swiftconstvalues",
+    "dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/ViewController.d",
+    "diagnostics" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/ViewController.dia",
+    "index-unit-output-path" : "/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/ViewController.o",
+    "llvm-bc" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/ViewController.bc",
+    "object" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/ViewController.o",
+    "swift-dependencies" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/ViewController.swiftdeps",
+    "swiftmodule" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex/UInterfaceIOS.build/Debug-iphonesimulator/UInterfaceIOS.build/Objects-normal/x86_64/ViewController~partial.swiftmodule"
+  }
+}

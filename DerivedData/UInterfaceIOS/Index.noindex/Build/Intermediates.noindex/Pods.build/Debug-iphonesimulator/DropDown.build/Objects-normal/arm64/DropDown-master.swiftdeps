@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)"
+options: "845780acf06057e8f7c12a9d6adca086c9f05a87ac75a91ccc4fa4dcdc85335e"
+build_start_time: [1726136128, 631924000]
+build_end_time: [1726136130, 349558000]
+inputs:
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/Pods/DropDown/DropDown/helpers/DPDConstants.swift": [1726134383, 798755942]
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/Pods/DropDown/DropDown/helpers/DPDKeyboardListener.swift": [1726134383, 797917347]
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/Pods/DropDown/DropDown/helpers/DPDUIView+Extension.swift": [1726134383, 798918236]
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/Pods/DropDown/DropDown/src/DropDown+Appearance.swift": [1726134383, 799587870]
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/Pods/DropDown/DropDown/src/DropDown.swift": [1726134383, 799272282]
+  "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/Pods/DropDown/DropDown/src/DropDownCell.swift": [1726134383, 799457119]
