@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8145344FCF0502B70379FC2A /* Pods_UInterfaceIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2524EBC7CB94315535C5775 /* Pods_UInterfaceIOS.framework */; };
-		CE7FFB922C92A7F900DAEAC0 /* uInterfaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FFB8F2C92A7EC00DAEAC0 /* uInterfaceSDK.framework */; };
+		CE7FFBBF2C92B4BB00DAEAC0 /* uInterfaceSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FFBBE2C92B4BB00DAEAC0 /* uInterfaceSDK.xcframework */; };
 		CE8F8E322C91C5AE00A01EEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E312C91C5AE00A01EEE /* AppDelegate.swift */; };
 		CE8F8E342C91C5AE00A01EEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */; };
 		CE8F8E362C91C5AE00A01EEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E352C91C5AE00A01EEE /* ViewController.swift */; };
@@ -19,27 +19,10 @@
 		CE8F8E742C91C78E00A01EEE /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CE7FFB8E2C92A7EC00DAEAC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE7FFB892C92A7EC00DAEAC0 /* uInterfaceSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3512D2952BE8D31000B149C1;
-			remoteInfo = uInterfaceSDK;
-		};
-		CE7FFB902C92A7EC00DAEAC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE7FFB892C92A7EC00DAEAC0 /* uInterfaceSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3512D29F2BE8D31100B149C1;
-			remoteInfo = uInterfaceSDKTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		643592AA8971214413CC848D /* Pods-UInterfaceIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UInterfaceIOS.debug.xcconfig"; path = "Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C2524EBC7CB94315535C5775 /* Pods_UInterfaceIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UInterfaceIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE7FFB892C92A7EC00DAEAC0 /* uInterfaceSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uInterfaceSDK.xcodeproj; path = "../iOS-SDK/uInterfaceSDK.xcodeproj"; sourceTree = "<group>"; };
+		CE7FFBBE2C92B4BB00DAEAC0 /* uInterfaceSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uInterfaceSDK.xcframework; sourceTree = "<group>"; };
 		CE8F8E2E2C91C5AE00A01EEE /* UInterfaceIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UInterfaceIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8F8E312C91C5AE00A01EEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7FFB922C92A7F900DAEAC0 /* uInterfaceSDK.framework in Frameworks */,
+				CE7FFBBF2C92B4BB00DAEAC0 /* uInterfaceSDK.xcframework in Frameworks */,
 				8145344FCF0502B70379FC2A /* Pods_UInterfaceIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,28 +66,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CE7FFB882C929F0600DAEAC0 /* SDK */ = {
+		CE7FFBBD2C92B4BB00DAEAC0 /* SDK_Framework */ = {
 			isa = PBXGroup;
 			children = (
+				CE7FFBBE2C92B4BB00DAEAC0 /* uInterfaceSDK.xcframework */,
 			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
-		CE7FFB8A2C92A7EC00DAEAC0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE7FFB8F2C92A7EC00DAEAC0 /* uInterfaceSDK.framework */,
-				CE7FFB912C92A7EC00DAEAC0 /* uInterfaceSDKTests.xctest */,
-			);
-			name = Products;
+			path = SDK_Framework;
 			sourceTree = "<group>";
 		};
 		CE8F8E252C91C5AE00A01EEE = {
 			isa = PBXGroup;
 			children = (
-				CE7FFB892C92A7EC00DAEAC0 /* uInterfaceSDK.xcodeproj */,
 				CE8F8E302C91C5AE00A01EEE /* UInterfaceIOS */,
-				CE7FFB882C929F0600DAEAC0 /* SDK */,
+				CE7FFBBD2C92B4BB00DAEAC0 /* SDK_Framework */,
 				CE8F8E2F2C91C5AE00A01EEE /* Products */,
 				6C5E44EFCA6E144F35398B43 /* Pods */,
 				6406DFFDF7C7BCE43D005C46 /* Frameworks */,
@@ -199,35 +173,12 @@
 			mainGroup = CE8F8E252C91C5AE00A01EEE;
 			productRefGroup = CE8F8E2F2C91C5AE00A01EEE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CE7FFB8A2C92A7EC00DAEAC0 /* Products */;
-					ProjectRef = CE7FFB892C92A7EC00DAEAC0 /* uInterfaceSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CE8F8E2D2C91C5AE00A01EEE /* UInterfaceIOS */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CE7FFB8F2C92A7EC00DAEAC0 /* uInterfaceSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = uInterfaceSDK.framework;
-			remoteRef = CE7FFB8E2C92A7EC00DAEAC0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CE7FFB912C92A7EC00DAEAC0 /* uInterfaceSDKTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = uInterfaceSDKTests.xctest;
-			remoteRef = CE7FFB902C92A7EC00DAEAC0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE8F8E2C2C91C5AE00A01EEE /* Resources */ = {
@@ -448,6 +399,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X45UVM4CFQ;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UInterfaceIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -479,6 +431,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X45UVM4CFQ;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UInterfaceIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

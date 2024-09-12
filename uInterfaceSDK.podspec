@@ -17,10 +17,12 @@ Pod::Spec.new do |spec|
   spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :tag => spec.version.to_s }
   spec.ios.deployment_target    = "12.0"
 
-  spec.source_files             = "SDK/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}"
+  spec.source_files             = "SDK_Framework/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}"
   spec.requires_arc             = true
-  # spec.vendored_frameworks      = "SDK/uInterfaceSDK.xcframework"
-  spec.vendored_frameworks      = "SDK/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework"
+  # spec.vendored_frameworks      = "SDK_Framework/uInterfaceSDK.xcframework"
+  spec.vendored_frameworks      = "SDK_Framework/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework"
+  spec.pod_target_xcconfig      = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig     = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.frameworks               = "UIKit"
 end
 
