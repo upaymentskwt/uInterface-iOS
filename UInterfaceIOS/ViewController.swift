@@ -6,15 +6,13 @@
 //
 
 import UIKit
-import DropDown
-import uInterfaceSDK
 
 class ViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var dropDownContainerView: UIView!
-    @IBOutlet weak var btnWhiteListIP: UIButton!
-    @IBOutlet weak var btnNonWhiteListIP: UIButton!
+    
+    @IBOutlet weak var toggleSwtich: UISwitch!
     
     // MARK: - Properties
     let objPaymentAPIManager = PaymentAPIManager()
@@ -50,15 +48,14 @@ class ViewController: UIViewController {
         // Configure navigation bar appearance
         self.setupNavigationBarAppearance()
         
-        // Configure button appearance
-        self.setupButtonAppearance()
-        
         // Assign API token for Sandbox environment
-        apiToken = "jtest123" // For Sandbox
-        // apiToken = "e66a94d579cf75fba327ff716ad68c53aae11528" // For Production (uncomment for production use)
+        apiToken = "jtest123"  // For Non White Label
+//        apiToken = "e66a94d579cf75fba327ff716ad68c53aae11528" // For White Label
+//        apiToken = "6407c050db6642c64a204eb8e1591c3c07a8ac49" // For White Label (Production)
+        self.whiteListStatus = "1"
         
         // Set the payment source value to KNET
-        self.sourceValue = "knet"
+        self.sourceValue = "cc"
         
         // Populate refund data with user-entered values (amount to refund and IBAN number)
         self.arrUserEnteredRefundData = [
@@ -80,60 +77,26 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    /// Sets up the appearance of the whitelist and non-whitelist buttons.
-    private func setupButtonAppearance() {
-        self.btnNonWhiteListIP.backgroundColor = UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0)
-        self.btnNonWhiteListIP.setTitleColor(.white, for: .normal)
+    //MARK: - IBAction Methods
+    
+    @IBAction func onToggleChanged(_ sender: UISwitch) {
         
-        self.btnWhiteListIP.backgroundColor = .white
-        self.btnWhiteListIP.setTitleColor(UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0), for: .normal)
-        self.btnWhiteListIP.layer.borderColor = UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0).cgColor
-        self.btnWhiteListIP.layer.borderWidth = 1
+        if sender.isOn {
+            // Assign API token for White Label environment (e.g., Production)
+            self.apiToken = "e66a94d579cf75fba327ff716ad68c53aae11528"
+            
+            // Set whiteListStatus to White Label selected
+            self.whiteListStatus = "2"
+        } else {
+            // Assign API token for Non-White Label environment (e.g., Sandbox)
+//            self.apiToken = "jtest123"
+            self.apiToken = "6407c050db6642c64a204eb8e1591c3c07a8ac49"
+            
+            // Set whiteListStatus to Non-White Label selected
+            self.whiteListStatus = "1"
+        }
     }
     
-    //MARK: - IBAction Methods
-    // Action for selecting Non-White Label API (e.g., Sandbox Environment)
-    @IBAction func didTapSelectNonWhiteLabelAPI(_ sender: Any) {
-        // Set background color and text color for Non-White Label button
-        self.btnNonWhiteListIP.backgroundColor = UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0)
-        self.btnNonWhiteListIP.setTitleColor(UIColor.white, for: .normal)
-        
-        // Reset background and text color for White Label button
-        self.btnWhiteListIP.backgroundColor = UIColor.white
-        self.btnWhiteListIP.setTitleColor(UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0), for: .normal)
-        
-        // Set border color and width for White Label button
-        self.btnWhiteListIP.layer.borderColor = UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0).cgColor
-        self.btnWhiteListIP.layer.borderWidth = 1
-        
-        // Assign API token for Non-White Label environment (e.g., Sandbox)
-        self.apiToken = "jtest123"
-        
-        // Set whiteListStatus to Non-White Label selected
-        self.whiteListStatus = "1"
-    }
-
-    // Action for selecting White Label API (e.g., Production Environment)
-    @IBAction func didTapSelectWhiteLabelAPI(_ sender: Any) {
-        // Set background color and text color for White Label button
-        self.btnWhiteListIP.backgroundColor = UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0)
-        self.btnWhiteListIP.setTitleColor(UIColor.white, for: .normal)
-        
-        // Reset background and text color for Non-White Label button
-        self.btnNonWhiteListIP.backgroundColor = UIColor.white
-        self.btnNonWhiteListIP.setTitleColor(UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0), for: .normal)
-        
-        // Set border color and width for Non-White Label button
-        self.btnNonWhiteListIP.layer.borderColor = UIColor(red: 56.0/255.0, green: 22.0/255.0, blue: 176.0/255.0, alpha: 1.0).cgColor
-        self.btnNonWhiteListIP.layer.borderWidth = 1
-        
-        // Assign API token for White Label environment (e.g., Production)
-        self.apiToken = "e66a94d579cf75fba327ff716ad68c53aae11528"
-        
-        // Set whiteListStatus to White Label selected
-        self.whiteListStatus = "2"
-    }
-
     // Action for purchasing a single product using Charge API
     @IBAction func didTapChargeAPIBuySingleProduct(_ sender: Any) {
         if self.whiteListStatus == "2" {
@@ -145,7 +108,7 @@ class ViewController: UIViewController {
             self.initiateSingleProductPayment()
         }
     }
-
+    
     // Action for purchasing multiple products using Charge API
     @IBAction func didTapChargeAPIBuyMultipleProducts(_ sender: Any) {
         if self.whiteListStatus == "2" {
@@ -157,49 +120,49 @@ class ViewController: UIViewController {
             self.processPaymentForMultipleProducts()
         }
     }
-
+    
     // Action for creating an invoice
     @IBAction func didTapCreateInvoice(_ sender: Any) {
         // Trigger the invoice generation process
         self.generateInvoice()
     }
-
+    
     // Action for initiating a single product refund
     @IBAction func didTapSingleRefund(_ sender: Any) {
         // Handle refund request for a single product
         self.handleRefund()
     }
-
+    
     // Action for initiating multiple products refund
     @IBAction func didTapMultiRefund(_ sender: Any) {
         // Handle refund request for multiple products
         self.handleRefund()
     }
-
+    
     // Action for deleting a single product refund request
     @IBAction func didTapSingleDeleteRefund(_ sender: Any) {
         // Handle deletion of a single product refund
         self.deleteSingleRefund()
     }
-
+    
     // Action for deleting multiple product refund requests
     @IBAction func didTapMultiDeleteRefund(_ sender: Any) {
         // Handle deletion of multiple product refunds
         self.deleteMultiRefunds()
     }
-
+    
     // Action for adding a new card to the user account
     @IBAction func didTapAddCard(_ sender: Any) {
         // Handle the process for adding a new card
         self.addCard()
     }
-
+    
     // Action for retrieving saved cards from the user account
     @IBAction func didTapRetrieveCard(_ sender: Any) {
         // Handle the process for fetching saved cards
         self.fetchCardDetails()
     }
-
+    
     //MARK: - API Calls Method
     // Function to check the status of payment buttons based on the provided API token
     func checkPaymentButtonStatus() {
@@ -220,14 +183,14 @@ class ViewController: UIViewController {
                 }
                 // Log the available payment options
                 debugPrint(self.arrPaymentOptions)
-            
+                
             case .failure(let error):
                 // Show alert with error status and message
                 self.displayAlert(status: String(error.httpStatusCode ?? 0), responseMessage: error.reason ?? "")
             }
         })
     }
-
+    
     // Function to check the payment status for a specific tracking ID
     func checkPaymentStatus() {
         self.objPaymentAPIManager.fetchPaymentStatus(headerToken: self.apiToken, trackingID: "202305505718076761984557261163", controller: self, completionHandler: { (result) in
@@ -238,7 +201,7 @@ class ViewController: UIViewController {
                 JSONUtilities.printModelAsJSON(response)
                 // Show an alert with the status and message from the response
                 self.displayAlert(status: response.message ?? "", responseMessage: response)
-            
+                
             case .failure(let error):
                 // Log the error and show an alert with error status and message
                 debugPrint(error.localizedDescription)
@@ -272,12 +235,13 @@ class ViewController: UIViewController {
         )
         
         // Create payment gateway details
-        let paymentGatewayDetail = PaymentGatewayModel(src: "knet")
+        let paymentGatewayDetail = PaymentGatewayModel(src: "cc")
         
         // Create token details for the payment
         let tokenDetail = TokenModel(
             fastToken: "",
-            creditCardToken: "",
+//            creditCard: "9001907273890737",
+            creditCard: "",
             customerUniqueToken: self.customerUniqueID
         )
         
@@ -293,7 +257,7 @@ class ViewController: UIViewController {
         )
         
         // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "magento")
+        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
         
         // Create browser details
         let browserDetails = BrowserDetailsModel(
@@ -335,38 +299,36 @@ class ViewController: UIViewController {
         JSONUtilities.printModelAsJSON(paymentRequestDetails)
         
         // Process the payment request
-        self.objPaymentAPIManager.processPayment(isBackground: true, token: self.apiToken, paymentRequestDetails: paymentRequestDetails, controller: self, completionHandler: { result in
-                switch result {
-                case .success(let response):
-                    // Log the payment response for debugging
-                    debugPrint("Response:")
-                    JSONUtilities.printModelAsJSON(response)
-                    
-                    // Extract and log the refund order ID from the response
-                    let responseDict = response.transactionDetails.toDictionary()
-                    self.orderID = responseDict["refund_order_id"] as? String ?? ""
-                    debugPrint("Refund Order ID: \(self.orderID)")
-                    
-                    // Show an alert with the payment response message
-                    self.displayAlert(status: response.message, responseMessage: response)
+        self.objPaymentAPIManager.createPayment(isBackground: true, token: self.apiToken, paymentRequestDetails: paymentRequestDetails, controller: self, completionHandler: { result in
+            switch result {
+            case .success(let response):
+                // Extract and log the refund order ID from the response
+                let responseDict = response.transactionDetails.toDictionary()
+                self.orderID = responseDict["refund_order_id"] as? String ?? ""
+                print("Refund Order ID: \(self.orderID)")
+                print("\(response)")
                 
-                case .failure(let error):
-                    // Show an alert with error status and message
-                    self.displayAlert(status: String(error.httpStatusCode ?? 0), responseMessage: error.reason ?? "")
-                }
+                // Show an alert with the payment response message
+                self.displayAlert(status: response.message, responseMessage: response)
+                
+            case .failure(let error):
+                // Show an alert with error status and message
+                self.displayAlert(status: String(error.httpStatusCode ?? 0), responseMessage: error.reason ?? "")
+                print("Failure => Charge Single Product Error => \(error.localizedDescription)")
             }
+        }
         )
     }
-
+    
     // Function to prepare invoice data for creating an invoice
     func createInvoiceData() -> [String: Any] {
         
         // Create customer details
         let customerDetail = CustomerModel(
-            uniqueID: "ABCDer22126433",
-            name: "Aqeel2",
-            email: "Aqeel2@gmail.com",
-            mobile: "69923183"
+            uniqueID: "siyahul22126433",
+            name: "siyahul",
+            email: "siyahul.haq@upayments.com",
+            mobile: "+96565035165"
         )
         
         // Create order details
@@ -382,13 +344,13 @@ class ViewController: UIViewController {
         let paymentGatewayDetail = PaymentGatewayModel(src: "create-invoice")
         
         // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "magento")
+        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
         
         // Create reference details
         let referenceDetail = ReferenceModel(referenceId: "123459865234889")
         
         // Create token details
-        let tokenDetail = TokenModel(fastToken: "", creditCardToken: "", customerUniqueToken: "69923183")
+        let tokenDetail = TokenModel(fastToken: "", creditCard: "", customerUniqueToken: self.customerUniqueNumber)
         
         // Define the invoice data dictionary
         let invoiceData: [String: Any] = [
@@ -400,7 +362,7 @@ class ViewController: UIViewController {
             "isTest": false,
             "is_whitelabled": false,
             "language": "en",
-            "notificationType": "email",
+            "notificationType": "all",
             "notificationUrl": "https://webhook.site/92eb6888-362b-4874-840f-3fff620f7cf4",
             "order": orderDetail.toDictionary(),
             "paymentGateway": paymentGatewayDetail.toDictionary(),
@@ -427,7 +389,7 @@ class ViewController: UIViewController {
         
         return invoiceData
     }
-
+    
     // Function to process payment for multiple products
     func processPaymentForMultipleProducts() {
         
@@ -474,7 +436,7 @@ class ViewController: UIViewController {
         let customerUniqueToken = UserDefaults.standard.string(forKey: "customerUnique")
         
         // Create token details
-        let tokenDetail = TokenModel(fastToken: "", creditCardToken: "", customerUniqueToken: customerUniqueToken)
+        let tokenDetail = TokenModel(fastToken: "", creditCard: "", customerUniqueToken: customerUniqueToken)
         
         // Create reference details
         let referenceDetail = ReferenceModel(referenceId: "202210101202210101")
@@ -488,7 +450,7 @@ class ViewController: UIViewController {
         )
         
         // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "magento")
+        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
         
         // Create browser details
         let browserDetails = BrowserDetailsModel(
@@ -528,31 +490,30 @@ class ViewController: UIViewController {
             notificationURL: "https://webhook.site/d7c6e1c8-b98b-4f77-8b51-b487540df336",
             device: deviceDetail
         )
-
+        
         // Print payment request details for debugging
         JSONUtilities.printModelAsJSON(paymentRequestDetails)
         
         // Process the payment request
-        self.objPaymentAPIManager.processPayment(isBackground: true, token: self.apiToken, paymentRequestDetails: paymentRequestDetails, controller: self, completionHandler: { result in
+        self.objPaymentAPIManager.createPayment(isBackground: true, token: self.apiToken, paymentRequestDetails: paymentRequestDetails, controller: self, completionHandler: { result in
             switch result {
             case .success(let response):
-                debugPrint("Response:")
-                JSONUtilities.printModelAsJSON(response)
-                
                 // Extract and print the refund order ID from the response
                 let responseDict = response.transactionDetails.toDictionary()
                 self.orderID = responseDict["refund_order_id"] as? String ?? ""
-                debugPrint("Refund Order ID: \(self.orderID)")
+                print("Refund Order ID: \(self.orderID)")
+                print("\(response)")
                 
                 // Show success alert
                 self.displayAlert(status: response.message, responseMessage: response)
             case .failure(let error):
                 // Show error alert
                 self.displayAlert(status: String(error.httpStatusCode ?? 0), responseMessage: error.reason ?? "")
+                print("Failure => Charge Multiple Products Error => \(error.localizedDescription)")
             }
         })
     }
-
+    
     // Function to generate an invoice
     func generateInvoice() {
         // Create invoice data
@@ -570,14 +531,15 @@ class ViewController: UIViewController {
                 // Print and handle successful response
                 debugPrint("Response:")
                 JSONUtilities.printModelAsJSON(response)
-                self.displayAlert(status: "", responseMessage: response)
+//                self.displayAlert(status: "", responseMessage: response)
+                self.displayAlert(status: response.message ?? "", responseMessage: response)
             case .failure(let error):
                 // Print and handle error response
                 debugPrint(error.localizedDescription)
             }
         }
     }
-
+    
     /// Handles a refund request by sending the refund data to the API and processing the response.
     /// If the refund is for multiple vendors, it handles each vendor's refund separately.
     /// Otherwise, it processes a single refund.
@@ -639,7 +601,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     /// Processes multiple refund requests by updating payload data with refund amounts and sending it to the API.
     /// - Parameters:
     ///   - orderId: The unique identifier of the order for which refunds are being requested.
@@ -720,7 +682,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     
     /// Sends a request to delete a single refund based on provided order and refund IDs.
     func deleteSingleRefund() {
@@ -752,7 +714,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     /// Sends a request to delete multiple refunds based on provided refund details.
     func deleteMultiRefunds() {
         // Create the request data for multiple refund deletions
@@ -785,7 +747,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     /// Sends a request to add card details using a unique customer token.
     func addCard() {
         // Retrieve the unique customer token from UserDefaults
@@ -819,7 +781,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     /// Sends a request to fetch card details using a unique customer token.
     func fetchCardDetails() {
         // Retrieve the unique customer token from UserDefaults
@@ -848,7 +810,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 extension ViewController {
@@ -859,43 +821,6 @@ extension ViewController {
     func showPaymentTypeDropdown() {
         DispatchQueue.main.async {
             self.dropDownContainerView.isHidden = false
-            
-            let dropdown = DropDown()
-            dropdown.direction = .bottom
-            dropdown.cellHeight = 40
-            dropdown.anchorView = self.dropDownContainerView
-            dropdown.dataSource = self.arrPaymentOptions
-            dropdown.selectionAction = { [unowned self] (index: Int, item: String) in
-                // Parse the selected payment type
-                let paymentType = self.arrPaymentOptions[index].split(separator: "_")
-                debugPrint(paymentType)
-                
-                // Determine the payment value based on the selection
-                let paymentValue: String
-                if paymentType.count == 2 {
-                    paymentValue = "\(paymentType[0])-\(paymentType[1])"
-                } else {
-                    paymentValue = "\(paymentType[0])"
-                }
-                
-                // Set the source value based on the payment type
-                self.sourceValue = (paymentValue == "credit-card") ? "cc" : paymentValue
-                
-                // Adjust the dropdown position and hide the container view
-                dropdown.bottomOffset = CGPoint(
-                    x: 0,
-                    y: self.dropDownContainerView.frame.maxY
-                )
-                self.dropDownContainerView.isHidden = true
-                
-                // Trigger payment initiation based on the selected API type
-                if self.apiType == "1" {
-                    self.initiateSingleProductPayment()
-                } else if self.apiType == "2" {
-                    self.processPaymentForMultipleProducts()
-                }
-            }
-            dropdown.show()
         }
     }
     

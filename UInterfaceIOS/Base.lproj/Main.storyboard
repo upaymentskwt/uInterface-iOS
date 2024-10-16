@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F6O-fI-O0N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F6O-fI-O0N">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,32 +52,26 @@
                                     <constraint firstAttribute="height" constant="50" id="lOp-Yl-Doc"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toI-zr-gc2">
-                                <rect key="frame" x="0.0" y="116" width="195" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="UfY-96-THG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Test Case Non White Label"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Non White Label API" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuQ-6d-ccw">
+                                <rect key="frame" x="8" y="125" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJN-jw-2kh">
+                                <rect key="frame" x="172" y="120" width="51" height="31"/>
                                 <connections>
-                                    <action selector="didTapSelectNonWhiteLabelAPI:" destination="UTN-Kj-EIx" eventType="touchUpInside" id="LP7-jC-Wev"/>
+                                    <action selector="onToggleChanged:" destination="UTN-Kj-EIx" eventType="valueChanged" id="Bqv-zy-i41"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8er-cL-oa2">
-                                <rect key="frame" x="198" y="116" width="195" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="fq8-4a-O1T"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Test Case White Label"/>
-                                <connections>
-                                    <action selector="didTapSelectWhiteLabelAPI:" destination="UTN-Kj-EIx" eventType="touchUpInside" id="oUA-c4-OCb"/>
-                                </connections>
-                            </button>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White Label API" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SED-2s-7qE">
+                                <rect key="frame" x="229" y="125" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Library Cases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-11-aio">
-                                <rect key="frame" x="133" y="164" width="127" height="18"/>
+                                <rect key="frame" x="133" y="163" width="127" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="nya-v4-mRG"/>
                                 </constraints>
@@ -86,7 +80,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dTt-7R-h4A">
-                                <rect key="frame" x="0.0" y="190" width="393" height="662"/>
+                                <rect key="frame" x="0.0" y="189" width="393" height="663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="kfW-D6-mJv">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="652"/>
@@ -259,27 +253,28 @@
                         <viewLayoutGuide key="safeArea" id="6aR-1Q-ViE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8er-cL-oa2" firstAttribute="trailing" secondItem="6aR-1Q-ViE" secondAttribute="trailing" id="3ts-fy-9pr"/>
-                            <constraint firstItem="toI-zr-gc2" firstAttribute="top" secondItem="pct-EM-Z1R" secondAttribute="bottom" constant="8" symbolic="YES" id="6QH-rS-Ohh"/>
-                            <constraint firstItem="8er-cL-oa2" firstAttribute="width" secondItem="toI-zr-gc2" secondAttribute="width" id="7vL-Nr-hr4"/>
+                            <constraint firstItem="AJN-jw-2kh" firstAttribute="centerX" secondItem="6aR-1Q-ViE" secondAttribute="centerX" id="0lx-eD-bgS"/>
+                            <constraint firstItem="cfH-11-aio" firstAttribute="top" secondItem="AJN-jw-2kh" secondAttribute="bottom" constant="12" id="2rx-cr-LRd"/>
+                            <constraint firstItem="xuQ-6d-ccw" firstAttribute="leading" secondItem="6aR-1Q-ViE" secondAttribute="leading" constant="8" id="2sd-nV-Wbv"/>
+                            <constraint firstItem="AJN-jw-2kh" firstAttribute="top" secondItem="pct-EM-Z1R" secondAttribute="bottom" constant="12" id="6PN-o7-Wnp"/>
                             <constraint firstItem="dTt-7R-h4A" firstAttribute="trailing" secondItem="6aR-1Q-ViE" secondAttribute="trailing" id="AgU-zg-xdw"/>
                             <constraint firstItem="7Qc-D4-Yx0" firstAttribute="trailing" secondItem="6aR-1Q-ViE" secondAttribute="trailing" id="Aq5-PM-DZd"/>
                             <constraint firstItem="pct-EM-Z1R" firstAttribute="trailing" secondItem="6aR-1Q-ViE" secondAttribute="trailing" id="MsS-Aa-axE"/>
                             <constraint firstItem="cfH-11-aio" firstAttribute="centerX" secondItem="mKA-m9-VC4" secondAttribute="centerX" id="Shg-ml-ggs"/>
-                            <constraint firstItem="8er-cL-oa2" firstAttribute="top" secondItem="pct-EM-Z1R" secondAttribute="bottom" constant="8" symbolic="YES" id="StY-Xs-dv2"/>
                             <constraint firstItem="dTt-7R-h4A" firstAttribute="leading" secondItem="6aR-1Q-ViE" secondAttribute="leading" id="V3t-pH-H3e"/>
                             <constraint firstItem="dTt-7R-h4A" firstAttribute="top" secondItem="cfH-11-aio" secondAttribute="bottom" constant="8" symbolic="YES" id="WP6-4G-b76"/>
                             <constraint firstAttribute="bottom" secondItem="7Qc-D4-Yx0" secondAttribute="bottom" id="Xpr-OT-ZWP"/>
-                            <constraint firstItem="toI-zr-gc2" firstAttribute="leading" secondItem="6aR-1Q-ViE" secondAttribute="leading" id="YSf-2C-CRd"/>
+                            <constraint firstItem="6aR-1Q-ViE" firstAttribute="trailing" secondItem="SED-2s-7qE" secondAttribute="trailing" constant="8" id="Y3Z-yf-Ln8"/>
+                            <constraint firstItem="AJN-jw-2kh" firstAttribute="leading" secondItem="xuQ-6d-ccw" secondAttribute="trailing" constant="8" id="Zq4-uw-g58"/>
+                            <constraint firstItem="xuQ-6d-ccw" firstAttribute="centerY" secondItem="AJN-jw-2kh" secondAttribute="centerY" id="bK1-Gl-iCo"/>
                             <constraint firstAttribute="bottom" secondItem="dTt-7R-h4A" secondAttribute="bottom" id="cx3-r3-OZy"/>
-                            <constraint firstItem="8er-cL-oa2" firstAttribute="leading" secondItem="toI-zr-gc2" secondAttribute="trailing" constant="3" id="ein-Ug-LB1"/>
                             <constraint firstItem="dTt-7R-h4A" firstAttribute="trailing" secondItem="6aR-1Q-ViE" secondAttribute="trailing" id="hEn-sO-GGA"/>
                             <constraint firstItem="dTt-7R-h4A" firstAttribute="leading" secondItem="6aR-1Q-ViE" secondAttribute="leading" id="oHe-Ld-TeG"/>
                             <constraint firstItem="pct-EM-Z1R" firstAttribute="top" secondItem="6aR-1Q-ViE" secondAttribute="top" constant="-1" id="oYj-Vk-oMY"/>
-                            <constraint firstItem="cfH-11-aio" firstAttribute="top" secondItem="toI-zr-gc2" secondAttribute="bottom" constant="8" symbolic="YES" id="rBl-Qg-yN5"/>
+                            <constraint firstItem="SED-2s-7qE" firstAttribute="centerY" secondItem="AJN-jw-2kh" secondAttribute="centerY" id="qhE-AV-B36"/>
                             <constraint firstItem="7Qc-D4-Yx0" firstAttribute="top" secondItem="pct-EM-Z1R" secondAttribute="bottom" constant="1" id="rEc-Px-q2u"/>
                             <constraint firstItem="pct-EM-Z1R" firstAttribute="leading" secondItem="6aR-1Q-ViE" secondAttribute="leading" id="uIb-7D-AX7"/>
-                            <constraint firstItem="8er-cL-oa2" firstAttribute="height" secondItem="toI-zr-gc2" secondAttribute="height" id="w9b-j2-nD9"/>
+                            <constraint firstItem="SED-2s-7qE" firstAttribute="leading" secondItem="AJN-jw-2kh" secondAttribute="trailing" constant="8" id="v5C-Hw-Bt6"/>
                             <constraint firstItem="7Qc-D4-Yx0" firstAttribute="leading" secondItem="6aR-1Q-ViE" secondAttribute="leading" id="wmo-ft-H8A"/>
                             <constraint firstItem="dTt-7R-h4A" firstAttribute="top" secondItem="cfH-11-aio" secondAttribute="bottom" constant="8" symbolic="YES" id="xoP-M6-c4N"/>
                             <constraint firstAttribute="bottom" secondItem="dTt-7R-h4A" secondAttribute="bottom" id="zwt-tw-QTy"/>
@@ -287,9 +282,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="b9D-MC-x8Z"/>
                     <connections>
-                        <outlet property="btnNonWhiteListIP" destination="toI-zr-gc2" id="Hix-am-IJE"/>
-                        <outlet property="btnWhiteListIP" destination="8er-cL-oa2" id="TsD-B3-17W"/>
                         <outlet property="dropDownContainerView" destination="7Qc-D4-Yx0" id="YZR-is-dT8"/>
+                        <outlet property="toggleSwtich" destination="AJN-jw-2kh" id="FVV-9R-plq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIK-Ja-hwk" sceneMemberID="firstResponder"/>
