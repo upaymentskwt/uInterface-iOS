@@ -3,27 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		260C98E4A9038F114D78F782765763A4 /* Pods-AliPaymentGatewayExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29830D60A23F9D361A9B3506639EDEB4 /* Pods-AliPaymentGatewayExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		361F5CE2807CBD530C8C6E63FD245F5A /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA092CDFBD4C66A29A9CDEA1DE78E1 /* DropDownCell.swift */; };
-		4A8FE4C4F6D45B41CE01A00D24C56961 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F84589A96D52448FD74E261268404 /* DPDUIView+Extension.swift */; };
-		5F515237FF94DAB4C8A15B7E33A3877B /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761A77A038E79C8451C03293CDA4FC0 /* DPDConstants.swift */; };
-		6064C623428CE711C252E442741F81AB /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87586FE2C9DECB6AE7FCA3238E4A1B8 /* DropDown+Appearance.swift */; };
-		6EAEE5BACE57BC8AC2757835D81DA4A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		825EAC8BE8AA1DE4F976B5982591C45E /* Pods-AliPaymentGatewayExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A786BF754C5890FC64E597EBCCF736AD /* Pods-AliPaymentGatewayExample-dummy.m */; };
-		842DFBB1471889C2CA329AE05620BBE7 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC1AD54C344AFD4E184B9586BFE267 /* DropDown.swift */; };
-		9518195DB69E904D77247E0A55A0043C /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8F61850F82D6CC477FAF8326336FD5A /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95897DCFD4071A7D61AEAE1DA86BB539 /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF17E1BF2597D8F37F69DB34CA024E5C /* DropDown-dummy.m */; };
-		BA7BB2FF04CE1CAFC5238D1807EF0034 /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB2377069976EC65992A59335066D3 /* DPDKeyboardListener.swift */; };
-		C99487C04757ECF4F73FA1D4519CFD6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		EB3D83C05EC7793D23A1192C11B9F631 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEBC6D732E1B0C41C6A8D03A8C81CF47 /* DropDownCell.xib */; };
+		34D86F4481D9328BF45B637B906B3122 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		515E22E4255B6073C1897BDDB091A2B8 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87586FE2C9DECB6AE7FCA3238E4A1B8 /* DropDown+Appearance.swift */; };
+		6328C54C61996CCA367CD75D3CF02337 /* Pods-UInterfaceIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 019D81083C1E475DBA2159703F85F57E /* Pods-UInterfaceIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68E1653C561E14BBEAC9CF4873570D58 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEBC6D732E1B0C41C6A8D03A8C81CF47 /* DropDownCell.xib */; };
+		74012B832FAF67F8D62A2B27CDAFE8B5 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761A77A038E79C8451C03293CDA4FC0 /* DPDConstants.swift */; };
+		84459C4824533C9C4FD12AFC941F3CE1 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC1AD54C344AFD4E184B9586BFE267 /* DropDown.swift */; };
+		89A72A55273CE358DC4E7600F785C37B /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB2377069976EC65992A59335066D3 /* DPDKeyboardListener.swift */; };
+		8E46628CC5CC95A549CFB8FDBA076514 /* Pods-UInterfaceIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A79F0A2917EBF74DD8B0DD1261568D /* Pods-UInterfaceIOS-dummy.m */; };
+		907338727C09F65DB75AA7AB9E10C3B4 /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF17E1BF2597D8F37F69DB34CA024E5C /* DropDown-dummy.m */; };
+		B73E510E851686F8184E26986A470458 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F84589A96D52448FD74E261268404 /* DPDUIView+Extension.swift */; };
+		BDC10974A8641F01C5665C61EA37A153 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA092CDFBD4C66A29A9CDEA1DE78E1 /* DropDownCell.swift */; };
+		E0A8C46EEE733B55971B1CC5ED65C9AA /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8F61850F82D6CC477FAF8326336FD5A /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF990E04ADE552F107283EB0A1A63287 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B48DDDB710483EF760987316011879F2 /* PBXContainerItemProxy */ = {
+		CD102C25C0FD322FA5D581FC44828A20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -33,49 +33,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0EE4472B2576D211E4A40DA883A4963A /* Pods-AliPaymentGatewayExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AliPaymentGatewayExample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		17B941CB9FEB287AA52DA03272219023 /* Pods-AliPaymentGatewayExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AliPaymentGatewayExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		2650AD3F14088A77B477BF2B76632711 /* Pods_AliPaymentGatewayExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AliPaymentGatewayExample.framework; path = "Pods-AliPaymentGatewayExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		297F3C497126B5FC799F360D5733B8EB /* Pods-AliPaymentGatewayExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AliPaymentGatewayExample-Info.plist"; sourceTree = "<group>"; };
-		29830D60A23F9D361A9B3506639EDEB4 /* Pods-AliPaymentGatewayExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AliPaymentGatewayExample-umbrella.h"; sourceTree = "<group>"; };
-		2A6C88B28C943F8B46AFA0E16B8B5955 /* Pods-AliPaymentGatewayExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AliPaymentGatewayExample.debug.xcconfig"; sourceTree = "<group>"; };
+		019D81083C1E475DBA2159703F85F57E /* Pods-UInterfaceIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UInterfaceIOS-umbrella.h"; sourceTree = "<group>"; };
+		1B124E308BF5273B73C35674CFA260CB /* Pods-UInterfaceIOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UInterfaceIOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		2F8A529C653A26F8D0B57E1CD7B2B5E6 /* DropDown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropDown-Info.plist"; sourceTree = "<group>"; };
 		2FCC1AD54C344AFD4E184B9586BFE267 /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
 		3761A77A038E79C8451C03293CDA4FC0 /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
+		3B56661C574281495F6FE5DD4277E27F /* Pods-UInterfaceIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UInterfaceIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		3E8D537745B813DAEAAA5F0704F36DA5 /* Pods-UInterfaceIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UInterfaceIOS.release.xcconfig"; sourceTree = "<group>"; };
 		451F84589A96D52448FD74E261268404 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
-		4D870919503392542B1500FDB8EB3BA6 /* Pods-AliPaymentGatewayExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AliPaymentGatewayExample-frameworks.sh"; sourceTree = "<group>"; };
+		560CC12972B7AB8E6DA1469E3CAEC433 /* Pods-UInterfaceIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UInterfaceIOS.modulemap"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		730D85BE0320FD50EA665A82042E5742 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
 		8DBB2377069976EC65992A59335066D3 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
 		93EA092CDFBD4C66A29A9CDEA1DE78E1 /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
-		9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97CF0914F0EF337D7EE4FEB2D5A9C292 /* Pods-UInterfaceIOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-UInterfaceIOS"; path = Pods_UInterfaceIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B6725B782188F18CB76A740433F14E4 /* DropDown */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C15EB8657063755722D9C7DC8D72885 /* DropDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.release.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A786BF754C5890FC64E597EBCCF736AD /* Pods-AliPaymentGatewayExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AliPaymentGatewayExample-dummy.m"; sourceTree = "<group>"; };
 		A87586FE2C9DECB6AE7FCA3238E4A1B8 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
 		AF17E1BF2597D8F37F69DB34CA024E5C /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
-		B436BCAA6E4341869DCEC6E1A26EB856 /* Pods-AliPaymentGatewayExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AliPaymentGatewayExample.release.xcconfig"; sourceTree = "<group>"; };
+		BAF348577DDE5E8FE55079DB3D5196AA /* Pods-UInterfaceIOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UInterfaceIOS-frameworks.sh"; sourceTree = "<group>"; };
+		D070658F238D97DA032F005783D6463E /* Pods-UInterfaceIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UInterfaceIOS-Info.plist"; sourceTree = "<group>"; };
+		D72D088E73CC7DF3E8BAE146EE5D52BB /* Pods-UInterfaceIOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UInterfaceIOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DCD9DE78A7260CA1D999340CF0124D1D /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropDown.modulemap; sourceTree = "<group>"; };
 		E5834E7BD925BD3ED29331C1938CC0B7 /* DropDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.debug.xcconfig; sourceTree = "<group>"; };
-		EDDB0DE0498392B92FA8A271B8B4181D /* Pods-AliPaymentGatewayExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AliPaymentGatewayExample.modulemap"; sourceTree = "<group>"; };
 		EEBC6D732E1B0C41C6A8D03A8C81CF47 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
+		F1A79F0A2917EBF74DD8B0DD1261568D /* Pods-UInterfaceIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UInterfaceIOS-dummy.m"; sourceTree = "<group>"; };
 		F8F61850F82D6CC477FAF8326336FD5A /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		51F27093CD8A3F31927F3532F128456D /* Frameworks */ = {
+		266C9982177DD992A21924B2C3AD491A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EAEE5BACE57BC8AC2757835D81DA4A6 /* Foundation.framework in Frameworks */,
+				EF990E04ADE552F107283EB0A1A63287 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9727840973A9C2692E58F7089A7C243E /* Frameworks */ = {
+		808BE4E171BD75B6477EC2B77490C2B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C99487C04757ECF4F73FA1D4519CFD6D /* Foundation.framework in Frameworks */,
+				34D86F4481D9328BF45B637B906B3122 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,14 +95,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DropDown";
-			sourceTree = "<group>";
-		};
-		050DAE7A11B6ECE35D059E173FFE590C /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8D0638C9154061A68BE71CE94C8B250A /* Pods-AliPaymentGatewayExample */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		057ED11B9D5977F85CBBBEF7C3E69DDB /* Pods */ = {
@@ -129,38 +121,20 @@
 			path = DropDown;
 			sourceTree = "<group>";
 		};
+		43F670FED30029268156A08550A62C3E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D6872531BD69EEDDD8E61E9F680F4D8C /* Pods-UInterfaceIOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		5EF6900B7980BE6682B6A175208186D3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */,
-				2650AD3F14088A77B477BF2B76632711 /* Pods_AliPaymentGatewayExample.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8D0638C9154061A68BE71CE94C8B250A /* Pods-AliPaymentGatewayExample */ = {
-			isa = PBXGroup;
-			children = (
-				EDDB0DE0498392B92FA8A271B8B4181D /* Pods-AliPaymentGatewayExample.modulemap */,
-				0EE4472B2576D211E4A40DA883A4963A /* Pods-AliPaymentGatewayExample-acknowledgements.markdown */,
-				17B941CB9FEB287AA52DA03272219023 /* Pods-AliPaymentGatewayExample-acknowledgements.plist */,
-				A786BF754C5890FC64E597EBCCF736AD /* Pods-AliPaymentGatewayExample-dummy.m */,
-				4D870919503392542B1500FDB8EB3BA6 /* Pods-AliPaymentGatewayExample-frameworks.sh */,
-				297F3C497126B5FC799F360D5733B8EB /* Pods-AliPaymentGatewayExample-Info.plist */,
-				29830D60A23F9D361A9B3506639EDEB4 /* Pods-AliPaymentGatewayExample-umbrella.h */,
-				2A6C88B28C943F8B46AFA0E16B8B5955 /* Pods-AliPaymentGatewayExample.debug.xcconfig */,
-				B436BCAA6E4341869DCEC6E1A26EB856 /* Pods-AliPaymentGatewayExample.release.xcconfig */,
-			);
-			name = "Pods-AliPaymentGatewayExample";
-			path = "Target Support Files/Pods-AliPaymentGatewayExample";
 			sourceTree = "<group>";
 		};
 		C59647B6F3C67ED72D999C113D892AF0 /* Resources */ = {
@@ -177,8 +151,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				057ED11B9D5977F85CBBBEF7C3E69DDB /* Pods */,
-				5EF6900B7980BE6682B6A175208186D3 /* Products */,
-				050DAE7A11B6ECE35D059E173FFE590C /* Targets Support Files */,
+				E0C5875E89C19ED7E5195D8B3FAA4642 /* Products */,
+				43F670FED30029268156A08550A62C3E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,36 +164,81 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D6872531BD69EEDDD8E61E9F680F4D8C /* Pods-UInterfaceIOS */ = {
+			isa = PBXGroup;
+			children = (
+				560CC12972B7AB8E6DA1469E3CAEC433 /* Pods-UInterfaceIOS.modulemap */,
+				D72D088E73CC7DF3E8BAE146EE5D52BB /* Pods-UInterfaceIOS-acknowledgements.markdown */,
+				1B124E308BF5273B73C35674CFA260CB /* Pods-UInterfaceIOS-acknowledgements.plist */,
+				F1A79F0A2917EBF74DD8B0DD1261568D /* Pods-UInterfaceIOS-dummy.m */,
+				BAF348577DDE5E8FE55079DB3D5196AA /* Pods-UInterfaceIOS-frameworks.sh */,
+				D070658F238D97DA032F005783D6463E /* Pods-UInterfaceIOS-Info.plist */,
+				019D81083C1E475DBA2159703F85F57E /* Pods-UInterfaceIOS-umbrella.h */,
+				3B56661C574281495F6FE5DD4277E27F /* Pods-UInterfaceIOS.debug.xcconfig */,
+				3E8D537745B813DAEAAA5F0704F36DA5 /* Pods-UInterfaceIOS.release.xcconfig */,
+			);
+			name = "Pods-UInterfaceIOS";
+			path = "Target Support Files/Pods-UInterfaceIOS";
+			sourceTree = "<group>";
+		};
+		E0C5875E89C19ED7E5195D8B3FAA4642 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
+				97CF0914F0EF337D7EE4FEB2D5A9C292 /* Pods-UInterfaceIOS */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2BB5683F7D1AA8FB2F94DA252A664DB8 /* Headers */ = {
+		1E1A3B735A7E03387333F088EB9D8D9E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9518195DB69E904D77247E0A55A0043C /* DropDown-umbrella.h in Headers */,
+				6328C54C61996CCA367CD75D3CF02337 /* Pods-UInterfaceIOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8153E046E756EF329B42A11CF97EADB7 /* Headers */ = {
+		97CE91431E229797751455423C79CA4F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				260C98E4A9038F114D78F782765763A4 /* Pods-AliPaymentGatewayExample-umbrella.h in Headers */,
+				E0A8C46EEE733B55971B1CC5ED65C9AA /* DropDown-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		607351B7ACF5A511794D68D3377D5132 /* Pods-UInterfaceIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F56A4654FEEC1578B2755FBCDEAC8B9 /* Build configuration list for PBXNativeTarget "Pods-UInterfaceIOS" */;
+			buildPhases = (
+				1E1A3B735A7E03387333F088EB9D8D9E /* Headers */,
+				9B6B330A426C82EFE947C8522D14019C /* Sources */,
+				266C9982177DD992A21924B2C3AD491A /* Frameworks */,
+				2F07709169D8B5823C0B8D1B62709424 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8159C2407DAC0EDBDE8CC934E3FFA53 /* PBXTargetDependency */,
+			);
+			name = "Pods-UInterfaceIOS";
+			productName = Pods_UInterfaceIOS;
+			productReference = 97CF0914F0EF337D7EE4FEB2D5A9C292 /* Pods-UInterfaceIOS */;
+			productType = "com.apple.product-type.framework";
+		};
 		E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EBED57D13F9A2559E14BCD92E7CFF597 /* Build configuration list for PBXNativeTarget "DropDown" */;
+			buildConfigurationList = 53052E6CBA1E65D6EF818199E617AC68 /* Build configuration list for PBXNativeTarget "DropDown" */;
 			buildPhases = (
-				2BB5683F7D1AA8FB2F94DA252A664DB8 /* Headers */,
-				FAFA782452D3B598A37FB459CD314120 /* Sources */,
-				9727840973A9C2692E58F7089A7C243E /* Frameworks */,
-				D0143B72ED2669C4E98A5B8BBCE72151 /* Resources */,
+				97CE91431E229797751455423C79CA4F /* Headers */,
+				48864C435B3DB37698CF568C638CF98F /* Sources */,
+				808BE4E171BD75B6477EC2B77490C2B1 /* Frameworks */,
+				EFDE5B37A62BFF2F9A9BD2023B960CD7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -227,26 +246,7 @@
 			);
 			name = DropDown;
 			productName = DropDown;
-			productReference = 9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EE579ECC0C7FB206CC325AE59A387924 /* Pods-AliPaymentGatewayExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 40639DD4C6FE620386C2EEEFEEE7496F /* Build configuration list for PBXNativeTarget "Pods-AliPaymentGatewayExample" */;
-			buildPhases = (
-				8153E046E756EF329B42A11CF97EADB7 /* Headers */,
-				947F10343FAF6BA1DC73304741FF4282 /* Sources */,
-				51F27093CD8A3F31927F3532F128456D /* Frameworks */,
-				25CB29F4062C5AB2FC89229A40B02BD3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FA0D5186D584549106BB097AA62FAA78 /* PBXTargetDependency */,
-			);
-			name = "Pods-AliPaymentGatewayExample";
-			productName = "Pods-AliPaymentGatewayExample";
-			productReference = 2650AD3F14088A77B477BF2B76632711 /* Pods_AliPaymentGatewayExample.framework */;
+			productReference = 9B6725B782188F18CB76A740433F14E4 /* DropDown */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -255,85 +255,88 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 5EF6900B7980BE6682B6A175208186D3 /* Products */;
+			minimizedProjectReferenceProxies = 0;
+			productRefGroup = E0C5875E89C19ED7E5195D8B3FAA4642 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */,
-				EE579ECC0C7FB206CC325AE59A387924 /* Pods-AliPaymentGatewayExample */,
+				607351B7ACF5A511794D68D3377D5132 /* Pods-UInterfaceIOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		25CB29F4062C5AB2FC89229A40B02BD3 /* Resources */ = {
+		2F07709169D8B5823C0B8D1B62709424 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0143B72ED2669C4E98A5B8BBCE72151 /* Resources */ = {
+		EFDE5B37A62BFF2F9A9BD2023B960CD7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB3D83C05EC7793D23A1192C11B9F631 /* DropDownCell.xib in Resources */,
+				68E1653C561E14BBEAC9CF4873570D58 /* DropDownCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		947F10343FAF6BA1DC73304741FF4282 /* Sources */ = {
+		48864C435B3DB37698CF568C638CF98F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				825EAC8BE8AA1DE4F976B5982591C45E /* Pods-AliPaymentGatewayExample-dummy.m in Sources */,
+				74012B832FAF67F8D62A2B27CDAFE8B5 /* DPDConstants.swift in Sources */,
+				89A72A55273CE358DC4E7600F785C37B /* DPDKeyboardListener.swift in Sources */,
+				B73E510E851686F8184E26986A470458 /* DPDUIView+Extension.swift in Sources */,
+				84459C4824533C9C4FD12AFC941F3CE1 /* DropDown.swift in Sources */,
+				515E22E4255B6073C1897BDDB091A2B8 /* DropDown+Appearance.swift in Sources */,
+				907338727C09F65DB75AA7AB9E10C3B4 /* DropDown-dummy.m in Sources */,
+				BDC10974A8641F01C5665C61EA37A153 /* DropDownCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAFA782452D3B598A37FB459CD314120 /* Sources */ = {
+		9B6B330A426C82EFE947C8522D14019C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F515237FF94DAB4C8A15B7E33A3877B /* DPDConstants.swift in Sources */,
-				BA7BB2FF04CE1CAFC5238D1807EF0034 /* DPDKeyboardListener.swift in Sources */,
-				4A8FE4C4F6D45B41CE01A00D24C56961 /* DPDUIView+Extension.swift in Sources */,
-				842DFBB1471889C2CA329AE05620BBE7 /* DropDown.swift in Sources */,
-				6064C623428CE711C252E442741F81AB /* DropDown+Appearance.swift in Sources */,
-				95897DCFD4071A7D61AEAE1DA86BB539 /* DropDown-dummy.m in Sources */,
-				361F5CE2807CBD530C8C6E63FD245F5A /* DropDownCell.swift in Sources */,
+				8E46628CC5CC95A549CFB8FDBA076514 /* Pods-UInterfaceIOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FA0D5186D584549106BB097AA62FAA78 /* PBXTargetDependency */ = {
+		F8159C2407DAC0EDBDE8CC934E3FFA53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DropDown;
 			target = E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */;
-			targetProxy = B48DDDB710483EF760987316011879F2 /* PBXContainerItemProxy */;
+			targetProxy = CD102C25C0FD322FA5D581FC44828A20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4A17D27FFBCE427192C281661D3F5767 /* Debug */ = {
+		632AB0B99232D945A611909CECDF2DA2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5834E7BD925BD3ED29331C1938CC0B7 /* DropDown.debug.xcconfig */;
+			baseConfigurationReference = 3E8D537745B813DAEAAA5F0704F36DA5 /* Pods-UInterfaceIOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -342,62 +345,66 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
-				PRODUCT_MODULE_NAME = DropDown;
-				PRODUCT_NAME = DropDown;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8B28DAA7DDFFF9A20AD710664AC96ADD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C15EB8657063755722D9C7DC8D72885 /* DropDown.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
-				PRODUCT_MODULE_NAME = DropDown;
-				PRODUCT_NAME = DropDown;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		8DB1CB8CA781754352AEC56EE7ECA4C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B56661C574281495F6FE5DD4277E27F /* Pods-UInterfaceIOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -527,12 +534,10 @@
 			};
 			name = Release;
 		};
-		AB29E88987EC88E752CD5DA300E3E573 /* Debug */ = {
+		C24518E891FAA59668669823639498EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A6C88B28C943F8B46AFA0E16B8B5955 /* Pods-AliPaymentGatewayExample.debug.xcconfig */;
+			baseConfigurationReference = 9C15EB8657063755722D9C7DC8D72885 /* DropDown.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -541,7 +546,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AliPaymentGatewayExample/Pods-AliPaymentGatewayExample-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -549,52 +555,13 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AliPaymentGatewayExample/Pods-AliPaymentGatewayExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
+				PRODUCT_MODULE_NAME = DropDown;
+				PRODUCT_NAME = DropDown;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FA6C256E94A76F35ABCD7AE3275B8867 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B436BCAA6E4341869DCEC6E1A26EB856 /* Pods-AliPaymentGatewayExample.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AliPaymentGatewayExample/Pods-AliPaymentGatewayExample-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AliPaymentGatewayExample/Pods-AliPaymentGatewayExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -602,18 +569,43 @@
 			};
 			name = Release;
 		};
+		E2CDE7BD114C532701D2E79C5CB4CAA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5834E7BD925BD3ED29331C1938CC0B7 /* DropDown.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
+				PRODUCT_MODULE_NAME = DropDown;
+				PRODUCT_NAME = DropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		40639DD4C6FE620386C2EEEFEEE7496F /* Build configuration list for PBXNativeTarget "Pods-AliPaymentGatewayExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB29E88987EC88E752CD5DA300E3E573 /* Debug */,
-				FA6C256E94A76F35ABCD7AE3275B8867 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -623,11 +615,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EBED57D13F9A2559E14BCD92E7CFF597 /* Build configuration list for PBXNativeTarget "DropDown" */ = {
+		53052E6CBA1E65D6EF818199E617AC68 /* Build configuration list for PBXNativeTarget "DropDown" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4A17D27FFBCE427192C281661D3F5767 /* Debug */,
-				8B28DAA7DDFFF9A20AD710664AC96ADD /* Release */,
+				E2CDE7BD114C532701D2E79C5CB4CAA8 /* Debug */,
+				C24518E891FAA59668669823639498EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F56A4654FEEC1578B2755FBCDEAC8B9 /* Build configuration list for PBXNativeTarget "Pods-UInterfaceIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DB1CB8CA781754352AEC56EE7ECA4C3 /* Debug */,
+				632AB0B99232D945A611909CECDF2DA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
