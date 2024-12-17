@@ -7,6 +7,7 @@ target 'UInterfaceIOS' do
 
   # Pods for UInterfaceIOS
   pod 'DropDown'
+  pod 'uInterfaceSDK' 
 
 end
 
