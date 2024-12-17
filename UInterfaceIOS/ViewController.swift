@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import uInterfaceSDK
 
 class ViewController: UIViewController {
     
@@ -548,7 +549,7 @@ class ViewController: UIViewController {
                 debugPrint("Response:")
                 JSONUtilities.printModelAsJSON(response)
 //                self.displayAlert(status: "", responseMessage: response)
-                self.displayAlert(status: response.message ?? "", responseMessage: response)
+                self.displayAlert(status: "", responseMessage: response.toDictionary()["message"] ?? "")
             case .failure(let error):
                 // Print and handle error response
                 debugPrint(error.localizedDescription)

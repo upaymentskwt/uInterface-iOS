@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import uInterfaceSDK
+import uInterfaceSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
