@@ -173,7 +173,7 @@ let paymentRequestDetails = PaymentRequestModel(
     order: orderDetail,  // Order details
     paymentGateway: paymentGatewayDetail,  // Payment gateway details
     notificationType: "all",  // Type of notifications to be sent
-    language: "en",  // Language for the payment process
+    language: "en",  // Language for the payment process - en for English & ar For Arabic
     isSaveCard: false,  // Flag indicating if the card should be saved
     isWhitelabeled: true,  // Flag indicating if the payment is whitelabeled
     tokens: tokenDetail,  // Token details
