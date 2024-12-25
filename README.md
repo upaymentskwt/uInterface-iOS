@@ -225,6 +225,10 @@ self.objPaymentAPIManager.processPayment(
 
 * **Handling Results:** The result of the payment will be passed back in a completion handler with either a success or failure case.
 
+* **Note:** 
+For more parameters check this document
+https://developers.upayments.com/reference/addcharge#request-model
+
 ## Example
 
 For a complete example, check out our sample projects:
