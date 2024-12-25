@@ -140,13 +140,6 @@ let customerDetail = CustomerModel(
 )
 ```
 
-* **Plugin Details:** Specify the plugin source URL.
-
-```swift
-// Create a PluginModel instance with the source URL of the plugin
-let pluginDetail = PluginModel(sourceURL: "magento")
-```
-
 * **Browser Details:** Set up details about the browser used.
 
 ```swift
