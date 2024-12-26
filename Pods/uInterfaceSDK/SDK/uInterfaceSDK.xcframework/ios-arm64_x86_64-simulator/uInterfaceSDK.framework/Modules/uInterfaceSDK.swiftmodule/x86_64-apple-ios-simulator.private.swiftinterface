@@ -1,0 +1,555 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name uInterfaceSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import uInterfaceSDK
+public struct InvoiceCreationModel : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct NetworkError : Swift.Error {
+  public let reason: Swift.String?
+  public let httpStatusCode: Swift.Int?
+  public init(reason: Swift.String? = nil, httpStatusCode: Swift.Int? = nil)
+}
+public struct RefundResponseModel : Swift.Codable {
+  public var status: Swift.Bool?
+  public var message: Swift.String?
+  public var data: uInterfaceSDK.RefundResponseDetailsModel?
+  public init(status: Swift.Bool? = nil, message: Swift.String? = nil, data: uInterfaceSDK.RefundResponseDetailsModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefundResponseDetailsModel : Swift.Codable {
+  public var errorCode: Swift.String?
+  public init(errorCode: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardDetailsModel : Swift.Codable {
+  public var cardNumber: Swift.String?
+  public var cardExpiryDetails: uInterfaceSDK.CardExpiryDetailsModel?
+  public var securityCode: Swift.String?
+  public var nameOnCard: Swift.String?
+  public init(cardNumber: Swift.String? = nil, expiryDetails: uInterfaceSDK.CardExpiryDetailsModel? = nil, securityCode: Swift.String? = nil, nameOnCard: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class SecretsManager {
+  public init(apiKey: Swift.String)
+  public func retrieveSecretMessage() -> Swift.String
+  public func performAPICall()
+  @objc deinit
+}
+public struct PaymentDetailsModel : Swift.Codable {
+  public var paymentLink: Swift.String?
+  public var trackingId: Swift.String?
+  public init(paymentLink: Swift.String? = nil, trackingId: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentGatewayModel : Swift.Codable {
+  public let src: Swift.String?
+  public init(src: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardDataResponseModel : Swift.Codable {
+  public let cardInfo: uInterfaceSDK.CardInfoModel?
+  public init(cardInfo: uInterfaceSDK.CardInfoModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RetrieveCardResponseModel : Swift.Codable {
+  public let status: Swift.Bool?
+  public let message: Swift.String?
+  public let data: uInterfaceSDK.CardDataModel?
+  public init(status: Swift.Bool? = nil, message: Swift.String? = nil, data: uInterfaceSDK.CardDataModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MerchantCustomerModel : Swift.Codable {
+  public var merchantCustomerID: Swift.String?
+  public var merchantID: Swift.Int?
+  public var updatedAt: Swift.String?
+  public var createdAt: Swift.String?
+  public var id: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardTransactionModel : Swift.Codable {
+  public let brandName: Swift.String?
+  public let expiryDate: Swift.String?
+  public let fundingMethod: Swift.String?
+  public let cardNumber: Swift.String?
+  public let cardScheme: Swift.String?
+  public init(brand: Swift.String? = nil, expiry: Swift.String? = nil, fundingMethod: Swift.String? = nil, number: Swift.String? = nil, scheme: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardUsageInfoModel : Swift.Codable {
+  public let lastUpdated: Swift.String?
+  public let lastUpdatedBy: Swift.String?
+  public let lastUsed: Swift.String?
+  public init(lastUpdated: Swift.String? = nil, lastUpdatedBy: Swift.String? = nil, lastUsed: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardDataModel : Swift.Codable {
+  public let customerCardsInfo: [uInterfaceSDK.CardInfoModel]?
+  public init(customerCardsInfo: [uInterfaceSDK.CardInfoModel]? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BrowserDetailsModel : Swift.Codable {
+  public let screenWidth: Swift.String?
+  public let screenHeight: Swift.String?
+  public let colorDepth: Swift.String?
+  public let javaEnabled: Swift.String?
+  public let language: Swift.String?
+  public let timeZone: Swift.String?
+  public init(screenWidth: Swift.String? = nil, screenHeight: Swift.String? = nil, colorDepth: Swift.String? = nil, javaEnabled: Swift.String? = nil, language: Swift.String? = nil, timeZone: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SourceOfFundsInfoModel : Swift.Codable {
+  public let providedCardInfoModel: uInterfaceSDK.ProvidedCardInfoModel?
+  public let fundType: Swift.String?
+  public init(providedCardInfoModel: uInterfaceSDK.ProvidedCardInfoModel? = nil, fundType: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CustomerTokenResponseModel : Swift.Codable {
+  public var status: Swift.Bool?
+  public var message: Swift.String?
+  public var data: uInterfaceSDK.TokenDataModel?
+  public init(status: Swift.Bool? = nil, message: Swift.String? = nil, data: uInterfaceSDK.TokenDataModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TokenDataModel : Swift.Codable {
+  public var customerUniqueToken: Swift.Int?
+  public init(customerUniqueToken: Swift.Int? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardRequestModel : Swift.Codable {
+  public var cardDetails: uInterfaceSDK.CardDetailsModel?
+  public var customerUniqueToken: Swift.Int?
+  public init(cardDetails: uInterfaceSDK.CardDetailsModel? = nil, customerUniqueToken: Swift.Int? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RefundRequestModel : Swift.Codable {
+  public var orderId: Swift.String?
+  public var totalPrice: Swift.Double?
+  public var customerFirstName: Swift.String?
+  public var customerEmail: Swift.String?
+  public var customerMobileNumber: Swift.String?
+  public var reference: Swift.String?
+  public var notifyUrl: Swift.String?
+  public init(orderId: Swift.String? = nil, totalPrice: Swift.Double? = nil, customerFirstName: Swift.String? = nil, customerEmail: Swift.String? = nil, customerMobileNumber: Swift.String? = nil, reference: Swift.String? = nil, notifyUrl: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentTransactionModel : Swift.Codable {
+  public let orderId: Swift.String?
+  public let refundOrderId: Swift.String?
+  public let paymentId: Swift.String?
+  public let result: Swift.String?
+  public let trackId: Swift.String?
+  public let transactionDate: Swift.String?
+  public let isSaveCard: Swift.Bool?
+  public let fromPlugin: Swift.Bool?
+  public let productDetails: Swift.String?
+  public let reference: Swift.String?
+  public let totalPrice: Swift.String?
+  public let currencyType: Swift.String?
+  public let status: Swift.String?
+  public let sessionId: Swift.String?
+  public let errorUrl: Swift.String?
+  public let successUrl: Swift.String?
+  public let redirectUrl: Swift.String?
+  public let notifyUrl: Swift.String?
+  public let notifyUrlCalled: Swift.Bool?
+  public let notifyUrlResponse: Swift.String?
+  public let whitelabeled: Swift.Bool?
+  public let customerId: Swift.Int?
+  public let customerUniqueId: Swift.String?
+  public let merchantRequestedOrderId: Swift.String?
+  public let extraMerchantsData: Swift.String?
+  public let totalPaidNonKwd: Swift.String?
+  public let isPaidFromKnet: Swift.Bool?
+  public let isPaidFromCc: Swift.Bool?
+  public let isFromNbk: Swift.Bool?
+  public let customerExtraData: Swift.String?
+  public let createdAt: Swift.String?
+  public init(orderId: Swift.String? = nil, refundOrderId: Swift.String? = nil, paymentId: Swift.String? = nil, result: Swift.String? = nil, trackId: Swift.String? = nil, transactionDate: Swift.String? = nil, isSaveCard: Swift.Bool? = nil, fromPlugin: Swift.Bool? = nil, productDetails: Swift.String? = nil, reference: Swift.String? = nil, totalPrice: Swift.String? = nil, currencyType: Swift.String? = nil, status: Swift.String? = nil, sessionId: Swift.String? = nil, errorUrl: Swift.String? = nil, successUrl: Swift.String? = nil, redirectUrl: Swift.String? = nil, notifyUrl: Swift.String? = nil, notifyUrlCalled: Swift.Bool? = nil, notifyUrlResponse: Swift.String? = nil, whitelabeled: Swift.Bool? = nil, customerId: Swift.Int? = nil, customerUniqueId: Swift.String? = nil, merchantRequestedOrderId: Swift.String? = nil, extraMerchantsData: Swift.String? = nil, totalPaidNonKwd: Swift.String? = nil, isPaidFromKnet: Swift.Bool? = nil, isPaidFromCc: Swift.Bool? = nil, isFromNbk: Swift.Bool? = nil, customerExtraData: Swift.String? = nil, createdAt: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OrderModel : Swift.Codable {
+  public let orderId: Swift.String?
+  public let reference: Swift.String?
+  public let description: Swift.String?
+  public let currency: Swift.String?
+  public let amount: Swift.Double?
+  public init(orderId: Swift.String? = nil, reference: Swift.String? = nil, description: Swift.String? = nil, currency: Swift.String? = nil, amount: Swift.Double? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ApprovedKeysModel {
+  public static let approvedKeys: [Swift.String]
+}
+public struct TokenModel : Swift.Codable {
+  public let fastToken: Swift.String?
+  public let creditCard: Swift.String?
+  public let customerUniqueToken: Swift.String?
+  public init(fastToken: Swift.String? = nil, creditCard: Swift.String? = nil, customerUniqueToken: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol UseCase {
+}
+public struct MerchantMoreInfoModel : Swift.Codable {
+  public let amount: Swift.Double?
+  public let kNetCharge: Swift.Double?
+  public let kNetChargeType: Swift.String?
+  public let ccCharge: Swift.Double?
+  public let ccChargeType: Swift.String?
+  public let iBanNumber: Swift.String?
+  public init(amount: Swift.Double? = nil, knetCharge: Swift.Double? = nil, knetChargeType: Swift.String? = nil, ccCharge: Swift.Double? = nil, ccChargeType: Swift.String? = nil, ibanNumber: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentStatusResponseModel : Swift.Codable {
+  public let status: Swift.Bool?
+  public let message: Swift.String?
+  public let data: uInterfaceSDK.PaymentStatusDataModel?
+  public init(status: Swift.Bool? = nil, message: Swift.String? = nil, data: uInterfaceSDK.PaymentStatusDataModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CustomerTokenRequestModel : Swift.Codable {
+  public var customerUniqueToken: Swift.String?
+  public init(customerUniqueToken: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MultiVendorRefundRequest : Swift.Codable {
+  public let merchantMoreDetailModel: [uInterfaceSDK.MerchantMoreDetailsModel]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MerchantMoreDetailsModel : Swift.Codable {
+  public let amount: Swift.Int?
+  public let kNetCharge: Swift.Int?
+  public let kNetChargeType: Swift.String?
+  public let ccCharge: Swift.Int?
+  public let ccChargeType: Swift.String?
+  public let iBanNumber: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TransactionDetails : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentResult : Swift.Codable {
+  public var message: Swift.String
+  public var transactionDetails: uInterfaceSDK.TransactionDetails
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension Swift.Encodable {
+  public func toDictionary() -> [Swift.String : Any]
+}
+public enum APIConstants {
+  public enum Headers {
+    public static let authorization: Swift.String
+    public static let contentType: Swift.String
+    public static let accept: Swift.String
+  }
+  public enum ContentTypes {
+    public static let json: Swift.String
+    public static let formUrlEncoded: Swift.String
+  }
+  public enum CustomContentTypes {
+    public static let customJSON: Swift.String
+    public static let customFormUrlEncoded: Swift.String
+  }
+}
+public enum HTTPMethod : Swift.String {
+  case get
+  case post
+  case put
+  case delete
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum Environment {
+  case production
+  case sandbox
+  case defaultEnvironment
+  public static func == (a: uInterfaceSDK.Environment, b: uInterfaceSDK.Environment) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CardInfoModel : Swift.Codable {
+  public let repositoryID: Swift.String?
+  public let response: uInterfaceSDK.GatewayResponseModel?
+  public let result: Swift.String?
+  public let sourceOfFunds: uInterfaceSDK.SourceOfFundsInfoModel?
+  public let status: Swift.String?
+  public let token: Swift.String?
+  public let usage: uInterfaceSDK.CardUsageInfoModel?
+  public let verificationStrategy: Swift.String?
+  public init(repositoryID: Swift.String? = nil, response: uInterfaceSDK.GatewayResponseModel? = nil, result: Swift.String? = nil, sourceOfFunds: uInterfaceSDK.SourceOfFundsInfoModel? = nil, status: Swift.String? = nil, token: Swift.String? = nil, usage: uInterfaceSDK.CardUsageInfoModel? = nil, verificationStrategy: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GatewayResponseModel : Swift.Codable {
+  public let gatewayCode: Swift.String?
+  public init(gatewayCode: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol PaymentGateway {
+  var paymentStoreUseCase: any uInterfaceSDK.PaymentStoreUseCase { get }
+}
+@_hasMissingDesignatedInitializers public class PaymentGatewayImplementation : uInterfaceSDK.PaymentGateway {
+  public static var shared: any uInterfaceSDK.PaymentGateway {
+    get
+  }
+  public var paymentStoreUseCase: any uInterfaceSDK.PaymentStoreUseCase {
+    get
+  }
+  @objc deinit
+}
+public struct PaymentStatusDataModel : Swift.Codable {
+  public let transaction: uInterfaceSDK.PaymentTransactionModel?
+  public init(transaction: uInterfaceSDK.PaymentTransactionModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DeviceModel : Swift.Codable {
+  public let browser: Swift.String?
+  public let browserDetails: uInterfaceSDK.BrowserDetailsModel?
+  public init(browser: Swift.String? = nil, browserDetails: uInterfaceSDK.BrowserDetailsModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class NetworkManager {
+  public init(token: Swift.String?)
+  public init(token: Swift.String?, decoder: Foundation.JSONDecoder?)
+  public init(withJsonDecoder decoder: Foundation.JSONDecoder)
+  public init()
+  public func sendRequest<T>(to url: Swift.String, using method: uInterfaceSDK.HTTPMethod, withBody requestBody: Foundation.Data? = nil, expecting responseType: T.Type, completion: @escaping (Swift.Result<T?, uInterfaceSDK.NetworkError>) -> Swift.Void) where T : Swift.Decodable
+  @objc deinit
+}
+public struct AddCardResponseModel : Swift.Codable {
+  public let status: Swift.Bool?
+  public let message: Swift.String?
+  public let cardDataResponse: uInterfaceSDK.CardDataResponseModel?
+  public init(status: Swift.Bool? = nil, message: Swift.String? = nil, cardDataResponse: uInterfaceSDK.CardDataResponseModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct InvoiceCreationDetailsModel : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ReferenceModel : Swift.Codable {
+  public let referenceId: Swift.String?
+  public init(referenceId: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PluginModel : Swift.Codable {
+  public var sourceURL: Swift.String?
+  public init(sourceURL: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ProvidedCardInfoModel : Swift.Codable {
+  public let cardTransaction: uInterfaceSDK.CardTransactionModel?
+  public init(cardTransaction: uInterfaceSDK.CardTransactionModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentButtonStatusModel : Swift.Codable {
+  public let status: Swift.Bool?
+  public let message: Swift.String?
+  public let paymentButtonData: uInterfaceSDK.PaymentButtonDataModel?
+  public init(status: Swift.Bool? = nil, message: Swift.String? = nil, paymentButtonData: uInterfaceSDK.PaymentButtonDataModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentResponseModel : Swift.Codable {
+  public var isSuccess: Swift.Bool?
+  public var statusMessage: Swift.String?
+  public var paymentDetailsModel: uInterfaceSDK.PaymentDetailsModel?
+  public init(isSuccess: Swift.Bool? = nil, statusMessage: Swift.String? = nil, paymentDetailsModel: uInterfaceSDK.PaymentDetailsModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentRequestModel : Swift.Codable {
+  public let products: [uInterfaceSDK.ProductModel]?
+  public let merchantsMoreInfo: [uInterfaceSDK.MerchantMoreInfoModel]?
+  public let sessionID: Swift.String?
+  public let isTest: Swift.Bool?
+  public let order: uInterfaceSDK.OrderModel?
+  public let paymentGateway: uInterfaceSDK.PaymentGatewayModel?
+  public let notificationType: Swift.String?
+  public let language: Swift.String?
+  public let isSaveCard: Swift.Bool?
+  public let isWhitelabeled: Swift.Bool?
+  public let tokens: uInterfaceSDK.TokenModel?
+  public let reference: uInterfaceSDK.ReferenceModel?
+  public let customer: uInterfaceSDK.CustomerModel?
+  public let plugin: uInterfaceSDK.PluginModel?
+  public let customerExtraData: Swift.String?
+  public let returnURL: Swift.String?
+  public let cancelURL: Swift.String?
+  public let notificationURL: Swift.String?
+  public let device: uInterfaceSDK.DeviceModel?
+  public init(products: [uInterfaceSDK.ProductModel]? = nil, merchantsMoreInfo: [uInterfaceSDK.MerchantMoreInfoModel]? = nil, sessionID: Swift.String? = nil, isTest: Swift.Bool? = nil, order: uInterfaceSDK.OrderModel? = nil, paymentGateway: uInterfaceSDK.PaymentGatewayModel? = nil, notificationType: Swift.String? = nil, language: Swift.String? = nil, isSaveCard: Swift.Bool? = nil, isWhitelabeled: Swift.Bool? = nil, tokens: uInterfaceSDK.TokenModel? = nil, reference: uInterfaceSDK.ReferenceModel? = nil, customer: uInterfaceSDK.CustomerModel? = nil, plugin: uInterfaceSDK.PluginModel? = nil, customerExtraData: Swift.String? = nil, returnURL: Swift.String? = nil, cancelURL: Swift.String? = nil, notificationURL: Swift.String? = nil, device: uInterfaceSDK.DeviceModel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public var baseURL: Swift.String
+@objc @_inheritsConvenienceInitializers public class PaymentAPIManager : ObjectiveC.NSObject, uInterfaceSDK.PaymentStoreUseCase {
+  @objc override dynamic public init()
+  public func setBaseURL(environment: uInterfaceSDK.Environment)
+  public func createPayment(isBackground: Swift.Bool, token: Swift.String, paymentRequestDetails: uInterfaceSDK.PaymentRequestModel, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<uInterfaceSDK.PaymentResult, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func createCustomerToken(token: Swift.String, customerTokenRequestDetail: uInterfaceSDK.CustomerTokenRequestModel, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<uInterfaceSDK.CustomerTokenResponseModel, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func fetchCardDetails(token: Swift.String, cardRequestDetails: uInterfaceSDK.TokenDataModel, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func addCardDetails(isBackground: Swift.Bool, token: Swift.String, cardRequest: [Swift.String : Any], controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func fetchRefundDetails(token: Swift.String, refundRequest: uInterfaceSDK.RefundRequestModel, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func checkPaymentButtonStatus(token: Swift.String, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<uInterfaceSDK.PaymentButtonStatusModel, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func fetchPaymentStatus(headerToken: Swift.String, trackingID: Swift.String, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<uInterfaceSDK.PaymentStatusResponseModel, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func fetchMultipleRefundDetails(headerToken: Swift.String, refundRequest: [Swift.String : Any], controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func createInvoice(headerToken: Swift.String, invoiceRequest: [Swift.String : Any], controller: UIKit.UIViewController, completion: @escaping (Swift.Result<uInterfaceSDK.InvoiceCreationModel, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func deleteRefund(headerToken: Swift.String, refundRequest: [Swift.String : Any], controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  public func deleteMultiVendorRefund(headerToken: Swift.String, refundRequest: [Swift.String : Any], controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  @objc deinit
+}
+@objc public class PaymentCardModel : ObjectiveC.NSObject, Swift.Codable {
+  final public let number: Swift.String
+  final public let expiryMonth: Swift.String
+  final public let expiryYear: Swift.String
+  final public let brand: Swift.String
+  final public let issuer: Swift.String?
+  public init(cardNumber: Swift.String, expirationMonth: Swift.String, expirationYear: Swift.String, brandName: Swift.String, issuer: Swift.String? = nil)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public struct CustomerModel : Swift.Codable {
+  public let uniqueID: Swift.String?
+  public let customerName: Swift.String?
+  public let customerEmail: Swift.String?
+  public let customerMobile: Swift.String?
+  public init(uniqueID: Swift.String? = nil, name: Swift.String? = nil, email: Swift.String? = nil, mobile: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardExpiryDetailsModel : Swift.Codable {
+  public var month: Swift.String?
+  public var year: Swift.String?
+  public init(month: Swift.String? = nil, year: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol PaymentStoreUseCase : uInterfaceSDK.UseCase {
+  func createPayment(isBackground: Swift.Bool, token: Swift.String, paymentRequestDetails: uInterfaceSDK.PaymentRequestModel, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<uInterfaceSDK.PaymentResult, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func createCustomerToken(token: Swift.String, customerTokenRequestDetail: uInterfaceSDK.CustomerTokenRequestModel, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<uInterfaceSDK.CustomerTokenResponseModel, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func fetchCardDetails(token: Swift.String, cardRequestDetails: uInterfaceSDK.TokenDataModel, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func addCardDetails(isBackground: Swift.Bool, token: Swift.String, cardRequest: [Swift.String : Any], controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func fetchRefundDetails(token: Swift.String, refundRequest: uInterfaceSDK.RefundRequestModel, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func checkPaymentButtonStatus(token: Swift.String, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<uInterfaceSDK.PaymentButtonStatusModel, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func fetchPaymentStatus(headerToken: Swift.String, trackingID: Swift.String, controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<uInterfaceSDK.PaymentStatusResponseModel, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func fetchMultipleRefundDetails(headerToken: Swift.String, refundRequest: [Swift.String : Any], controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func createInvoice(headerToken: Swift.String, invoiceRequest: [Swift.String : Any], controller: UIKit.UIViewController, completion: @escaping (Swift.Result<uInterfaceSDK.InvoiceCreationModel, uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func deleteRefund(headerToken: Swift.String, refundRequest: [Swift.String : Any], controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func deleteMultiVendorRefund(headerToken: Swift.String, refundRequest: [Swift.String : Any], controller: UIKit.UIViewController, completionHandler: @escaping (Swift.Result<[Swift.String : Any], uInterfaceSDK.NetworkError>) -> Swift.Void)
+  func setBaseURL(environment: uInterfaceSDK.Environment)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class PaymentWebViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var onPaymentCompletion: ((Swift.Result<uInterfaceSDK.PaymentResult, uInterfaceSDK.NetworkError>) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var paymentURL: Foundation.URL?
+  @_Concurrency.MainActor(unsafe) public var paymentRequestDetails: uInterfaceSDK.PaymentRequestModel?
+  @_Concurrency.MainActor(unsafe) public var didEnterBackground: Swift.Bool?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension uInterfaceSDK.PaymentWebViewController : WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+}
+extension uInterfaceSDK.PaymentWebViewController : UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewWillBeginZooming(_ scrollView: UIKit.UIScrollView, with view: UIKit.UIView?)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+}
+public struct ProductModel : Swift.Codable {
+  public let name: Swift.String?
+  public let description: Swift.String?
+  public let price: Swift.Double?
+  public let quantity: Swift.Double?
+  public init(name: Swift.String? = nil, description: Swift.String? = nil, price: Swift.Double? = nil, quantity: Swift.Double? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentButtonDataModel : Swift.Codable {
+  public let payButtons: [Swift.String : Swift.Bool]?
+  public init(payButtons: [Swift.String : Swift.Bool]? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PaymentDetail : Swift.Encodable {
+  public var merchantID: Swift.String?
+  public var userName: Swift.String?
+  public var password: Swift.String?
+  public var apiKey: Swift.String?
+  public var orderID: Swift.String?
+  public var totalPrice: Swift.String?
+  public var currencyCode: Swift.String?
+  public var testMode: Swift.String?
+  public var successURL: Swift.String?
+  public var errorURL: Swift.String?
+  public var customerFullName: Swift.String?
+  public var customerEmail: Swift.String?
+  public var customerMobile: Swift.String?
+  public var productTitle: Swift.String?
+  public var productName: Swift.String?
+  public var productPrice: Swift.String?
+  public var productQuantity: Swift.String?
+  public var reference: Swift.String?
+  public var notifyURL: Swift.String?
+  public var isWhiteLabeled: Swift.Bool?
+  public init(merchantID: Swift.String? = nil, userName: Swift.String? = nil, password: Swift.String? = nil, apiKey: Swift.String? = nil, orderID: Swift.String? = nil, totalPrice: Swift.String? = nil, currencyCode: Swift.String? = nil, testMode: Swift.String? = nil, successURL: Swift.String? = nil, errorURL: Swift.String? = nil, customerFullName: Swift.String? = nil, customerEmail: Swift.String? = nil, customerMobile: Swift.String? = nil, productTitle: Swift.String? = nil, productName: Swift.String? = nil, productPrice: Swift.String? = nil, productQuantity: Swift.String? = nil, reference: Swift.String? = nil, notifyURL: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension uInterfaceSDK.HTTPMethod : Swift.Equatable {}
+extension uInterfaceSDK.HTTPMethod : Swift.Hashable {}
+extension uInterfaceSDK.HTTPMethod : Swift.RawRepresentable {}
+extension uInterfaceSDK.Environment : Swift.Equatable {}
+extension uInterfaceSDK.Environment : Swift.Hashable {}

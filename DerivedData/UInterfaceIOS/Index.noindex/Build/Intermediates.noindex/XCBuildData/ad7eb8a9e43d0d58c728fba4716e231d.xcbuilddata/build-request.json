@@ -1,0 +1,66 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd422236055ff770ce6ca38c2281d66bd8a6"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd42ec1e5d51cce0dda6dc3122e5391d9b39"
+    },
+    {
+      "guid" : "5a31c88e083d2d822dd7b675b6a01a6ad2cb696f3556f0bd4091682f6d996b9c"
+    }
+  ],
+  "containerPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/UInterfaceIOS.xcworkspace",
+  "continueBuildingAfterErrors" : true,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator17.5",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Build/Products",
+      "pchPath" : "/Users/hirenbharodiya/Documents/Work/iOS/uInterface-iOS/DerivedData/UInterfaceIOS/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
