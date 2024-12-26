@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     var multiDeleteRefundARN = ""
     var multiDeleteRefundOrderID = ""
     
-    var whiteListStatus = ""
+    var whiteListStatus = "2"
     var apiType = ""
     var customerUniqueNumber = ""
     
@@ -53,10 +53,8 @@ class ViewController: UIViewController {
         self.setupNavigationBarAppearance()
         
         // Assign API token for Sandbox environment
-//        apiToken = "jtest123"  // For Non White Label
-        apiToken = "e66a94d579cf75fba327ff716ad68c53aae11528" // For White Label
-//        apiToken = "6407c050db6642c64a204eb8e1591c3c07a8ac49" // For White Label (Production)
-        self.whiteListStatus = "2"
+//        apiToken = "jtest123"  // For Non White Label (Sandbox)
+        apiToken = "e66a94d579cf75fba327ff716ad68c53aae11528" // For White Label (Sandbox)
         
         // Set the payment source value to KNET
         self.sourceValue = "cc"
@@ -297,7 +295,7 @@ class ViewController: UIViewController {
             order: orderDetail,
             paymentGateway: paymentGatewayDetail,
             notificationType: "all",
-            language: "en",
+            language: "en", // en for English & ar For Arabic
             isSaveCard: false,
             isWhitelabeled: true,
             tokens: tokenDetail,
