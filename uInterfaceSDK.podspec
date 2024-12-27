@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name                     = "uInterfaceSDK"
-  spec.version                  = "1.1.0"
+  spec.version                  = "1.1.1"
   spec.summary                  = "This library simplifies the integration of user interface components and payment processing features into iOS applications."
   
   spec.description = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
 
   spec.author                   = { "upaymentskwt" => "license@upayments.com" }
   
-  spec.source = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :tag => "1.1.0" }
+  spec.source = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :tag => "1.1.1" }
   spec.ios.deployment_target    = "12.0"
 
   spec.source_files             = "SDK/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}"

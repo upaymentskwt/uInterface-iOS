@@ -271,7 +271,7 @@ class ViewController: UIViewController {
         )
         
         // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
+//        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
         
         // Create browser details
         let browserDetails = BrowserDetailsModel(
@@ -301,7 +301,6 @@ class ViewController: UIViewController {
             tokens: tokenDetail,
             reference: referenceDetail,
             customer: customerDetail,
-            plugin: pluginDetail,
             customerExtraData: "test data",
             returnURL: "https://upayments.com/en/",
             cancelURL: "https://www.error.com",
@@ -498,7 +497,6 @@ class ViewController: UIViewController {
             tokens: tokenDetail,
             reference: referenceDetail,
             customer: customerDetail,
-            plugin: pluginDetail,
             customerExtraData: "User define data",
             returnURL: "https://upayments.com/en/",
             cancelURL: "https://error.com",
