@@ -358,9 +358,6 @@ class ViewController: UIViewController {
         // Create payment gateway details
         let paymentGatewayDetail = PaymentGatewayModel(src: "create-invoice")
         
-        // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
-        
         // Create reference details
         let referenceDetail = ReferenceModel(referenceId: "123459865234889")
         
@@ -381,7 +378,7 @@ class ViewController: UIViewController {
             "notificationUrl": "https://webhook.site/92eb6888-362b-4874-840f-3fff620f7cf4",
             "order": orderDetail.toDictionary(),
             "paymentGateway": paymentGatewayDetail.toDictionary(),
-            "plugin": pluginDetail.toDictionary(),
+            "plugin": PluginModel(sourceURL: "ios-sdk").toDictionary(),
             "product": [
                 [
                     "description": "Product 1",
