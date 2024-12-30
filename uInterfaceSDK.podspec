@@ -14,8 +14,8 @@ Pod::Spec.new do |spec|
 
   spec.author                   = { "upaymentskwt" => "license@upayments.com" }
   
-  spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :tag => "1.1.1" }
-  # spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :branch => "main" }
+  # spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :tag => "1.1.1" }
+  spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :branch => "main" }
   spec.ios.deployment_target    = "12.0"
 
   spec.source_files             = "SDK/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}"
