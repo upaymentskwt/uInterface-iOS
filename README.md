@@ -6,6 +6,7 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
   - [CocoaPods](#using-cocoapods)
+  - [Manual Installtion](#using-manual-installation)
 - [Integration Steps](#integration-steps)
   - [Initial Setup](#initial-setup)
   - [Configuring the SDK](#configuring-the-sdk)
@@ -39,6 +40,35 @@ pod install
 ```
 
 3. Open the generated `.xcworkspace` file and start using the SDK.
+
+### Using Manual Installation
+
+1. Obtain the Universal Framework
+- Download the universal framework file named ```(uInterfaceSDK.xcframework)``` from the ```uInterfaceSDK-Framework``` folder from the Git repository.
+- Ensure that the framework includes binaries for both simulator and device architectures (e.g., arm64 and x86_64).
+2. Add the Framework to Your Project
+- Open your Xcode project.
+- Drag and drop the uInterfaceSDK.framework file into your project’s file hierarchy in Xcode. 
+    - Place it in a dedicated folder (e.g., Frameworks).
+- In the dialog that appears:
+    - Check "Copy items if needed" to copy the framework to your project directory.
+    - Ensure the framework is added to the correct target(s).
+3. Configure Build Settings
+- Add the Framework to "Frameworks, Libraries, and Embedded Content"
+    - Select your project in the Xcode Project Navigator.
+    - Navigate to the General tab of your target.
+    - Under Frameworks, Libraries, and Embedded Content, click the + button.
+    - Select uInterfaceSDK.framework from the list and add it.
+- Set the Framework Search Path (if required)
+    - Go to the Build Settings tab of your target.
+    - Search for Framework Search Paths.
+    - Add the path where the framework resides (e.g., $(PROJECT_DIR)/Frameworks).
+4. Import and Use the Framework
+- In your project’s code files, import the framework:
+```ruby
+import uInterfaceSDK
+```
+- Use the classes and methods provided by the framework as described in its documentation.
 
 ## Integration Steps
 
