@@ -464,7 +464,7 @@ class ViewController: UIViewController {
         )
         
         // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
+//        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
         
         // Create browser details
         let browserDetails = BrowserDetailsModel(
