@@ -1,0 +1,13 @@
+Pods
+Podfile.lock
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+.build/
+
+Pods/
+
+.DS_Store
