@@ -270,9 +270,6 @@ class ViewController: UIViewController {
             mobile: "+96512345678"
         )
         
-        // Create plugin details
-//        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
-        
         // Create browser details
         let browserDetails = BrowserDetailsModel(
             screenWidth: "1920",
@@ -357,9 +354,6 @@ class ViewController: UIViewController {
         // Create payment gateway details
         let paymentGatewayDetail = PaymentGatewayModel(src: "create-invoice")
         
-        // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
-        
         // Create reference details
         let referenceDetail = ReferenceModel(referenceId: "123459865234889")
         
@@ -380,7 +374,6 @@ class ViewController: UIViewController {
             "notificationUrl": "https://webhook.site/92eb6888-362b-4874-840f-3fff620f7cf4",
             "order": orderDetail.toDictionary(),
             "paymentGateway": paymentGatewayDetail.toDictionary(),
-            "plugin": pluginDetail.toDictionary(),
             "product": [
                 [
                     "description": "Product 1",
@@ -462,9 +455,6 @@ class ViewController: UIViewController {
             email: "kakde.dharmendra@upayments.com",
             mobile: "+96566336537"
         )
-        
-        // Create plugin details
-//        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
         
         // Create browser details
         let browserDetails = BrowserDetailsModel(
@@ -611,6 +601,7 @@ class ViewController: UIViewController {
             case .failure(let error):
                 // Print and handle error response
                 debugPrint(error.localizedDescription)
+                self.displayAlert(status: "", responseMessage: error.reason ?? "")
             }
         }
     }
