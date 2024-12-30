@@ -140,13 +140,6 @@ let customerDetail = CustomerModel(
 )
 ```
 
-* **Plugin Details:** Specify the plugin source URL.
-
-```swift
-// Create a PluginModel instance with the source URL of the plugin
-let pluginDetail = PluginModel(sourceURL: "magento")
-```
-
 * **Browser Details:** Set up details about the browser used.
 
 ```swift
@@ -180,7 +173,7 @@ let paymentRequestDetails = PaymentRequestModel(
     order: orderDetail,  // Order details
     paymentGateway: paymentGatewayDetail,  // Payment gateway details
     notificationType: "all",  // Type of notifications to be sent
-    language: "en",  // Language for the payment process
+    language: "en",  // Language for the payment process - en for English & ar For Arabic
     isSaveCard: false,  // Flag indicating if the card should be saved
     isWhitelabeled: true,  // Flag indicating if the payment is whitelabeled
     tokens: tokenDetail,  // Token details
@@ -231,6 +224,10 @@ self.objPaymentAPIManager.processPayment(
 ```
 
 * **Handling Results:** The result of the payment will be passed back in a completion handler with either a success or failure case.
+
+* **Note:** 
+For more parameters check this document
+https://developers.upayments.com/reference/addcharge#request-model
 
 ## Example
 
