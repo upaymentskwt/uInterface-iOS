@@ -45,11 +45,13 @@ pod install
 
 1. Obtain the Universal Framework
 - Download the universal framework file named ```(uInterfaceSDK.xcframework)``` from the ```UInterfaceSDK_Framework``` folder from the Git repository.
+- ![Screenshot 2024-12-31 at 9 48 27 AM](https://github.com/user-attachments/assets/65a8a93a-83fe-4222-9c1b-238ff3a8e558)
 - Ensure that the framework includes binaries for both simulator and device architectures (e.g., arm64 and x86_64).
 2. Add the Framework to Your Project
 - Open your Xcode project.
 - Drag and drop the uInterfaceSDK.framework file into your project’s file hierarchy in Xcode. 
     - Place it in a dedicated folder (e.g., Frameworks).
+    - ![Screenshot 2024-12-31 at 9 50 33 AM](https://github.com/user-attachments/assets/f9d6a4f0-8910-4c7a-a57e-5daafd72e628)
 - In the dialog that appears:
     - Check "Copy items if needed" to copy the framework to your project directory.
     - Ensure the framework is added to the correct target(s).
