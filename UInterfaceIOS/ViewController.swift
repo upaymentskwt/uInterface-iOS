@@ -270,9 +270,6 @@ class ViewController: UIViewController {
             mobile: "+96512345678"
         )
         
-        // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
-        
         // Create browser details
         let browserDetails = BrowserDetailsModel(
             screenWidth: "1920",
@@ -301,7 +298,6 @@ class ViewController: UIViewController {
             tokens: tokenDetail,
             reference: referenceDetail,
             customer: customerDetail,
-            plugin: pluginDetail,
             customerExtraData: "test data",
             returnURL: "https://upayments.com/en/",
             cancelURL: "https://www.error.com",
@@ -378,7 +374,6 @@ class ViewController: UIViewController {
             "notificationUrl": "https://webhook.site/92eb6888-362b-4874-840f-3fff620f7cf4",
             "order": orderDetail.toDictionary(),
             "paymentGateway": paymentGatewayDetail.toDictionary(),
-            "plugin": PluginModel(sourceURL: "ios-sdk").toDictionary(),
             "product": [
                 [
                     "description": "Product 1",
@@ -461,9 +456,6 @@ class ViewController: UIViewController {
             mobile: "+96566336537"
         )
         
-        // Create plugin details
-        let pluginDetail = PluginModel(sourceURL: "ios-sdk")
-        
         // Create browser details
         let browserDetails = BrowserDetailsModel(
             screenWidth: "1920",
@@ -495,7 +487,6 @@ class ViewController: UIViewController {
             tokens: tokenDetail,
             reference: referenceDetail,
             customer: customerDetail,
-            plugin: pluginDetail,
             customerExtraData: "User define data",
             returnURL: "https://upayments.com/en/",
             cancelURL: "https://error.com",
@@ -610,6 +601,7 @@ class ViewController: UIViewController {
             case .failure(let error):
                 // Print and handle error response
                 debugPrint(error.localizedDescription)
+                self.displayAlert(status: "", responseMessage: error.reason ?? "")
             }
         }
     }
