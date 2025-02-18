@@ -25,7 +25,7 @@
 
 ### Using CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C and Swift, which automates and simplifies the process of using 3rd-party libraries like `uInterfaceSDK` in your projects.
+[CocoaPods]([http://cocoapods.org](https://cocoapods.org/pods/uInterfaceSDK)) is a dependency manager for Objective-C and Swift, which automates and simplifies the process of using 3rd-party libraries like `uInterfaceSDK` in your projects.
 
 1. Add the following line to your `Podfile`:
 
