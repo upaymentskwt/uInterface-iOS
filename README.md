@@ -275,6 +275,7 @@ For a complete example, check out our sample projects:
 
 * **Build Errors**
    - Check that the correct frameworks are added to "Link Binary with Libraries" in your Build Phases.
+    ![image](https://github.com/user-attachments/assets/6af713e8-0cb0-47fa-92e0-2f631307bad7)
 
 * **API Keys Not Recognized**
    - Double-check the API keys in your configuration.
