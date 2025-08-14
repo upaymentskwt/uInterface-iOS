@@ -1,7 +1,9 @@
-Pod::Spec.new do |spec|
+version = "1.1.2"
+
+Pod::Spec.new do |spec| 
 
   spec.name                     = "uInterfaceSDK"
-  spec.version                  = "1.1.2"
+  spec.version                  = version
   spec.summary                  = "This library simplifies the integration of user interface components and payment processing features into iOS applications."
   
   spec.description = <<-DESC
@@ -14,13 +16,13 @@ Pod::Spec.new do |spec|
 
   spec.author                   = { "upaymentskwt" => "license@upayments.com" }
   
-  # spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :tag => "1.1.1" }
-  spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :branch => "main" }
+  spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :tag => version }
+  # spec.source                   = { :git => "https://github.com/upaymentskwt/uInterface-iOS.git", :branch => "main" }
   spec.ios.deployment_target    = "12.0"
 
-  spec.source_files             = "SDK/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}"
+  spec.source_files             = "UInterfaceSDK_Framework/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}"
   # spec.source_files             = "SDK/uInterfaceSDK.xcframework/ios-arm64/uInterfaceSDK.framework/Headers/*.{h}"
   spec.requires_arc             = true
-  spec.vendored_frameworks      = "SDK/uInterfaceSDK.xcframework"
+  spec.vendored_frameworks      = "UInterfaceSDK_Framework/uInterfaceSDK.xcframework"
   spec.frameworks               = "UIKit"
 end
