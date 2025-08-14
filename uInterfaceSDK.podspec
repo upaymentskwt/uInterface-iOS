@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name                     = "uInterfaceSDK"
-  spec.version                  = "1.1.1"
+  spec.version                  = "1.1.2"
   spec.summary                  = "This library simplifies the integration of user interface components and payment processing features into iOS applications."
   
   spec.description = <<-DESC
