@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A7E94F82CC90727002A5627 /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7E94F72CC90727002A5627 /* DropDown.framework */; };
-		4B28B01099E857E7F10FEEEA /* Pods_UInterfaceIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3039FE5F4D406345853CFE3 /* Pods_UInterfaceIOS.framework */; };
 		CE8F8E322C91C5AE00A01EEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E312C91C5AE00A01EEE /* AppDelegate.swift */; };
 		CE8F8E342C91C5AE00A01EEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */; };
 		CE8F8E362C91C5AE00A01EEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E352C91C5AE00A01EEE /* ViewController.swift */; };
@@ -17,8 +16,23 @@
 		CE8F8E3E2C91C5AF00A01EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F8E3C2C91C5AF00A01EEE /* LaunchScreen.storyboard */; };
 		CE8F8E712C91C77300A01EEE /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E6E2C91C77300A01EEE /* JSONUtilities.swift */; };
 		CE8F8E742C91C78E00A01EEE /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */; };
-		CEF874572D22962800E686D3 /* uInterfaceSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF874562D22962800E686D3 /* uInterfaceSDK.xcframework */; };
+		D3BEADBD2F2B3D50001566BE /* uInterfaceSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEADBB2F2B3CC9001566BE /* uInterfaceSDK.xcframework */; };
+		D3BEADBE2F2B3D50001566BE /* uInterfaceSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEADBB2F2B3CC9001566BE /* uInterfaceSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3BEADB82F2B36CF001566BE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D3BEADBE2F2B3D50001566BE /* uInterfaceSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A7E94F72CC90727002A5627 /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,7 +49,7 @@
 		CE8F8E3F2C91C5AF00A01EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8F8E6E2C91C77300A01EEE /* JSONUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtilities.swift; sourceTree = "<group>"; };
 		CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
-		CEF874562D22962800E686D3 /* uInterfaceSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uInterfaceSDK.xcframework; sourceTree = "<group>"; };
+		D3BEADBB2F2B3CC9001566BE /* uInterfaceSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uInterfaceSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,9 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BEADBD2F2B3D50001566BE /* uInterfaceSDK.xcframework in Frameworks */,
 				0A7E94F82CC90727002A5627 /* DropDown.framework in Frameworks */,
-				CEF874572D22962800E686D3 /* uInterfaceSDK.xcframework in Frameworks */,
-				4B28B01099E857E7F10FEEEA /* Pods_UInterfaceIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,11 +77,11 @@
 		CE8F8E252C91C5AE00A01EEE = {
 			isa = PBXGroup;
 			children = (
-				CEF874552D22958400E686D3 /* UInterfaceSDK_Framework */,
 				CE8F8E302C91C5AE00A01EEE /* UInterfaceIOS */,
 				CE8F8E2F2C91C5AE00A01EEE /* Products */,
 				6406DFFDF7C7BCE43D005C46 /* Frameworks */,
 				D7C201347F0DDA3A2F624139 /* Pods */,
+				D3BEADBB2F2B3CC9001566BE /* uInterfaceSDK.xcframework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,14 +125,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CEF874552D22958400E686D3 /* UInterfaceSDK_Framework */ = {
-			isa = PBXGroup;
-			children = (
-				CEF874562D22962800E686D3 /* uInterfaceSDK.xcframework */,
-			);
-			path = UInterfaceSDK_Framework;
-			sourceTree = "<group>";
-		};
 		D7C201347F0DDA3A2F624139 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +146,7 @@
 				CE8F8E2C2C91C5AE00A01EEE /* Resources */,
 				E6C2F0609B204BB94FE56A27 /* Frameworks */,
 				BC87B5F8F994958EF7BFEB91 /* [CP] Embed Pods Frameworks */,
+				D3BEADB82F2B36CF001566BE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,9 +212,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

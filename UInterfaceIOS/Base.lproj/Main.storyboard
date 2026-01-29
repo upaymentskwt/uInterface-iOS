@@ -83,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="189" width="393" height="663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="kfW-D6-mJv">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="652"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="707"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxL-im-OcD">
@@ -212,6 +212,20 @@
                                                 <action selector="didTapRetrieveCard:" destination="UTN-Kj-EIx" eventType="touchUpInside" id="frQ-E8-2Yd"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADt-Bu-3Xt">
+                                            <rect key="frame" x="0.0" y="497" width="393" height="35"/>
+                                            <color key="backgroundColor" red="0.37647058820000001" green="0.12941176469999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="Adt-Ht-3Xt"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Auto Deduct">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didTapAutoDeduct:" destination="UTN-Kj-EIx" eventType="touchUpInside" id="Adt-Ay-3Xt"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -242,6 +256,9 @@
                                         <constraint firstAttribute="trailing" secondItem="DPe-Pa-E2h" secondAttribute="trailing" id="uQH-GZ-aji"/>
                                         <constraint firstAttribute="trailing" secondItem="AAb-vi-CMu" secondAttribute="trailing" id="uyI-Hu-vxH"/>
                                         <constraint firstItem="AAb-vi-CMu" firstAttribute="leading" secondItem="kfW-D6-mJv" secondAttribute="leading" id="zxU-9z-MEK"/>
+                                        <constraint firstItem="ADt-Bu-3Xt" firstAttribute="top" secondItem="DPe-Pa-E2h" secondAttribute="bottom" constant="20" id="Adt-Tp-3Xt"/>
+                                        <constraint firstItem="ADt-Bu-3Xt" firstAttribute="leading" secondItem="kfW-D6-mJv" secondAttribute="leading" id="Adt-Ld-3Xt"/>
+                                        <constraint firstAttribute="trailing" secondItem="ADt-Bu-3Xt" secondAttribute="trailing" id="Adt-Tr-3Xt"/>
                                     </constraints>
                                 </view>
                             </tableView>

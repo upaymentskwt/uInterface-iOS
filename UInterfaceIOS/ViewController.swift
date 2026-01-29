@@ -177,6 +177,12 @@ class ViewController: UIViewController {
         self.fetchCardDetails()
     }
     
+    // Action for performing auto deduct payment
+    @IBAction func didTapAutoDeduct(_ sender: Any) {
+        // Handle the auto deduct payment process
+        self.performAutoDeduct()
+    }
+    
     //MARK: - API Calls Method
     // Function to check the status of payment buttons based on the provided API token
     func checkPaymentButtonStatus() {
@@ -811,6 +817,189 @@ class ViewController: UIViewController {
                 // Handle error response
                 self.displayAlert(status: String(error.httpStatusCode ?? 0), responseMessage: error.reason ?? "")
                 debugPrint(error.localizedDescription)
+            }
+        }
+    }
+    
+    /// Performs an auto-deduct payment using a saved card token.
+    /// This method first fetches available cards, shows a selection UI, then initiates payment.
+    func performAutoDeduct() {
+        // Retrieve the unique customer token from UserDefaults
+        let customerUniqueToken = UserDefaults.standard.string(forKey: "customerUnique") ?? "0"
+        
+        // Create the request data for fetching card details
+        let fetchCardRequest = TokenDataModel(customerUniqueToken: Int(customerUniqueToken) ?? 0)
+        
+        // Print request details for debugging
+        JSONUtilities.printModelAsJSON(fetchCardRequest)
+        
+        // Show loading indicator
+        let loadingAlert = showLoadingIndicator(message: "Fetching saved cards...")
+        
+        // First, fetch available cards
+        self.objPaymentAPIManager.fetchCardDetails(token: self.apiToken, cardRequestDetails: fetchCardRequest, controller: self) { [weak self] result in
+            // Hide loading indicator
+            DispatchQueue.main.async {
+                loadingAlert.dismiss(animated: true) {
+                    switch result {
+                    case .success(let response):
+                        debugPrint("Fetch Cards Response: \(response)")
+                        
+                        // Parse the cards from response
+                        guard let data = response["data"] as? [String: Any],
+                              let customerCards = data["customerCards"] as? [[String: Any]],
+                              !customerCards.isEmpty else {
+                            self?.displayAlert(status: "No Cards", responseMessage: "No saved cards found. Please add a card first.")
+                            return
+                        }
+                        
+                        // Show card selection action sheet
+                        self?.showCardSelectionActionSheet(cards: customerCards, customerUniqueToken: customerUniqueToken)
+                        
+                    case .failure(let error):
+                        let errorMessage = error.reason ?? "Failed to fetch cards. Please try again."
+                        let statusCode = error.httpStatusCode ?? 0
+                        debugPrint("Fetch Cards Error: \(error.localizedDescription)")
+                        self?.displayAlert(status: "Error (\(statusCode))", responseMessage: errorMessage)
+                    }
+                }
+            }
+        }
+    }
+    
+    /// Shows a loading indicator alert with a spinner
+    /// - Parameter message: The message to display in the loading alert
+    /// - Returns: The UIAlertController being presented
+    func showLoadingIndicator(message: String) -> UIAlertController {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = .medium
+        loadingIndicator.startAnimating()
+        
+        alert.view.addSubview(loadingIndicator)
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        return alert
+    }
+    
+    /// Shows an action sheet for the user to select a card for auto-deduct payment.
+    /// - Parameters:
+    ///   - cards: Array of card dictionaries from the API response.
+    ///   - customerUniqueToken: The customer's unique token.
+    func showCardSelectionActionSheet(cards: [[String: Any]], customerUniqueToken: String) {
+        let alertController = UIAlertController(
+            title: "Select Card",
+            message: "Choose a card for auto-deduct payment",
+            preferredStyle: .actionSheet
+        )
+        
+        // Add an action for each available card
+        for card in cards {
+            let brand = card["brand"] as? String ?? "Card"
+            let cardNumber = card["number"] as? String ?? "****"
+            let token = card["token"] as? String ?? ""
+            
+            // Display card brand and last 4 digits
+            let cardTitle = "\(brand) - \(cardNumber)"
+            
+            let cardAction = UIAlertAction(title: cardTitle, style: .default) { [weak self] _ in
+                // Execute auto-deduct with selected card token
+                self?.executeAutoDeduct(cardToken: token, customerUniqueToken: customerUniqueToken)
+            }
+            alertController.addAction(cardAction)
+        }
+        
+        // Add cancel action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        // For iPad support (action sheets need source view on iPad)
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    /// Executes the auto-deduct payment with the selected card token.
+    /// - Parameters:
+    ///   - cardToken: The token of the selected card.
+    ///   - customerUniqueToken: The customer's unique token.
+    func executeAutoDeduct(cardToken: String, customerUniqueToken: String) {
+        // Create order details for the auto-deduct payment
+        let order = AutoDeductOrderModel(
+            orderId: "20221010125525515728",
+            reference: "202210101",
+            description: "Auto deduct test payment",
+            currency: "KWD",
+            amount: "0.01"
+        )
+        
+        // Create customer details
+        let customer = AutoDeductCustomerModel(
+            name: "John Doe",
+            email: "john@example.com",
+            mobile: "94771608",
+            uniqueToken: Int(customerUniqueToken) ?? 9904917679
+        )
+        
+        // Create card token details using the selected card
+        let card = AutoDeductCardModel(token: cardToken)
+        
+        // Create reference details
+        let reference = AutoDeductReferenceModel(referenceId: "202210101202210101")
+        
+        // Create the auto-deduct request model
+        let autoDeductRequest = AutoDeductRequestModel(
+            order: order,
+            language: "en",
+            reference: reference,
+            customer: customer,
+            card: card
+        )
+        
+        // Print request details for debugging
+        JSONUtilities.printModelAsJSON(autoDeductRequest)
+        
+        // Show loading indicator
+        let loadingAlert = showLoadingIndicator(message: "Processing auto-deduct payment...")
+        
+        // Send the auto-deduct request to the API
+        self.objPaymentAPIManager.autoDeduct(
+            token: self.apiToken,
+            autoDeductRequest: autoDeductRequest,
+            controller: self
+        ) { [weak self] result in
+            // Hide loading indicator
+            DispatchQueue.main.async {
+                loadingAlert.dismiss(animated: true) {
+                    switch result {
+                    case .success(let response):
+                        // Convert response to JSON string for debugging
+                        if let jsonResponse = JSONUtilities.convertDictionaryToJSONString(dictionary: response) {
+                            debugPrint("Auto Deduct Response:")
+                            JSONUtilities.printModelAsJSON(jsonResponse)
+                        }
+                        
+                        // Extract and display the response message
+                        let message = response["message"] as? String ?? "Auto deduct payment processed"
+                        self?.displayAlert(status: "Success", responseMessage: response)
+                        
+                    case .failure(let error):
+                        // Handle error response
+                        let errorMessage = error.reason ?? "Payment failed. Please try again."
+                        let statusCode = error.httpStatusCode ?? 0
+                        debugPrint("Auto Deduct Error: \(error.localizedDescription)")
+                        self?.displayAlert(status: "Error (\(statusCode))", responseMessage: errorMessage)
+                    }
+                }
             }
         }
     }
