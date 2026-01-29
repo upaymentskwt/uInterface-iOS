@@ -1021,26 +1021,52 @@ extension ViewController {
         dropdown.anchorView = self.dropDownContainerView
         dropdown.dataSource = self.arrPaymentOptions
         dropdown.selectionAction = { [unowned self] (index: Int, item: String) in
-            // Parse the selected payment type
-            let paymentType = self.arrPaymentOptions[index].split(separator: "_")
-            debugPrint(paymentType)
+            // Get the selected payment option
+            let selectedOption = self.arrPaymentOptions[index]
+            debugPrint("Selected payment option: \(selectedOption)")
             
-            // Determine the payment value based on the selection
+            // Map payment option to gateway value using switch case
             let paymentValue: String
-            if paymentType.count == 2 {
-                paymentValue = "\(paymentType[0])-\(paymentType[1])"
-            } else {
-                paymentValue = "\(paymentType[0])"
+            switch selectedOption {
+            case "credit_card":
+                self.sourceValue = "cc"
+                paymentValue = "credit-card"
+            case "knet":
+                self.sourceValue = "knet"
+                paymentValue = "knet"
+            case "apple_pay":
+                self.sourceValue = "apple-pay"
+                paymentValue = "apple-pay"
+            case "apple_pay_knet":
+                self.sourceValue = "apple-pay-knet"
+                paymentValue = "apple-pay-knet"
+            case "google_pay":
+                self.sourceValue = "google-pay"
+                paymentValue = "google-pay"
+            case "samsung_pay":
+                self.sourceValue = "samsung-pay"
+                paymentValue = "samsung-pay"
+            case "stc_pay":
+                self.sourceValue = "stc-pay"
+                paymentValue = "stc-pay"
+            case "amex":
+                self.sourceValue = "amex"
+                paymentValue = "amex"
+            default:
+                // For any other payment types, use the original logic
+                let paymentType = selectedOption.split(separator: "_")
+                if paymentType.count == 2 {
+                    paymentValue = "\(paymentType[0])-\(paymentType[1])"
+                    self.sourceValue = paymentValue
+                } else {
+                    paymentValue = "\(paymentType[0])"
+                    self.sourceValue = paymentValue
+                }
             }
             
-            // Set the source value based on the payment type
-            self.sourceValue = (paymentValue == "credit-card") ? "cc" : paymentValue
+            debugPrint("Payment value: \(paymentValue), Source value: \(self.sourceValue)")
             
-            // Adjust the dropdown position and hide the container view
-//            dropdown.bottomOffset = CGPoint(
-//                x: 0,
-//                y: self.dropDownContainerView.frame.maxY
-//            )
+            // Hide the dropdown
             self.dropdown.hide()
             
             // Trigger payment initiation based on the selected API type
