@@ -38,6 +38,8 @@ class ViewController: UIViewController {
     var whiteListStatus = "2"
     var apiType = ""
     var customerUniqueNumber = ""
+    let token = "oxxnDz0ES48qyaT96f8VG6YYyFr0krk2akJI7LH5"
+//    let token = "e66a94d579cf75fba327ff716ad68c53aae11528"
     
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -54,7 +56,7 @@ class ViewController: UIViewController {
         
         // Assign API token for Sandbox environment
 //        apiToken = "jtest123"  // For Non White Label (Sandbox)
-        apiToken = "e66a94d579cf75fba327ff716ad68c53aae11528" // For White Label (Sandbox)
+        apiToken = token // For White Label (Sandbox)
         
         // Set the payment source value to KNET
         self.sourceValue = "cc"
@@ -96,7 +98,7 @@ class ViewController: UIViewController {
         
         if sender.isOn {
             // Assign API token for White Label environment (e.g., Production)
-            self.apiToken = "e66a94d579cf75fba327ff716ad68c53aae11528"
+            self.apiToken = token
             
             // Set whiteListStatus to White Label selected
             self.whiteListStatus = "2"
@@ -443,7 +445,7 @@ class ViewController: UIViewController {
         )
         
         // Create payment gateway details
-        let paymentGatewayDetail = PaymentGatewayModel(src: "knet")
+        let paymentGatewayDetail = PaymentGatewayModel(src: self.sourceValue)
         
         // Retrieve customer unique token from UserDefaults
         let customerUniqueToken = UserDefaults.standard.string(forKey: "customerUnique")
@@ -1026,15 +1028,21 @@ extension ViewController {
             debugPrint(paymentType)
             
             // Determine the payment value based on the selection
-            let paymentValue: String
-            if paymentType.count == 2 {
-                paymentValue = "\(paymentType[0])-\(paymentType[1])"
-            } else {
-                paymentValue = "\(paymentType[0])"
-            }
+            let paymentValue = paymentType.joined(separator: "-")
+            
+            // Mapping dictionary for payment sources
+            let paymentSourceMap: [String: String] = [
+                "credit-card": "cc",
+                "knet": "knet",
+                "samsung-pay": "samsung-pay",
+                "apple-pay": "apple-pay",
+                "apple-pay-knet": "apple-pay-knet",
+                "google-pay": "google-pay",
+                "create-invoice": "create-invoice"
+            ]
             
             // Set the source value based on the payment type
-            self.sourceValue = (paymentValue == "credit-card") ? "cc" : paymentValue
+            self.sourceValue = paymentSourceMap[paymentValue] ?? paymentValue
             
             // Adjust the dropdown position and hide the container view
 //            dropdown.bottomOffset = CGPoint(

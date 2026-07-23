@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "absolute:/Users/siyahulhaq/Development/iOS-SDK/uInterfaceSDK.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UInterfaceIOS.xcodeproj">
    </FileRef>
    <FileRef

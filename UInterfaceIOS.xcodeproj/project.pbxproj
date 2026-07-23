@@ -16,18 +16,18 @@
 		CE8F8E3E2C91C5AF00A01EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F8E3C2C91C5AF00A01EEE /* LaunchScreen.storyboard */; };
 		CE8F8E712C91C77300A01EEE /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E6E2C91C77300A01EEE /* JSONUtilities.swift */; };
 		CE8F8E742C91C78E00A01EEE /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */; };
-		D3BEADBD2F2B3D50001566BE /* uInterfaceSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEADBB2F2B3CC9001566BE /* uInterfaceSDK.xcframework */; };
-		D3BEADBE2F2B3D50001566BE /* uInterfaceSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEADBB2F2B3CC9001566BE /* uInterfaceSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D397EB532FA711FF00BC6F43 /* uInterfaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */; };
+		D397EB542FA711FF00BC6F43 /* uInterfaceSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D3BEADB82F2B36CF001566BE /* Embed Frameworks */ = {
+		D397EB462FA70E5600BC6F43 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D3BEADBE2F2B3D50001566BE /* uInterfaceSDK.xcframework in Embed Frameworks */,
+				D397EB542FA711FF00BC6F43 /* uInterfaceSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +49,7 @@
 		CE8F8E3F2C91C5AF00A01EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8F8E6E2C91C77300A01EEE /* JSONUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtilities.swift; sourceTree = "<group>"; };
 		CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
-		D3BEADBB2F2B3CC9001566BE /* uInterfaceSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uInterfaceSDK.xcframework; sourceTree = "<group>"; };
+		D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uInterfaceSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3BEADBD2F2B3D50001566BE /* uInterfaceSDK.xcframework in Frameworks */,
 				0A7E94F82CC90727002A5627 /* DropDown.framework in Frameworks */,
+				D397EB532FA711FF00BC6F43 /* uInterfaceSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +68,7 @@
 		6406DFFDF7C7BCE43D005C46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */,
 				0A7E94F72CC90727002A5627 /* DropDown.framework */,
 				A3039FE5F4D406345853CFE3 /* Pods_UInterfaceIOS.framework */,
 			);
@@ -81,7 +82,6 @@
 				CE8F8E2F2C91C5AE00A01EEE /* Products */,
 				6406DFFDF7C7BCE43D005C46 /* Frameworks */,
 				D7C201347F0DDA3A2F624139 /* Pods */,
-				D3BEADBB2F2B3CC9001566BE /* uInterfaceSDK.xcframework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,7 +146,7 @@
 				CE8F8E2C2C91C5AE00A01EEE /* Resources */,
 				E6C2F0609B204BB94FE56A27 /* Frameworks */,
 				BC87B5F8F994958EF7BFEB91 /* [CP] Embed Pods Frameworks */,
-				D3BEADB82F2B36CF001566BE /* Embed Frameworks */,
+				D397EB462FA70E5600BC6F43 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,8 +409,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = U6726M5K48;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -429,6 +430,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.upayments.uinterfacesdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -441,8 +443,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = U6726M5K48;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -461,6 +464,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.upayments.uinterfacesdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Setting the base URL for the default environment
-        self.objPaymentManager.setBaseURL(environment: .sandbox)
+        self.objPaymentManager.setBaseURL(environment: .production)
         return true
     }
 
