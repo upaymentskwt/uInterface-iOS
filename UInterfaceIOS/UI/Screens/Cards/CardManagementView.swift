@@ -59,6 +59,23 @@ public struct CardManagementView: View {
                         }
                     }
                     
+                    // Operation Status Banner
+                    if let alertMsg = viewModel.alertMessage, !viewModel.showAlert {
+                        GlassCard(title: "Card Status", icon: "info.circle.fill") {
+                            HStack {
+                                Text(alertMsg)
+                                    .font(.system(size: 13, weight: .medium))
+                                    .foregroundColor(.secondary)
+                                Spacer()
+                                Button("Dismiss") {
+                                    viewModel.alertMessage = nil
+                                }
+                                .font(.system(size: 12, weight: .semibold))
+                                .foregroundColor(AppTheme.brandPrimary)
+                            }
+                        }
+                    }
+                    
                     // Saved Cards Section
                     HStack {
                         Text("Saved Payment Methods")

@@ -134,11 +134,15 @@ public final class CheckoutViewModel: ObservableObject {
                 case .success(let paymentResult):
                     self.lastResult = paymentResult
                     self.lastNetworkError = nil
-                    self.showResultSheet = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                        self.showResultSheet = true
+                    }
                 case .failure(let error):
                     self.lastResult = nil
                     self.lastNetworkError = error
-                    self.showResultSheet = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                        self.showResultSheet = true
+                    }
                 }
             }
         }

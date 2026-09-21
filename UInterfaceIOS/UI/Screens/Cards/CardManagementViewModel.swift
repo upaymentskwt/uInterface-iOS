@@ -77,8 +77,13 @@ public final class CardManagementViewModel: ObservableObject {
                 case .success(let response):
                     let statusMsg = response["addCardStatusMessage"] as? String ?? "Card processed successfully"
                     self.alertMessage = statusMsg
-                    self.showAlert = true
-                    self.fetchSavedCards()
+                    self.lastNetworkError = nil
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                        self.showAlert = true
+                    }
+                    if !statusMsg.contains("cancelled") && !statusMsg.contains("failed") {
+                        self.fetchSavedCards()
+                    }
                 case .failure(let error):
                     self.lastNetworkError = error
                 }

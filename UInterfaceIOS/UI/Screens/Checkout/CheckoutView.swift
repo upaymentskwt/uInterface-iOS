@@ -89,6 +89,44 @@ public struct CheckoutView: View {
                         }
                     }
                     
+                    // Last Transaction Outcome Card
+                    if let result = viewModel.lastResult {
+                        GlassCard(title: "Transaction Outcome", icon: "creditcard.circle.fill") {
+                            VStack(alignment: .leading, spacing: 10) {
+                                HStack {
+                                    Text("Status")
+                                        .font(.system(size: 14, weight: .medium))
+                                    Spacer()
+                                    StatusBadge(
+                                        title: result.message,
+                                        style: (result.transactionDetails.result == "CAPTURED" || result.transactionDetails.result == "SUCCESS") ? .success : ((result.transactionDetails.result == "CANCELED" || result.transactionDetails.result == "CANCELLED") ? .warning : .error)
+                                    )
+                                }
+                                
+                                if let resultStr = result.transactionDetails.result, !resultStr.isEmpty {
+                                    HStack {
+                                        Text("Result Code:")
+                                            .font(.system(size: 13))
+                                            .foregroundColor(.secondary)
+                                        Spacer()
+                                        Text(resultStr)
+                                            .font(.system(size: 13, weight: .bold, design: .monospaced))
+                                    }
+                                }
+                                
+                                Button(action: { viewModel.showResultSheet = true }) {
+                                    HStack {
+                                        Text("View Full Details")
+                                            .font(.system(size: 13, weight: .semibold))
+                                        Image(systemName: "arrow.up.right.square")
+                                            .font(.system(size: 12))
+                                    }
+                                    .foregroundColor(AppTheme.brandPrimary)
+                                }
+                            }
+                        }
+                    }
+                    
                     // Checkout Button
                     ActionButton(
                         title: String(format: "Pay Now • %.3f %@", viewModel.totalAmount, viewModel.currency),
