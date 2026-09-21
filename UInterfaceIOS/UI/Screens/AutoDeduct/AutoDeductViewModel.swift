@@ -21,6 +21,7 @@ public final class AutoDeductViewModel: ObservableObject {
     
     @Published public var isProcessing: Bool = false
     @Published public var responseJSON: String? = nil
+    @Published public var lastNetworkError: NetworkError? = nil
     @Published public var alertMessage: String? = nil
     @Published public var showAlert: Bool = false
     @Published public var showJSONSheet: Bool = false
@@ -28,13 +29,13 @@ public final class AutoDeductViewModel: ObservableObject {
     // MARK: - Actions
     public func executeAutoDeduct() {
         guard !cardToken.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            self.alertMessage = "Please enter or select a valid Card Token."
-            self.showAlert = true
+            self.lastNetworkError = NetworkError(reason: "Please enter or select a valid Card Token.", httpStatusCode: 400)
             return
         }
         
         let config = AppConfiguration.shared
         self.isProcessing = true
+        self.lastNetworkError = nil
         
         let timestamp = "\(Int(Date().timeIntervalSince1970))"
         let order = AutoDeductOrderModel(
@@ -77,11 +78,12 @@ public final class AutoDeductViewModel: ObservableObject {
                         self.responseJSON = "\(responseDict)"
                     }
                     self.alertMessage = message
-                    self.showAlert = true
+                    self.lastNetworkError = nil
+                    self.showJSONSheet = true
                 case .failure(let error):
-                    self.responseJSON = "Error: \(error.localizedDescription)"
-                    self.alertMessage = "Auto-deduct failed: \(error.localizedDescription)"
-                    self.showAlert = true
+                    self.lastNetworkError = error
+                    self.responseJSON = error.rawResponseBody ?? error.formattedInDepthDescription
+                    self.showJSONSheet = true
                 }
             }
         }

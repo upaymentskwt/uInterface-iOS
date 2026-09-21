@@ -35,6 +35,7 @@ public final class RefundsViewModel: ObservableObject {
     
     @Published public var isSubmitting: Bool = false
     @Published public var resultMessage: String? = nil
+    @Published public var lastNetworkError: NetworkError? = nil
     @Published public var alertMessage: String? = nil
     @Published public var showAlert: Bool = false
     
@@ -53,6 +54,7 @@ public final class RefundsViewModel: ObservableObject {
     private func executeSingleRefund() {
         let config = AppConfiguration.shared
         self.isSubmitting = true
+        self.lastNetworkError = nil
         
         let request = RefundRequestModel(
             orderId: orderId,
@@ -71,11 +73,11 @@ public final class RefundsViewModel: ObservableObject {
                     let msg = response.message ?? "Single refund submitted"
                     self.alertMessage = msg
                     self.resultMessage = "Status: \(response.status ?? false)\nMessage: \(msg)"
+                    self.lastNetworkError = nil
                     self.showAlert = true
                 case .failure(let error):
-                    self.alertMessage = "Refund error: \(error.localizedDescription)"
+                    self.lastNetworkError = error
                     self.resultMessage = "Error: \(error.localizedDescription)"
-                    self.showAlert = true
                 }
             }
         }
@@ -84,6 +86,7 @@ public final class RefundsViewModel: ObservableObject {
     private func executeMultiVendorRefund() {
         let config = AppConfiguration.shared
         self.isSubmitting = true
+        self.lastNetworkError = nil
         
         let v1 = MerchantMoreDetailsModel(
             amount: Int(vendor1Amount) ?? 1,
@@ -107,11 +110,11 @@ public final class RefundsViewModel: ObservableObject {
                     let msg = response.message ?? "Multi-vendor refund submitted"
                     self.alertMessage = msg
                     self.resultMessage = "Status: \(response.status ?? false)\nMessage: \(msg)"
+                    self.lastNetworkError = nil
                     self.showAlert = true
                 case .failure(let error):
-                    self.alertMessage = "Multi-vendor refund error: \(error.localizedDescription)"
+                    self.lastNetworkError = error
                     self.resultMessage = "Error: \(error.localizedDescription)"
-                    self.showAlert = true
                 }
             }
         }
@@ -120,6 +123,7 @@ public final class RefundsViewModel: ObservableObject {
     private func executeDeleteRefund() {
         let config = AppConfiguration.shared
         self.isSubmitting = true
+        self.lastNetworkError = nil
         
         let payload: [String: Any] = [
             "order_id": deleteOrderId.isEmpty ? orderId : deleteOrderId
@@ -134,11 +138,11 @@ public final class RefundsViewModel: ObservableObject {
                     let msg = responseDict["message"] as? String ?? "Refund cancelled successfully"
                     self.alertMessage = msg
                     self.resultMessage = "\(responseDict)"
+                    self.lastNetworkError = nil
                     self.showAlert = true
                 case .failure(let error):
-                    self.alertMessage = "Delete refund failed: \(error.localizedDescription)"
+                    self.lastNetworkError = error
                     self.resultMessage = "Error: \(error.localizedDescription)"
-                    self.showAlert = true
                 }
             }
         }

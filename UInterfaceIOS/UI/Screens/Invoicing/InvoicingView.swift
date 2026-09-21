@@ -60,6 +60,13 @@ public struct InvoicingView: View {
                         }
                     }
                     
+                    // In-depth Error Banner
+                    if let error = viewModel.lastNetworkError {
+                        ErrorDetailView(error: error) {
+                            viewModel.lastNetworkError = nil
+                        }
+                    }
+                    
                     // Create Button
                     ActionButton(
                         title: "Generate Invoice",

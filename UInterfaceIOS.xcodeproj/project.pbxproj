@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EBA21571EB9B3D1CC23AAA /* ErrorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA21571EB9B3D1CC23AAA /* ErrorDetailView.swift */; };
 		0A7E94F82CC90727002A5627 /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7E94F72CC90727002A5627 /* DropDown.framework */; };
 		CE8F8E322C91C5AE00A01EEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E312C91C5AE00A01EEE /* AppDelegate.swift */; };
 		CE8F8E342C91C5AE00A01EEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EFA21571EB9B3D1CC23AAA /* ErrorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorDetailView.swift"; sourceTree = "<group>"; };
 		0A7E94F72CC90727002A5627 /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A28E93CFFFFA0D5C1F632DD /* Pods-UInterfaceIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UInterfaceIOS.debug.xcconfig"; path = "Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A3039FE5F4D406345853CFE3 /* Pods_UInterfaceIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UInterfaceIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 		EG05BBB43B3D923283E0B6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EFA21571EB9B3D1CC23AAA /* ErrorDetailView.swift */,
 				EFD9CE9F407A41B56BB54E /* ActionButton.swift */,
 				EF9D6DC795B06D4D53EFA0 /* FormInputField.swift */,
 				EF957299ED07AB875A94A2 /* GlassCard.swift */,
@@ -400,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA21571EB9B3D1CC23AAA /* ErrorDetailView.swift in Sources */,
 				EBEE95E830A7862F237CA2 /* AppConfiguration.swift in Sources */,
 				EBE319301E042A28C270C9 /* WindowHelper.swift in Sources */,
 				EB474192B5A29F946D1885 /* AppTheme.swift in Sources */,

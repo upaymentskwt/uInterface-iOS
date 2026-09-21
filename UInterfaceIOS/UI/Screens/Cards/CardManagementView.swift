@@ -52,6 +52,13 @@ public struct CardManagementView: View {
                         }
                     }
                     
+                    // In-depth Error Banner
+                    if let error = viewModel.lastNetworkError {
+                        ErrorDetailView(error: error) {
+                            viewModel.lastNetworkError = nil
+                        }
+                    }
+                    
                     // Saved Cards Section
                     HStack {
                         Text("Saved Payment Methods")
@@ -79,7 +86,7 @@ public struct CardManagementView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 40)
-                    } else if viewModel.savedCards.isEmpty {
+                    } else if viewModel.savedCards.isEmpty && viewModel.lastNetworkError == nil {
                         VStack(spacing: 12) {
                             Image(systemName: "creditcard")
                                 .font(.system(size: 40))

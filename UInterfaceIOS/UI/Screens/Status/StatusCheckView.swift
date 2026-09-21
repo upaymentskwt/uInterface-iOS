@@ -36,6 +36,13 @@ public struct StatusCheckView: View {
                         }
                     }
                     
+                    // In-depth Error Banner
+                    if let error = viewModel.lastNetworkError {
+                        ErrorDetailView(error: error) {
+                            viewModel.lastNetworkError = nil
+                        }
+                    }
+                    
                     // Payment Status Results
                     if let statusResponse = viewModel.paymentStatusResponse {
                         GlassCard(title: "Payment Details", icon: "doc.plaintext.fill") {

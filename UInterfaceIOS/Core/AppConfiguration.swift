@@ -91,6 +91,7 @@ public final class AppConfiguration: ObservableObject {
     @Published public var isInitializing: Bool = false
     @Published public var resolvedSecretKey: String? = nil
     @Published public var initErrorMessage: String? = nil
+    @Published public var lastNetworkError: NetworkError? = nil
     
     // MARK: - Computed Properties
     public var currentEnvironment: Environment {
@@ -141,6 +142,7 @@ public final class AppConfiguration: ObservableObject {
         let trimmedKey = apiKey.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedKey.isEmpty else {
             self.initErrorMessage = "API Key cannot be empty"
+            self.lastNetworkError = NetworkError(reason: "API Key cannot be empty", httpStatusCode: 400)
             self.isInitialized = false
             completion?(false)
             return
@@ -148,6 +150,7 @@ public final class AppConfiguration: ObservableObject {
         
         self.isInitializing = true
         self.initErrorMessage = nil
+        self.lastNetworkError = nil
         
         let trimmedSecret = secretKey.trimmingCharacters(in: .whitespacesAndNewlines)
         let secretParam = trimmedSecret.isEmpty ? nil : trimmedSecret
@@ -166,10 +169,12 @@ public final class AppConfiguration: ObservableObject {
                     self.isInitialized = true
                     self.resolvedSecretKey = secret.isEmpty ? "Direct / None required" : secret
                     self.initErrorMessage = nil
+                    self.lastNetworkError = nil
                     completion?(true)
                 case .failure(let error):
                     self.isInitialized = false
                     self.resolvedSecretKey = nil
+                    self.lastNetworkError = error
                     self.initErrorMessage = error.localizedDescription
                     completion?(false)
                 }

@@ -35,12 +35,12 @@ public struct CheckoutView: View {
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text(product.name ?? "Product")
                                             .font(.system(size: 14, weight: .semibold))
-                                        Text("Qty: \(product.quantity ?? 1)")
+                                        Text("Qty: \(Int(product.quantity ?? 1.0))")
                                             .font(.system(size: 12))
                                             .foregroundColor(.secondary)
                                     }
                                     Spacer()
-                                    Text(String(format: "%.3f %@", (product.price ?? 0.0) * Double(product.quantity ?? 1), viewModel.currency))
+                                    Text(String(format: "%.3f %@", (product.price ?? 0.0) * Double(product.quantity ?? 1.0), viewModel.currency))
                                         .font(.system(size: 14, weight: .bold))
                                 }
                                 if product.name != viewModel.currentProducts.last?.name {
@@ -79,6 +79,13 @@ public struct CheckoutView: View {
                             FormInputField(label: "Full Name", placeholder: "Customer Name", text: $viewModel.customerName)
                             FormInputField(label: "Email Address", placeholder: "customer@example.com", text: $viewModel.customerEmail, keyboardType: .emailAddress)
                             FormInputField(label: "Mobile Number", placeholder: "965XXXXXXXX", text: $viewModel.customerMobile, keyboardType: .phonePad)
+                        }
+                    }
+                    
+                    // Live Error Banner (if any)
+                    if let error = viewModel.lastNetworkError {
+                        ErrorDetailView(error: error) {
+                            viewModel.lastNetworkError = nil
                         }
                     }
                     
@@ -127,15 +134,8 @@ public struct CheckoutView: View {
                                 resultRow(title: "Post Date", value: result.transactionDetails.postingDate ?? "N/A")
                             }
                         }
-                    } else if let error = viewModel.lastError {
-                        GlassCard(title: "Payment Failed", icon: "xmark.octagon.fill") {
-                            VStack(alignment: .leading, spacing: 10) {
-                                StatusBadge(title: "Transaction Error", style: .error)
-                                Text(error)
-                                    .font(.system(size: 14))
-                                    .foregroundColor(.secondary)
-                            }
-                        }
+                    } else if let error = viewModel.lastNetworkError {
+                        ErrorDetailView(error: error)
                     }
                     
                     ActionButton(title: "Dismiss", isSecondary: true) {

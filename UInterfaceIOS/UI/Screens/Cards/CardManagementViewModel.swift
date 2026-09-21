@@ -15,6 +15,7 @@ public final class CardManagementViewModel: ObservableObject {
     @Published public var isLoading: Bool = false
     @Published public var isAddingCard: Bool = false
     @Published public var isGeneratingToken: Bool = false
+    @Published public var lastNetworkError: NetworkError? = nil
     @Published public var alertMessage: String? = nil
     @Published public var showAlert: Bool = false
     
@@ -24,6 +25,7 @@ public final class CardManagementViewModel: ObservableObject {
     public func createCustomerToken() {
         let config = AppConfiguration.shared
         self.isGeneratingToken = true
+        self.lastNetworkError = nil
         
         let request = CustomerTokenRequestModel(customerUniqueToken: config.customerUniqueToken)
         UPayments.shared.createCustomerToken(request: request, apiKey: config.apiKey) { [weak self] result in
@@ -37,8 +39,7 @@ public final class CardManagementViewModel: ObservableObject {
                     self.showAlert = true
                     self.fetchSavedCards()
                 case .failure(let error):
-                    self.alertMessage = "Token generation failed: \(error.localizedDescription)"
-                    self.showAlert = true
+                    self.lastNetworkError = error
                 }
             }
         }
@@ -47,13 +48,13 @@ public final class CardManagementViewModel: ObservableObject {
     /// Presents the Add Card web modal to tokenize a card.
     public func addCard() {
         guard let topVC = WindowHelper.topMostViewController else {
-            self.alertMessage = "Could not locate active presentation view controller."
-            self.showAlert = true
+            self.lastNetworkError = NetworkError(reason: "Could not locate active presentation view controller.", httpStatusCode: 500)
             return
         }
         
         let config = AppConfiguration.shared
         self.isAddingCard = true
+        self.lastNetworkError = nil
         
         let cardPayload: [String: Any] = [
             "customerUniqueToken": config.customerUniqueToken
@@ -74,8 +75,7 @@ public final class CardManagementViewModel: ObservableObject {
                     self.showAlert = true
                     self.fetchSavedCards()
                 case .failure(let error):
-                    self.alertMessage = "Add card failed: \(error.localizedDescription)"
-                    self.showAlert = true
+                    self.lastNetworkError = error
                 }
             }
         }
@@ -85,6 +85,7 @@ public final class CardManagementViewModel: ObservableObject {
     public func fetchSavedCards() {
         let config = AppConfiguration.shared
         self.isLoading = true
+        self.lastNetworkError = nil
         
         let tokenInt = Int(config.customerUniqueToken) ?? 123456789
         let request = TokenDataModel(customerUniqueToken: tokenInt)
@@ -97,8 +98,7 @@ public final class CardManagementViewModel: ObservableObject {
                     self.savedCards = response.data?.customerCardsInfo ?? []
                 case .failure(let error):
                     self.savedCards = []
-                    self.alertMessage = "Failed to load cards: \(error.localizedDescription)"
-                    self.showAlert = true
+                    self.lastNetworkError = error
                 }
             }
         }

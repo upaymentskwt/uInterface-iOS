@@ -73,6 +73,13 @@ public struct SettingsView: View {
                                         .truncationMode(.middle)
                                 }
                             }
+                            
+                            if let error = config.lastNetworkError {
+                                Divider()
+                                ErrorDetailView(error: error) {
+                                    config.lastNetworkError = nil
+                                }
+                            }
                         }
                     }
                     

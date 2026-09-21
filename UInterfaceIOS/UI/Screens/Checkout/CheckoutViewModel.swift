@@ -20,7 +20,7 @@ public final class CheckoutViewModel: ObservableObject {
     
     @Published public var isProcessing: Bool = false
     @Published public var lastResult: PaymentResult? = nil
-    @Published public var lastError: String? = nil
+    @Published public var lastNetworkError: NetworkError? = nil
     @Published public var showResultSheet: Bool = false
     
     public let availableSources: [(id: String, name: String)] = [
@@ -50,14 +50,14 @@ public final class CheckoutViewModel: ObservableObject {
     // MARK: - Actions
     public func initiatePayment() {
         guard let topVC = WindowHelper.topMostViewController else {
-            self.lastError = "Could not locate active presentation view controller."
+            self.lastNetworkError = NetworkError(reason: "Could not locate active presentation view controller.", httpStatusCode: 500)
             self.showResultSheet = true
             return
         }
         
         let config = AppConfiguration.shared
         self.isProcessing = true
-        self.lastError = nil
+        self.lastNetworkError = nil
         self.lastResult = nil
         
         let timestamp = "\(Int(Date().timeIntervalSince1970))"
@@ -106,11 +106,11 @@ public final class CheckoutViewModel: ObservableObject {
                 switch result {
                 case .success(let paymentResult):
                     self.lastResult = paymentResult
-                    self.lastError = nil
+                    self.lastNetworkError = nil
                     self.showResultSheet = true
                 case .failure(let error):
                     self.lastResult = nil
-                    self.lastError = error.localizedDescription
+                    self.lastNetworkError = error
                     self.showResultSheet = true
                 }
             }

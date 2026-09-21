@@ -20,6 +20,7 @@ public final class InvoicingViewModel: ObservableObject {
     
     @Published public var isGenerating: Bool = false
     @Published public var createdInvoice: InvoiceCreatedModel? = nil
+    @Published public var lastNetworkError: NetworkError? = nil
     @Published public var alertMessage: String? = nil
     @Published public var showAlert: Bool = false
     
@@ -27,6 +28,7 @@ public final class InvoicingViewModel: ObservableObject {
     public func createInvoice() {
         let config = AppConfiguration.shared
         self.isGenerating = true
+        self.lastNetworkError = nil
         
         let timestamp = "\(Int(Date().timeIntervalSince1970))"
         let customer = CustomerModel(
@@ -62,12 +64,12 @@ public final class InvoicingViewModel: ObservableObject {
                 switch result {
                 case .success(let invoice):
                     self.createdInvoice = invoice
+                    self.lastNetworkError = nil
                     self.alertMessage = invoice.message ?? "Invoice created successfully"
                     self.showAlert = true
                 case .failure(let error):
                     self.createdInvoice = nil
-                    self.alertMessage = "Invoice creation failed: \(error.localizedDescription)"
-                    self.showAlert = true
+                    self.lastNetworkError = error
                 }
             }
         }

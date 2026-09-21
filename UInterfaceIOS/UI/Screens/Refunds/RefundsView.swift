@@ -36,6 +36,13 @@ public struct RefundsView: View {
                         deleteSection
                     }
                     
+                    // In-depth Error Banner
+                    if let error = viewModel.lastNetworkError {
+                        ErrorDetailView(error: error) {
+                            viewModel.lastNetworkError = nil
+                        }
+                    }
+                    
                     // Action Button
                     ActionButton(
                         title: buttonTitle,
@@ -46,7 +53,7 @@ public struct RefundsView: View {
                     }
                     
                     // Result Card
-                    if let result = viewModel.resultMessage {
+                    if let result = viewModel.resultMessage, viewModel.lastNetworkError == nil {
                         GlassCard(title: "Refund Status", icon: "info.circle.fill") {
                             Text(result)
                                 .font(.system(size: 13, design: .monospaced))

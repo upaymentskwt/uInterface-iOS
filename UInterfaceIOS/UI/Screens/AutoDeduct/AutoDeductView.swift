@@ -21,7 +21,7 @@ public struct AutoDeductView: View {
                     
                     // Header card
                     GlassCard(title: "Recurring Billing", icon: "arrow.triangle.2.circlepath.circle.fill") {
-                        Text("Auto-deduct allows backend or background charging of a previously tokenized customer card without prompting for 3D Secure or web views.")
+                        Text("Auto-deduct allows background charging of a previously tokenized customer card without prompting for 3D Secure or web views.")
                             .font(.system(size: 13))
                             .foregroundColor(.secondary)
                     }
@@ -69,6 +69,13 @@ public struct AutoDeductView: View {
                         }
                     }
                     
+                    // Live Error Detail Card
+                    if let error = viewModel.lastNetworkError {
+                        ErrorDetailView(error: error) {
+                            viewModel.lastNetworkError = nil
+                        }
+                    }
+                    
                     // Execute Button
                     ActionButton(
                         title: "Execute Auto-Deduct",
@@ -93,15 +100,23 @@ public struct AutoDeductView: View {
             }
             .background(AppTheme.background.ignoresSafeArea())
             .navigationTitle("Auto-Deduct")
-            .alert(isPresented: $viewModel.showAlert) {
-                Alert(
-                    title: Text("Auto-Deduct Result"),
-                    message: Text(viewModel.alertMessage ?? ""),
-                    dismissButton: .default(Text("OK"))
-                )
-            }
             .sheet(isPresented: $viewModel.showJSONSheet) {
-                if let json = viewModel.responseJSON {
+                if let error = viewModel.lastNetworkError {
+                    NavigationView {
+                        ScrollView {
+                            ErrorDetailView(error: error)
+                                .padding()
+                        }
+                        .background(AppTheme.background.ignoresSafeArea())
+                        .navigationTitle("Error Details")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button("Done") { viewModel.showJSONSheet = false }
+                            }
+                        }
+                    }
+                } else if let json = viewModel.responseJSON {
                     JSONResponseSheet(title: "Auto-Deduct Response", jsonString: json)
                 }
             }
