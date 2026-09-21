@@ -81,17 +81,44 @@ public final class CheckoutViewModel: ObservableObject {
             gatewayModel = PaymentGatewayModel(src: selectedPaymentSource)
         }
         
+        let tokenDetail = TokenModel(
+            fastToken: "",
+            creditCard: "",
+            customerUniqueToken: config.customerUniqueToken
+        )
+        
+        let referenceDetail = ReferenceModel(referenceId: "REF_\(timestamp)")
+        
+        let browserDetails = BrowserDetailsModel(
+            screenWidth: "1920",
+            screenHeight: "1080",
+            colorDepth: "24",
+            javaEnabled: "true",
+            language: "en"
+        )
+        let deviceDetail = DeviceModel(
+            browser: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15",
+            browserDetails: browserDetails
+        )
+        
         let paymentRequest = PaymentRequestModel(
             products: currentProducts,
-            sessionID: UUID().uuidString,
+            sessionID: nil,
             isTest: !config.isProduction,
             order: order,
             paymentGateway: gatewayModel,
+            notificationType: "all",
+            language: "en",
+            isSaveCard: false,
             isWhitelabeled: config.isWhiteLabel,
+            tokens: tokenDetail,
+            reference: referenceDetail,
             customer: customer,
+            customerExtraData: "iOS Checkout",
             returnURL: "https://upayments.com/en/success",
             cancelURL: "https://upayments.com/en/cancel",
-            notificationURL: "https://upayments.com/en/notification"
+            notificationURL: "https://upayments.com/en/notification",
+            device: deviceDetail
         )
         
         UPayments.shared.processPayment(

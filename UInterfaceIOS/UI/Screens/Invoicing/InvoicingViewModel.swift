@@ -46,12 +46,20 @@ public final class InvoicingViewModel: ObservableObject {
             amount: Double(amount) ?? 25.0
         )
         
+        let referenceDetail = ReferenceModel(referenceId: "REF_\(timestamp)")
+        let tokenDetail = TokenModel(fastToken: "", creditCard: "", customerUniqueToken: config.customerUniqueToken)
+        
         let invoicePayload: [String: Any] = [
             "customer": customer.toDictionary(),
             "order": order.toDictionary(),
             "paymentGateway": PaymentGatewayModel(src: "create-invoice").toDictionary(),
-            "reference": ReferenceModel(referenceId: "REF_\(timestamp)").toDictionary(),
+            "reference": referenceDetail.toDictionary(),
+            "tokens": tokenDetail.toDictionary(),
+            "language": "en",
+            "notificationType": "all",
+            "isSaveCard": false,
             "isTest": !config.isProduction,
+            "is_whitelabeled": false,
             "returnUrl": "https://upayments.com/en/success",
             "cancelUrl": "https://upayments.com/en/cancel",
             "notificationUrl": "https://upayments.com/en/notification"
