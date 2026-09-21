@@ -11,3 +11,9 @@ Podfile.lock
 Pods/
 
 .DS_Store
+
+# Xcode user state
+*.xcuserstate
+xcuserdata/
+DerivedData/
+.DS_Store

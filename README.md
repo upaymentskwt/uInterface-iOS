@@ -1,289 +1,104 @@
-# uInterfaceSDK - PaymentSDK Integration Guide
+# UInterface iOS Example Application
 
-`uInterfaceSDK` is a versatile SDK designed to simplify the integration of user interface components and payment processing features into your iOS applications. It includes a comprehensive PaymentSDK module that facilitates seamless payment processing across multiple projects. This guide will walk you through the steps to integrate and use the SDK in your project.
+A modern, native iOS reference application demonstrating the full feature set of `uInterfaceSDK`. Built with **SwiftUI**, **MVVM**, and **Clean Architecture** patterns.
 
-## Table of Contents
-- [Requirements](#requirements)
-- [Installation](#installation)
-  - [CocoaPods](#using-cocoapods)
-  - [Manual Installtion](#using-manual-installation)
-- [Integration Steps](#integration-steps)
-  - [Initial Setup](#initial-setup)
-  - [Configuring the SDK](#configuring-the-sdk)
-- [Usage](#usage)
-- [Example](#example)
-- [Troubleshooting](#troubleshooting)
-- [FAQ](#faqs)
-  
-## Requirements
-- **iOS 13.0+**
-- **Xcode 12+**
-- **Swift 5.0+**
-- **Internet Access** (Required for payment processing)
+---
 
-## Installation
+## Features & Test Modules
 
-### Using CocoaPods
+This application provides dedicated, end-to-end interactive test flows for all UPayments payment gateway capabilities:
 
-[CocoaPods](https://cocoapods.org/pods/uInterfaceSDK) is a dependency manager for Objective-C and Swift, which automates and simplifies the process of using 3rd-party libraries like `uInterfaceSDK` in your projects.
+### 1. ⚙️ Environment & Settings
+- Switch seamlessly between **Sandbox** and **Production** environments.
+- Enable or disable **White-Label** branding mode.
+- Configure and persist API Keys, Merchant Tokens, and HMAC Secrets.
+- Live API Key format verification and credentials reset.
 
-1. Add the following line to your `Podfile`:
+### 2. 💳 Checkout & Payment Processing
+- Configure test orders with single or multi-product baskets.
+- Customize customer details (Name, Email, Mobile number).
+- Launch the payment flow via `PaymentGatewayImplementation.shared.processPayment(...)`.
+- Built-in 3DS Web Coordinator with interactive WKWebView presentation.
+- Instant transaction result display with status badges, reference IDs, and formatted JSON inspector.
 
-```ruby
-pod 'uInterfaceSDK'
+### 3. 🗂️ Card Management & Tokenization
+- Generate customer tokens on demand (`CustomerUniqueTokenUseCase`).
+- Save new cards securely via the 3DS `addCard(...)` web flow.
+- Retrieve and render tokenized cards as realistic, branded card tiles (brand, masked number, expiry).
+- Inspect raw card payload and tokens.
+
+### 4. 🔄 Auto-Deduct (Recurring Charges)
+- Charge previously tokenized customer cards directly without user re-authentication.
+- Supports order metadata, amount configuration, and currency selection.
+- Detailed transaction response inspection.
+
+### 5. 🧾 Invoicing
+- Generate dynamic payment invoices and shareable payment URLs via `createInvoice(...)`.
+- Configure multi-item orders with automated line-item calculations.
+- Display generated invoice links with one-tap copy and browser preview.
+
+### 6. 💸 Refunds
+- **Single Refund**: Issue partial or full refunds against existing payment transactions.
+- **Multi-Vendor Refund**: Distribute refunds across multiple merchant/vendor accounts.
+- **Delete Refund**: Cancel pending refund requests before settlement.
+
+### 7. 🔍 Status & Diagnostics
+- **Payment Status**: Query real-time transaction lifecycle by Tracking ID (`getPaymentStatus(...)`).
+- **Pay Buttons Status**: Query merchant-enabled payment buttons and gateway channels (`getPaymentButtonsStatus(...)`).
+
+---
+
+## Architecture & Project Structure
+
+The example application follows Clean Architecture and MVVM principles:
+
+```
+UInterfaceIOS/
+├── Core/
+│   ├── AppConfiguration.swift       # Centralized observable environment & credentials state
+│   └── WindowHelper.swift           # Utility to resolve root UIViewController for web coordinators
+├── UI/
+│   ├── Theme/
+│   │   └── AppTheme.swift           # Brand colors, typography, glassmorphism cards, gradients
+│   ├── Components/
+│   │   ├── ActionButton.swift       # Standardized primary/secondary buttons with loading spinner
+│   │   ├── FormInputField.swift     # Reusable form field with floating label & clear button
+│   │   ├── GlassCard.swift          # Glassmorphic card modifier with border glow
+│   │   ├── JSONResponseSheet.swift  # Monospaced interactive JSON response viewer with copy action
+│   │   └── StatusBadge.swift        # Colored status badges (Success, Pending, Failed, Info)
+│   ├── Navigation/
+│   │   └── MainTabView.swift        # Modern bottom navigation bar for all 7 modules
+│   └── Screens/
+│       ├── Settings/                # Environment toggle, credentials configuration
+│       ├── Checkout/                # 3DS Payment Checkout flow
+│       ├── Cards/                   # Card tokenization and saved cards gallery
+│       ├── AutoDeduct/              # Direct card token recurring payment
+│       ├── Invoicing/               # Invoice creation and link generation
+│       ├── Refunds/                 # Single, Multi-vendor, and Delete refund flows
+│       └── Status/                  # Tracking ID query and payment button diagnostics
 ```
 
-2. Install `uInterfaceSDK`:
+### Xcode Group Invariant
+All PBXGroups in `UInterfaceIOS.xcodeproj` strictly mirror disk folders 1:1. No virtual groups, aliases, or symlinks.
 
-```ruby
-pod install
-```
+---
 
-3. Open the generated `.xcworkspace` file and start using the SDK.
+## Getting Started
 
-### Using Manual Installation
+### Requirements
+- **macOS Sonoma** or later
+- **Xcode 15.0+**
+- **iOS 15.0+** deployment target
+- **CocoaPods** (for workspace integration)
 
-1. Obtain the Universal Framework
-- Download the universal framework file named ```(uInterfaceSDK.xcframework)``` from the ```UInterfaceSDK_Framework``` folder from the Git repository.
-- ![Screenshot 2024-12-31 at 9 48 27 AM](https://github.com/user-attachments/assets/65a8a93a-83fe-4222-9c1b-238ff3a8e558)
-- Ensure that the framework includes binaries for both simulator and device architectures (e.g., arm64 and x86_64).
-2. Add the Framework to Your Project
-- Open your Xcode project.
-- Drag and drop the uInterfaceSDK.framework file into your project’s file hierarchy in Xcode. 
-    - Place it in a dedicated folder (e.g., Frameworks).
-    - ![Screenshot 2024-12-31 at 9 50 33 AM](https://github.com/user-attachments/assets/f9d6a4f0-8910-4c7a-a57e-5daafd72e628)
-- In the dialog that appears:
-    - Check "Copy items if needed" to copy the framework to your project directory.
-    - Ensure the framework is added to the correct target(s).
-3. Configure Build Settings
-- Add the Framework to "Frameworks, Libraries, and Embedded Content"
-    - Select your project in the Xcode Project Navigator.
-    - Navigate to the General tab of your target.
-    - Under Frameworks, Libraries, and Embedded Content, click the + button.
-    - Select uInterfaceSDK.framework from the list and add it.
-- Set the Framework Search Path (if required)
-    - Go to the Build Settings tab of your target.
-    - Search for Framework Search Paths.
-    - Add the path where the framework resides (e.g., $(PROJECT_DIR)/Frameworks).
-4. Import and Use the Framework
-- In your project’s code files, import the framework:
-```ruby
-import uInterfaceSDK
-```
-- Use the classes and methods provided by the framework as described in its documentation.
+### Running the Application
 
-## Integration Steps
+1. Open `UInterfaceIOS.xcworkspace` in Xcode:
+   ```bash
+   open UInterfaceIOS.xcworkspace
+   ```
+2. Select the `UInterfaceIOS` scheme.
+3. Choose an iOS Simulator (e.g. *iPhone 17* or *iPhone 15 Pro*).
+4. Press `Cmd + R` to build and run.
 
-### Initial Setup
-
-Import the SDK into your project files where needed:
-
-```swift
-import uInterfaceSDK
-```
-
-### Configuring the SDK
-
-Initialize `PaymentAPIManager`: In your `AppDelegate` or wherever your app configuration takes place.
-
-```swift
-let objPaymentManager = PaymentAPIManager()
-```
-   
-Set the Base URL for the environment:
-During the application launch, set the base URL for the default environment. This step is essential for the SDK to interact with the correct backend environment.
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    self.objPaymentManager.setBaseURL(environment: .production)
-    return true
-}
-```
-
-## Usage
-
-### Payment Processing Flow
-
-Here is a basic flow of how to use the `uInterfaceSDK` within your application.
-
-* **Product Details:** This section involves creating and configuring the product details for the payment.
-
-```swift
-// Create a ProductModel instance for the payment
-let productDetail = ProductModel(
-    name: "Logitech K380",
-    description: "Logitech K380 / Easy-Switch for Upto 3 Devices, Slim Bluetooth Tablet Keyboard",
-    price: 1,  // Price of the product in the specified currency
-    quantity: 1  // Quantity of the product
-)
-
-// Add product details to the products array
-var products = [ProductModel]()
-products.append(productDetail)
-```
-
-* **Order Details:** This section handles the creation of the order details.
-
-```swift
-// Create an OrderModel instance with order-specific information
-let orderDetail = OrderModel(
-    orderId: "202210101255255144669",  // Unique identifier for the order
-    reference: "11111991",  // Reference number for the order
-    description: "Purchase order received for Logitech K380 Keyboard",
-    currency: "KWD",  // Currency code
-    amount: 0.100  // Total amount for the order
-)
-```
-
-* **Payment Gateway Details:** This section is responsible for defining the payment gateway details.
-
-```swift
-// Create a PaymentGatewayModel instance specifying the source of the payment gateway
-let paymentGatewayDetail = PaymentGatewayModel(src: "knet")
-```
-
-* **Token Details:** Here, you set up token-related details for the payment.
-
-```swift
-// Create a TokenModel instance with payment and customer tokens
-let tokenDetail = TokenModel(
-    fastToken: "",  // Fast token for payment
-    creditCardToken: "",  // Credit card token for payment
-    customerUniqueToken: self.customerUniqueID  // Unique token for the customer
-)
-```
-
-* **Reference Details:** This section involves setting up reference details for the payment.
-
-```swift
-// Create a ReferenceModel instance with a reference ID
-let referenceDetail = ReferenceModel(referenceId: "202210101202210101")
-```
-
-* **Customer Details:** Define the customer information required for the payment.
-
-```swift
-// Create a CustomerModel instance with customer information
-let customerDetail = CustomerModel(
-    uniqueID: "2129879kjbljg767881",  // Unique ID for the customer
-    name: "Jhon Smithe",  // Customer's name
-    email: "jhon.smith@upayments.com",  // Customer's email address
-    mobile: "+96512345678"  // Customer's mobile number
-)
-```
-
-* **Browser Details:** Set up details about the browser used.
-
-```swift
-// Create a BrowserDetailsModel instance with browser information
-let browserDetails = BrowserDetailsModel(
-    screenWidth: "1920",  // Screen width of the browser
-    screenHeight: "1080",  // Screen height of the browser
-    colorDepth: "24",  // Color depth of the browser
-    javaEnabled: "true",  // Java enabled status
-    language: "en"  // Language of the browser
-)
-```
-
-* **Device Details:** Provide details about the device used for the payment.
-
-```swift
-// Create a DeviceModel instance with browser details
-let deviceDetail = DeviceModel(
-    browser: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 OPR/93.0.0.0",  // User agent string for the browser
-    browserDetails: browserDetails  // Browser details
-)
-```
-
-* **Payment Request:** Finally, create the `PaymentRequestModel` instance with all the gathered details.
-
-```swift
-// Create a PaymentRequestModel instance with all payment details
-let paymentRequestDetails = PaymentRequestModel(
-    products: products,  // List of products to be purchased
-    isTest: true,  // Flag indicating if the request is for testing
-    order: orderDetail,  // Order details
-    paymentGateway: paymentGatewayDetail,  // Payment gateway details
-    notificationType: "all",  // Type of notifications to be sent
-    language: "en",  // Language for the payment process - en for English & ar For Arabic
-    isSaveCard: false,  // Flag indicating if the card should be saved
-    isWhitelabeled: true,  // Flag indicating if the payment is whitelabeled
-    tokens: tokenDetail,  // Token details
-    reference: referenceDetail,  // Reference details
-    customer: customerDetail,  // Customer details
-    plugin: pluginDetail,  // Plugin details
-    customerExtraData: "test data",  // Additional data related to the customer
-    returnURL: "https://upayments.com/en/",  // URL to redirect after payment
-    cancelURL: "https://www.error.com",  // URL to redirect if payment is canceled
-    notificationURL: "https://webhook.site/ce503866-6bb3-4c58-a2f2-a0fa028f10ea",  // URL to receive payment notifications
-    device: deviceDetail  // Device details
-)
-```
-
-* **Create a APIManager Request:** You'll need to create an instance of `APIManager` class to call the API's.
-
-```swift
-// Create an instance of the PaymentAPIManager
-let objPaymentManager = PaymentAPIManager()
-```
-
-* **Start the Payment:** Using the instance of `APIManager` class, you can initiate and call the API for a payment session.
-
-```swift
-// Process the payment request
-self.objPaymentAPIManager.processPayment(
-    isBackground: true,  // Indicates if the request should be processed in the background
-    token: self.apiToken,  // API token for authorization
-    paymentRequestDetails: paymentRequestDetails,  // Payment request details
-    controller: self,  // View controller to handle UI updates
-    completionHandler: { result in
-        switch result {
-        case .success(let response):
-                        
-            // Extract the refund order ID from the response for future use
-            let responseDict = response.transactionDetails.toDictionary()
-            self.orderID = responseDict["refund_order_id"] as? String ?? ""
-            
-            // Show an alert with the payment response message
-            self.displayAlert(status: response.message, responseMessage: response)
-        
-        case .failure(let error):
-            // Show an alert with error status and message
-            self.displayAlert(status: String(error.httpStatusCode ?? 0), responseMessage: error.reason ?? "")
-        }
-    }
-)
-```
-
-* **Handling Results:** The result of the payment will be passed back in a completion handler with either a success or failure case.
-
-* **Note:** 
-For more parameters check this document
-https://developers.upayments.com/reference/addcharge#request-model
-
-## Example
-
-For a complete example, check out our sample projects:
-- [iOS Sample Project](https://github.com/upaymentskwt/uInterface-iOS)
-
-## Troubleshooting
-
-### Common Issues
-
-* **Library Not Installed Properly**
-   - Ensure the SDK is installed using the correct package manager and linked properly.
-
-* **Build Errors**
-   - Check that the correct frameworks are added to "Link Binary with Libraries" in your Build Phases.
-    ![image](https://github.com/user-attachments/assets/6af713e8-0cb0-47fa-92e0-2f631307bad7)
-
-* **API Keys Not Recognized**
-   - Double-check the API keys in your configuration.
-
-### FAQs
-
-* **Q: What should I do if my payment SDK fails to initialize?**
-  - Check your API keys, verify internet connectivity, and ensure the SDK's initialization method is being called at the correct point in the app lifecycle. Refer to the SDK documentation for the required parameters and environment configurations.
-
-* **Q: Is this SDK compatible with Objective-C?**
-  - Currently, the SDK is designed for Swift. Compatibility with Objective-C is not supported.
+The workspace is pre-configured with the sibling `uInterfaceSDK.xcodeproj` project reference, enabling live development and debugging across both the SDK and Example App simultaneously.

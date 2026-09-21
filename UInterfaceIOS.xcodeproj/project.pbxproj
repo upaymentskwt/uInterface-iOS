@@ -10,14 +10,34 @@
 		0A7E94F82CC90727002A5627 /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7E94F72CC90727002A5627 /* DropDown.framework */; };
 		CE8F8E322C91C5AE00A01EEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E312C91C5AE00A01EEE /* AppDelegate.swift */; };
 		CE8F8E342C91C5AE00A01EEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */; };
-		CE8F8E362C91C5AE00A01EEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E352C91C5AE00A01EEE /* ViewController.swift */; };
-		CE8F8E392C91C5AE00A01EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F8E372C91C5AE00A01EEE /* Main.storyboard */; };
 		CE8F8E3B2C91C5AF00A01EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8F8E3A2C91C5AF00A01EEE /* Assets.xcassets */; };
 		CE8F8E3E2C91C5AF00A01EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F8E3C2C91C5AF00A01EEE /* LaunchScreen.storyboard */; };
-		CE8F8E712C91C77300A01EEE /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E6E2C91C77300A01EEE /* JSONUtilities.swift */; };
-		CE8F8E742C91C78E00A01EEE /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */; };
 		D397EB532FA711FF00BC6F43 /* uInterfaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */; };
 		D397EB542FA711FF00BC6F43 /* uInterfaceSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBEF1481166A94508E12A0B8 /* Pods_UInterfaceIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3039FE5F4D406345853CFE3 /* Pods_UInterfaceIOS.framework */; };
+		EB0C48B8268B129933E6F9 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C48B8268B129933E6F9 /* CheckoutView.swift */; };
+		EB178538311EE8662796D5 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF178538311EE8662796D5 /* CheckoutViewModel.swift */; };
+		EB1ABABDD33B9361B76402 /* InvoicingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1ABABDD33B9361B76402 /* InvoicingView.swift */; };
+		EB3BC35200B5532C5DC267 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BC35200B5532C5DC267 /* StatusBadge.swift */; };
+		EB474192B5A29F946D1885 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF474192B5A29F946D1885 /* AppTheme.swift */; };
+		EB4D96D858D58D6F172CD1 /* StatusCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D96D858D58D6F172CD1 /* StatusCheckViewModel.swift */; };
+		EB51A3CDDDE2502EB9F2D5 /* CardManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF51A3CDDDE2502EB9F2D5 /* CardManagementView.swift */; };
+		EB6E911D92CAED248B78F9 /* AutoDeductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6E911D92CAED248B78F9 /* AutoDeductView.swift */; };
+		EB7F3D49AAFDE86B58B271 /* RefundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7F3D49AAFDE86B58B271 /* RefundsView.swift */; };
+		EB807177EC932194B8267E /* RefundsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF807177EC932194B8267E /* RefundsViewModel.swift */; };
+		EB8262B1EB936A15669FB2 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8262B1EB936A15669FB2 /* MainTabView.swift */; };
+		EB957299ED07AB875A94A2 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF957299ED07AB875A94A2 /* GlassCard.swift */; };
+		EB969870D20FCFBC168149 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF969870D20FCFBC168149 /* SettingsViewModel.swift */; };
+		EB98216C3D7734E473DC86 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF98216C3D7734E473DC86 /* SettingsView.swift */; };
+		EB9D6DC795B06D4D53EFA0 /* FormInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D6DC795B06D4D53EFA0 /* FormInputField.swift */; };
+		EBBF9B9C4878748AC3974E /* InvoicingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBF9B9C4878748AC3974E /* InvoicingViewModel.swift */; };
+		EBD0C37021CA516E606A10 /* AutoDeductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD0C37021CA516E606A10 /* AutoDeductViewModel.swift */; };
+		EBD32571013F814125CEAF /* CardManagementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD32571013F814125CEAF /* CardManagementViewModel.swift */; };
+		EBD9CE9F407A41B56BB54E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9CE9F407A41B56BB54E /* ActionButton.swift */; };
+		EBE319301E042A28C270C9 /* WindowHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE319301E042A28C270C9 /* WindowHelper.swift */; };
+		EBE8A435FFC0E7F23CFAA1 /* StatusCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE8A435FFC0E7F23CFAA1 /* StatusCheckView.swift */; };
+		EBEC89463EC197B3E914C2 /* JSONResponseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC89463EC197B3E914C2 /* JSONResponseSheet.swift */; };
+		EBEE95E830A7862F237CA2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE95E830A7862F237CA2 /* AppConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,14 +62,33 @@
 		CE8F8E2E2C91C5AE00A01EEE /* UInterfaceIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UInterfaceIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8F8E312C91C5AE00A01EEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE8F8E352C91C5AE00A01EEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE8F8E382C91C5AE00A01EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE8F8E3A2C91C5AF00A01EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8F8E3D2C91C5AF00A01EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE8F8E3F2C91C5AF00A01EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE8F8E6E2C91C77300A01EEE /* JSONUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtilities.swift; sourceTree = "<group>"; };
-		CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uInterfaceSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0C48B8268B129933E6F9 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		EF178538311EE8662796D5 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		EF1ABABDD33B9361B76402 /* InvoicingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicingView.swift; sourceTree = "<group>"; };
+		EF3BC35200B5532C5DC267 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		EF474192B5A29F946D1885 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		EF4D96D858D58D6F172CD1 /* StatusCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCheckViewModel.swift; sourceTree = "<group>"; };
+		EF51A3CDDDE2502EB9F2D5 /* CardManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManagementView.swift; sourceTree = "<group>"; };
+		EF6E911D92CAED248B78F9 /* AutoDeductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoDeductView.swift; sourceTree = "<group>"; };
+		EF7F3D49AAFDE86B58B271 /* RefundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundsView.swift; sourceTree = "<group>"; };
+		EF807177EC932194B8267E /* RefundsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundsViewModel.swift; sourceTree = "<group>"; };
+		EF8262B1EB936A15669FB2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		EF957299ED07AB875A94A2 /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		EF969870D20FCFBC168149 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		EF98216C3D7734E473DC86 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EF9D6DC795B06D4D53EFA0 /* FormInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputField.swift; sourceTree = "<group>"; };
+		EFBF9B9C4878748AC3974E /* InvoicingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicingViewModel.swift; sourceTree = "<group>"; };
+		EFD0C37021CA516E606A10 /* AutoDeductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoDeductViewModel.swift; sourceTree = "<group>"; };
+		EFD32571013F814125CEAF /* CardManagementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManagementViewModel.swift; sourceTree = "<group>"; };
+		EFD9CE9F407A41B56BB54E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		EFE319301E042A28C270C9 /* WindowHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowHelper.swift; sourceTree = "<group>"; };
+		EFE8A435FFC0E7F23CFAA1 /* StatusCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCheckView.swift; sourceTree = "<group>"; };
+		EFEC89463EC197B3E914C2 /* JSONResponseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponseSheet.swift; sourceTree = "<group>"; };
+		EFEE95E830A7862F237CA2 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +98,7 @@
 			files = (
 				0A7E94F82CC90727002A5627 /* DropDown.framework in Frameworks */,
 				D397EB532FA711FF00BC6F43 /* uInterfaceSDK.framework in Frameworks */,
+				DBEF1481166A94508E12A0B8 /* Pods_UInterfaceIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,33 +136,15 @@
 		CE8F8E302C91C5AE00A01EEE /* UInterfaceIOS */ = {
 			isa = PBXGroup;
 			children = (
+				EG83168E6CB289D732CC78 /* Core */,
+				EG71FF71526D15DB86EB50 /* UI */,
 				CE8F8E312C91C5AE00A01EEE /* AppDelegate.swift */,
 				CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */,
-				CE8F8E352C91C5AE00A01EEE /* ViewController.swift */,
-				CE8F8E372C91C5AE00A01EEE /* Main.storyboard */,
 				CE8F8E3C2C91C5AF00A01EEE /* LaunchScreen.storyboard */,
 				CE8F8E3A2C91C5AF00A01EEE /* Assets.xcassets */,
-				CE8F8E6D2C91C77300A01EEE /* Utilities */,
-				CE8F8E722C91C78E00A01EEE /* Extensions */,
 				CE8F8E3F2C91C5AF00A01EEE /* Info.plist */,
 			);
 			path = UInterfaceIOS;
-			sourceTree = "<group>";
-		};
-		CE8F8E6D2C91C77300A01EEE /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F8E6E2C91C77300A01EEE /* JSONUtilities.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		CE8F8E722C91C78E00A01EEE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F8E732C91C78E00A01EEE /* UIViewController+Alerts.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D7C201347F0DDA3A2F624139 /* Pods */ = {
@@ -132,6 +154,131 @@
 				C237C2F6A6FFD9942C25BF9D /* Pods-UInterfaceIOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EG05BBB43B3D923283E0B6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EFD9CE9F407A41B56BB54E /* ActionButton.swift */,
+				EF9D6DC795B06D4D53EFA0 /* FormInputField.swift */,
+				EF957299ED07AB875A94A2 /* GlassCard.swift */,
+				EFEC89463EC197B3E914C2 /* JSONResponseSheet.swift */,
+				EF3BC35200B5532C5DC267 /* StatusBadge.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EG228834C5779D3FDD470D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EG6FF063FBC860A79759A7 /* Checkout */,
+				EGCD81F9F55969C822377F /* Cards */,
+				EGAEE891A4FE39708C71FB /* AutoDeduct */,
+				EG6BDF2EFE1A99072849D4 /* Invoicing */,
+				EG53BEB26D8BCA00F56FBD /* Refunds */,
+				EGEC53A8C4F07BAED5D882 /* Status */,
+				EGF4F70727DC34561DFDE1 /* Settings */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EG53BEB26D8BCA00F56FBD /* Refunds */ = {
+			isa = PBXGroup;
+			children = (
+				EF7F3D49AAFDE86B58B271 /* RefundsView.swift */,
+				EF807177EC932194B8267E /* RefundsViewModel.swift */,
+			);
+			path = Refunds;
+			sourceTree = "<group>";
+		};
+		EG6BDF2EFE1A99072849D4 /* Invoicing */ = {
+			isa = PBXGroup;
+			children = (
+				EF1ABABDD33B9361B76402 /* InvoicingView.swift */,
+				EFBF9B9C4878748AC3974E /* InvoicingViewModel.swift */,
+			);
+			path = Invoicing;
+			sourceTree = "<group>";
+		};
+		EG6FF063FBC860A79759A7 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				EF0C48B8268B129933E6F9 /* CheckoutView.swift */,
+				EF178538311EE8662796D5 /* CheckoutViewModel.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		EG71FF71526D15DB86EB50 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EGD721757161F7F70C5B09 /* Theme */,
+				EG05BBB43B3D923283E0B6 /* Components */,
+				EG846495F9CEED11ACCF88 /* Navigation */,
+				EG228834C5779D3FDD470D /* Screens */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EG83168E6CB289D732CC78 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EFEE95E830A7862F237CA2 /* AppConfiguration.swift */,
+				EFE319301E042A28C270C9 /* WindowHelper.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		EG846495F9CEED11ACCF88 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				EF8262B1EB936A15669FB2 /* MainTabView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		EGAEE891A4FE39708C71FB /* AutoDeduct */ = {
+			isa = PBXGroup;
+			children = (
+				EF6E911D92CAED248B78F9 /* AutoDeductView.swift */,
+				EFD0C37021CA516E606A10 /* AutoDeductViewModel.swift */,
+			);
+			path = AutoDeduct;
+			sourceTree = "<group>";
+		};
+		EGCD81F9F55969C822377F /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				EF51A3CDDDE2502EB9F2D5 /* CardManagementView.swift */,
+				EFD32571013F814125CEAF /* CardManagementViewModel.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		EGD721757161F7F70C5B09 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				EF474192B5A29F946D1885 /* AppTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		EGEC53A8C4F07BAED5D882 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				EFE8A435FFC0E7F23CFAA1 /* StatusCheckView.swift */,
+				EF4D96D858D58D6F172CD1 /* StatusCheckViewModel.swift */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		EGF4F70727DC34561DFDE1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				EF98216C3D7734E473DC86 /* SettingsView.swift */,
+				EF969870D20FCFBC168149 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +344,6 @@
 			files = (
 				CE8F8E3E2C91C5AF00A01EEE /* LaunchScreen.storyboard in Resources */,
 				CE8F8E3B2C91C5AF00A01EEE /* Assets.xcassets in Resources */,
-				CE8F8E392C91C5AE00A01EEE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,10 +400,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8F8E712C91C77300A01EEE /* JSONUtilities.swift in Sources */,
-				CE8F8E362C91C5AE00A01EEE /* ViewController.swift in Sources */,
+				EBEE95E830A7862F237CA2 /* AppConfiguration.swift in Sources */,
+				EBE319301E042A28C270C9 /* WindowHelper.swift in Sources */,
+				EB474192B5A29F946D1885 /* AppTheme.swift in Sources */,
+				EB3BC35200B5532C5DC267 /* StatusBadge.swift in Sources */,
+				EB957299ED07AB875A94A2 /* GlassCard.swift in Sources */,
+				EBD9CE9F407A41B56BB54E /* ActionButton.swift in Sources */,
+				EB9D6DC795B06D4D53EFA0 /* FormInputField.swift in Sources */,
+				EBEC89463EC197B3E914C2 /* JSONResponseSheet.swift in Sources */,
+				EB8262B1EB936A15669FB2 /* MainTabView.swift in Sources */,
+				EB98216C3D7734E473DC86 /* SettingsView.swift in Sources */,
+				EB969870D20FCFBC168149 /* SettingsViewModel.swift in Sources */,
+				EB0C48B8268B129933E6F9 /* CheckoutView.swift in Sources */,
+				EB178538311EE8662796D5 /* CheckoutViewModel.swift in Sources */,
+				EB51A3CDDDE2502EB9F2D5 /* CardManagementView.swift in Sources */,
+				EBD32571013F814125CEAF /* CardManagementViewModel.swift in Sources */,
+				EB6E911D92CAED248B78F9 /* AutoDeductView.swift in Sources */,
+				EBD0C37021CA516E606A10 /* AutoDeductViewModel.swift in Sources */,
+				EB1ABABDD33B9361B76402 /* InvoicingView.swift in Sources */,
+				EBBF9B9C4878748AC3974E /* InvoicingViewModel.swift in Sources */,
+				EB7F3D49AAFDE86B58B271 /* RefundsView.swift in Sources */,
+				EB807177EC932194B8267E /* RefundsViewModel.swift in Sources */,
+				EBE8A435FFC0E7F23CFAA1 /* StatusCheckView.swift in Sources */,
+				EB4D96D858D58D6F172CD1 /* StatusCheckViewModel.swift in Sources */,
 				CE8F8E322C91C5AE00A01EEE /* AppDelegate.swift in Sources */,
-				CE8F8E742C91C78E00A01EEE /* UIViewController+Alerts.swift in Sources */,
 				CE8F8E342C91C5AE00A01EEE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,14 +431,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE8F8E372C91C5AE00A01EEE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE8F8E382C91C5AE00A01EEE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE8F8E3C2C91C5AF00A01EEE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -419,10 +577,9 @@
 				INFOPLIST_FILE = UInterfaceIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,10 +609,9 @@
 				INFOPLIST_FILE = UInterfaceIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
