@@ -121,7 +121,7 @@ public struct CheckoutView: View {
                                     Text("Status")
                                         .font(.system(size: 14, weight: .medium))
                                     Spacer()
-                                    StatusBadge(title: result.message, style: (result.transactionDetails.result == "CAPTURED" || result.transactionDetails.result == "SUCCESS") ? .success : .info)
+                                    StatusBadge(title: result.message, style: (result.transactionDetails.result == "CAPTURED" || result.transactionDetails.result == "SUCCESS") ? .success : (result.transactionDetails.result == "CANCELED" ? .warning : .error))
                                 }
                                 
                                 Divider()
