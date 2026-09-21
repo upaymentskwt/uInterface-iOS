@@ -35,6 +35,9 @@ public final class CardManagementViewModel: ObservableObject {
                 switch result {
                 case .success(let response):
                     let tokenValue = response.data?.customerUniqueToken
+                    if let tokenInt = tokenValue {
+                        config.customerUniqueToken = "\(tokenInt)"
+                    }
                     self.alertMessage = "Customer token created successfully: \(tokenValue ?? 0)"
                     self.showAlert = true
                     self.fetchSavedCards()
@@ -56,8 +59,10 @@ public final class CardManagementViewModel: ObservableObject {
         self.isAddingCard = true
         self.lastNetworkError = nil
         
+        let tokenInt = Int(config.customerUniqueToken) ?? 0
         let cardPayload: [String: Any] = [
-            "customerUniqueToken": config.customerUniqueToken
+            "customerUniqueToken": tokenInt != 0 ? tokenInt : config.customerUniqueToken,
+            "returnUrl": "https://upayments.com/en/"
         ]
         
         UPayments.shared.addCard(
