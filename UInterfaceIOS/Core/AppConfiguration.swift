@@ -41,6 +41,9 @@ public final class AppConfiguration: ObservableObject {
     // MARK: - Default Presets
     public static let defaultWhiteLabelKey = "oxxnDz0ES48qyaT96f8VG6YYyFr0krk2akJI7LH5"
     public static let defaultSandboxKey = "jtest123"
+    public static let defaultAppleMerchantId = "merchant.utechnologies.apple.native"
+    public static let defaultAppleCountryCode = "KW"
+    public static let defaultAppleMerchantName = "UPayments Store"
     
     // MARK: - Storage Keys
     private let customerTokenKey = "com.upayments.example.customerUniqueToken"
@@ -49,6 +52,10 @@ public final class AppConfiguration: ObservableObject {
     private let isWhiteLabelStorageKey = "com.upayments.example.isWhiteLabel"
     private let environmentStorageKey = "com.upayments.example.environmentOption"
     private let customURLStorageKey = "com.upayments.example.customBaseURL"
+    private let appleMerchantIdStorageKey = "com.upayments.example.appleMerchantId"
+    private let applePayCountryCodeStorageKey = "com.upayments.example.applePayCountryCode"
+    private let applePayMerchantNameStorageKey = "com.upayments.example.applePayMerchantName"
+    private let applePayRequiresActiveCardsStorageKey = "com.upayments.example.applePayRequiresActiveCards"
     
     // MARK: - Published Properties
     @Published public var apiKey: String {
@@ -87,6 +94,30 @@ public final class AppConfiguration: ObservableObject {
         }
     }
     
+    @Published public var appleMerchantId: String {
+        didSet {
+            UserDefaults.standard.set(appleMerchantId, forKey: appleMerchantIdStorageKey)
+        }
+    }
+    
+    @Published public var applePayCountryCode: String {
+        didSet {
+            UserDefaults.standard.set(applePayCountryCode, forKey: applePayCountryCodeStorageKey)
+        }
+    }
+    
+    @Published public var applePayMerchantName: String {
+        didSet {
+            UserDefaults.standard.set(applePayMerchantName, forKey: applePayMerchantNameStorageKey)
+        }
+    }
+
+    @Published public var applePayRequiresActiveCards: Bool {
+        didSet {
+            UserDefaults.standard.set(applePayRequiresActiveCards, forKey: applePayRequiresActiveCardsStorageKey)
+        }
+    }
+    
     @Published public var isInitialized: Bool = false
     @Published public var isInitializing: Bool = false
     @Published public var resolvedSecretKey: String? = nil
@@ -102,6 +133,20 @@ public final class AppConfiguration: ObservableObject {
         environmentOption == .production
     }
     
+    public var currentApplePayConfiguration: ApplePayConfiguration {
+        let merchantId = appleMerchantId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? Self.defaultAppleMerchantId : appleMerchantId
+        let country = applePayCountryCode.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? Self.defaultAppleCountryCode : applePayCountryCode
+        let name = applePayMerchantName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? Self.defaultAppleMerchantName : applePayMerchantName
+        return ApplePayConfiguration(
+            merchantIdentifier: merchantId,
+            countryCode: country,
+            supportedNetworks: [.visa, .masterCard],
+            merchantCapabilities: [.capability3DS],
+            merchantName: name,
+            requiresActiveCards: applePayRequiresActiveCards
+        )
+    }
+    
     // MARK: - Initializer
     private init() {
         let savedIsWhiteLabel = UserDefaults.standard.object(forKey: isWhiteLabelStorageKey) as? Bool ?? true
@@ -112,6 +157,14 @@ public final class AppConfiguration: ObservableObject {
         let savedEnv = AppEnvironmentOption(rawValue: savedEnvRaw) ?? .sandbox
         let savedCustomURL = UserDefaults.standard.string(forKey: customURLStorageKey) ?? "https://sandboxapi.upayments.com/api/v1/"
         let savedCustomerToken = UserDefaults.standard.string(forKey: customerTokenKey) ?? "1234567890845"
+        var savedAppleMerchantId = UserDefaults.standard.string(forKey: appleMerchantIdStorageKey) ?? Self.defaultAppleMerchantId
+        if savedAppleMerchantId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || savedAppleMerchantId == "merchant.com.upayments.test" {
+            savedAppleMerchantId = Self.defaultAppleMerchantId
+            UserDefaults.standard.set(savedAppleMerchantId, forKey: appleMerchantIdStorageKey)
+        }
+        let savedAppleCountry = UserDefaults.standard.string(forKey: applePayCountryCodeStorageKey) ?? Self.defaultAppleCountryCode
+        let savedAppleMerchantName = UserDefaults.standard.string(forKey: applePayMerchantNameStorageKey) ?? Self.defaultAppleMerchantName
+        let savedRequiresActive = UserDefaults.standard.bool(forKey: applePayRequiresActiveCardsStorageKey)
         
         self.isWhiteLabel = savedIsWhiteLabel
         self.apiKey = savedKey
@@ -119,6 +172,10 @@ public final class AppConfiguration: ObservableObject {
         self.environmentOption = savedEnv
         self.customBaseURL = savedCustomURL
         self.customerUniqueToken = savedCustomerToken
+        self.appleMerchantId = savedAppleMerchantId
+        self.applePayCountryCode = savedAppleCountry
+        self.applePayMerchantName = savedAppleMerchantName
+        self.applePayRequiresActiveCards = savedRequiresActive
     }
     
     // MARK: - Preset Helpers
@@ -137,7 +194,7 @@ public final class AppConfiguration: ObservableObject {
     }
     
     // MARK: - Actions
-    /// Configures and initializes the UPayments SDK with the currently set token, environment, and whitelabel options.
+    /// Configures and initializes the UPayments SDK with the currently set token, environment, whitelabel, and Apple Pay options.
     public func initializeSDK(completion: ((Bool) -> Void)? = nil) {
         let trimmedKey = apiKey.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedKey.isEmpty else {
@@ -154,6 +211,9 @@ public final class AppConfiguration: ObservableObject {
         
         let trimmedSecret = secretKey.trimmingCharacters(in: .whitespacesAndNewlines)
         let secretParam = trimmedSecret.isEmpty ? nil : trimmedSecret
+        
+        // Configure native Apple Pay companion options
+        UPayments.shared.configureApplePay(currentApplePayConfiguration)
         
         UPayments.configure(
             apiKey: trimmedKey,

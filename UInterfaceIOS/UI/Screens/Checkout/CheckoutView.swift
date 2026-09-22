@@ -27,36 +27,82 @@ public struct CheckoutView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal)
                     
-                    // Cart Summary Card
-                    GlassCard(title: "Order Summary", icon: "cart.fill") {
-                        VStack(spacing: 12) {
-                            ForEach(viewModel.currentProducts, id: \.name) { product in
-                                HStack {
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(product.name ?? "Product")
-                                            .font(.system(size: 14, weight: .semibold))
-                                        Text("Qty: \(Int(product.quantity ?? 1.0))")
-                                            .font(.system(size: 12))
-                                            .foregroundColor(.secondary)
+                    // Items & Pricing Card
+                    GlassCard(title: "Order Items & Pricing", icon: "cart.fill") {
+                        VStack(spacing: 16) {
+                            ForEach(Array(viewModel.products.enumerated()), id: \.element.id) { index, item in
+                                VStack(alignment: .leading, spacing: 10) {
+                                    HStack {
+                                        Text("Item #\(index + 1)")
+                                            .font(.system(size: 13, weight: .bold))
+                                            .foregroundColor(AppTheme.brandPrimary)
+                                        Spacer()
+                                        Text(String(format: "Subtotal: %.3f %@", item.itemTotal, viewModel.currency))
+                                            .font(.system(size: 13, weight: .bold))
+                                            .foregroundColor(AppTheme.brandPrimary)
+                                        
+                                        if viewModel.products.count > 1 {
+                                            Button(action: { viewModel.removeItem(at: index) }) {
+                                                Image(systemName: "trash.fill")
+                                                    .font(.system(size: 12))
+                                                    .foregroundColor(.red.opacity(0.8))
+                                            }
+                                            .padding(.leading, 6)
+                                        }
                                     }
-                                    Spacer()
-                                    Text(String(format: "%.3f %@", (product.price ?? 0.0) * Double(product.quantity ?? 1.0), viewModel.currency))
-                                        .font(.system(size: 14, weight: .bold))
+                                    
+                                    FormInputField(
+                                        label: "Item Name",
+                                        placeholder: "e.g. Single Espresso",
+                                        text: $viewModel.products[index].name
+                                    )
+                                    
+                                    HStack(spacing: 10) {
+                                        FormInputField(
+                                            label: "Unit Price (\(viewModel.currency))",
+                                            placeholder: "0.000",
+                                            text: $viewModel.products[index].priceText,
+                                            keyboardType: .decimalPad
+                                        )
+                                        
+                                        FormInputField(
+                                            label: "Qty",
+                                            placeholder: "1",
+                                            text: $viewModel.products[index].quantityText,
+                                            keyboardType: .numberPad
+                                        )
+                                        .frame(width: 80)
+                                    }
                                 }
-                                if product.name != viewModel.currentProducts.last?.name {
+                                
+                                if index < viewModel.products.count - 1 {
                                     Divider()
+                                        .padding(.vertical, 4)
                                 }
                             }
                             
                             Divider()
                             
                             HStack {
-                                Text("Total Amount")
-                                    .font(.system(size: 15, weight: .bold))
-                                Spacer()
-                                Text(String(format: "%.3f %@", viewModel.totalAmount, viewModel.currency))
-                                    .font(.system(size: 18, weight: .heavy))
+                                Button(action: { viewModel.addItem() }) {
+                                    HStack(spacing: 6) {
+                                        Image(systemName: "plus.circle.fill")
+                                        Text("Add Item")
+                                    }
+                                    .font(.system(size: 13, weight: .semibold))
                                     .foregroundColor(AppTheme.brandPrimary)
+                                }
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .trailing, spacing: 2) {
+                                    Text("Total Order Amount")
+                                        .font(.system(size: 12, weight: .medium))
+                                        .foregroundColor(.secondary)
+                                    Text(String(format: "%.3f %@", viewModel.totalAmount, viewModel.currency))
+                                        .font(.system(size: 18, weight: .heavy))
+                                        .foregroundColor(AppTheme.brandPrimary)
+                                }
                             }
                         }
                     }
@@ -73,6 +119,45 @@ public struct CheckoutView: View {
                         }
                     }
                     
+                    // Checkout Button
+                    if viewModel.selectedPaymentSource == "apple-pay" {
+                        Button(action: {
+                            viewModel.initiatePayment()
+                        }) {
+                            HStack(spacing: 8) {
+                                if viewModel.isProcessing {
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                } else {
+                                    Image(systemName: "applelogo")
+                                        .font(.system(size: 18, weight: .semibold))
+                                    Text("Pay with Apple Pay • " + String(format: "%.3f %@", viewModel.totalAmount, viewModel.currency))
+                                        .font(.system(size: 15, weight: .bold))
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 52)
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.white.opacity(0.25), lineWidth: 1)
+                            )
+                        }
+                        .disabled(viewModel.isProcessing)
+                        .padding(.top, 6)
+                    } else {
+                        ActionButton(
+                            title: String(format: "Pay Now • %.3f %@", viewModel.totalAmount, viewModel.currency),
+                            icon: "lock.fill",
+                            isLoading: viewModel.isProcessing
+                        ) {
+                            viewModel.initiatePayment()
+                        }
+                        .padding(.top, 6)
+                    }
+
                     // Customer Details Card
                     GlassCard(title: "Customer Details", icon: "person.fill") {
                         VStack(spacing: 12) {
@@ -127,15 +212,7 @@ public struct CheckoutView: View {
                         }
                     }
                     
-                    // Checkout Button
-                    ActionButton(
-                        title: String(format: "Pay Now • %.3f %@", viewModel.totalAmount, viewModel.currency),
-                        icon: "lock.fill",
-                        isLoading: viewModel.isProcessing
-                    ) {
-                        viewModel.initiatePayment()
-                    }
-                    .padding(.top, 6)
+
                 }
                 .padding()
             }

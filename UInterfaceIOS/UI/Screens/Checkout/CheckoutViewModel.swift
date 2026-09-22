@@ -8,15 +8,59 @@
 import SwiftUI
 import uInterfaceSDK
 
+public struct EditableProductItem: Identifiable, Equatable {
+    public let id: String
+    public var name: String
+    public var description: String
+    public var priceText: String
+    public var quantityText: String
+    
+    public init(id: String, name: String, description: String, priceText: String, quantityText: String) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.priceText = priceText
+        self.quantityText = quantityText
+    }
+    
+    public var price: Double {
+        Double(priceText.trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0.0
+    }
+    
+    public var quantity: Double {
+        Double(quantityText.trimmingCharacters(in: .whitespacesAndNewlines)) ?? 1.0
+    }
+    
+    public var itemTotal: Double {
+        price * quantity
+    }
+    
+    public func toProductModel() -> ProductModel {
+        ProductModel(
+            name: name,
+            description: description,
+            price: price,
+            quantity: quantity
+        )
+    }
+}
+
 public final class CheckoutViewModel: ObservableObject {
     
     // MARK: - Published Properties
-    @Published public var isSingleProduct: Bool = true
+    @Published public var isSingleProduct: Bool = true {
+        didSet {
+            resetProductsForMode()
+        }
+    }
+    
+    @Published public var products: [EditableProductItem] = []
+    
     @Published public var customerName: String = "John Doe"
     @Published public var customerEmail: String = "john@example.com"
     @Published public var customerMobile: String = "96594771608"
     @Published public var currency: String = "KWD"
-    @Published public var selectedPaymentSource: String = "cc"
+    @Published public var selectedPaymentSource: String = "apple-pay"
     
     @Published public var isProcessing: Bool = false
     @Published public var lastResult: PaymentResult? = nil
@@ -30,21 +74,37 @@ public final class CheckoutViewModel: ObservableObject {
         ("samsung-pay", "Samsung Pay")
     ]
     
-    public var currentProducts: [ProductModel] {
+    public init() {
+        resetProductsForMode()
+    }
+    
+    public func resetProductsForMode() {
         if isSingleProduct {
-            return [
-                ProductModel(name: "Single Espresso", description: "Premium Espresso", price: 2.5, quantity: 1.0)
+            products = [
+                EditableProductItem(id: "1", name: "Single Espresso", description: "Premium Espresso", priceText: "2.500", quantityText: "1")
             ]
         } else {
-            return [
-                ProductModel(name: "Single Espresso", description: "Premium Espresso", price: 2.5, quantity: 1.0),
-                ProductModel(name: "Butter Croissant", description: "French Croissant", price: 1.5, quantity: 2.0)
+            products = [
+                EditableProductItem(id: "1", name: "Single Espresso", description: "Premium Espresso", priceText: "2.500", quantityText: "1"),
+                EditableProductItem(id: "2", name: "Butter Croissant", description: "French Croissant", priceText: "1.500", quantityText: "2")
             ]
         }
     }
     
+    public func addItem() {
+        let newIndex = products.count + 1
+        products.append(
+            EditableProductItem(id: UUID().uuidString, name: "Item #\(newIndex)", description: "Custom Product Item", priceText: "1.000", quantityText: "1")
+        )
+    }
+    
+    public func removeItem(at index: Int) {
+        guard products.indices.contains(index), products.count > 1 else { return }
+        products.remove(at: index)
+    }
+    
     public var totalAmount: Double {
-        currentProducts.reduce(0.0) { $0 + (($1.price ?? 0.0) * ($1.quantity ?? 1.0)) }
+        products.reduce(0.0) { $0 + $1.itemTotal }
     }
     
     // MARK: - Actions
@@ -101,8 +161,10 @@ public final class CheckoutViewModel: ObservableObject {
             browserDetails: browserDetails
         )
         
+        let effectiveProducts = products.map { $0.toProductModel() }
+        
         let paymentRequest = PaymentRequestModel(
-            products: currentProducts,
+            products: effectiveProducts,
             sessionID: nil,
             isTest: !config.isProduction,
             order: order,

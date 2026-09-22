@@ -9,6 +9,7 @@ import SwiftUI
 import uInterfaceSDK
 
 public struct SettingsView: View {
+    
     @StateObject private var viewModel = SettingsViewModel()
     @ObservedObject private var config = AppConfiguration.shared
     
@@ -17,47 +18,19 @@ public struct SettingsView: View {
     public var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 20) {
+                VStack(spacing: 18) {
                     
-                    // MARK: - SDK Live Status
-                    GlassCard(title: "SDK Runtime Status", icon: "shield.checkerboard") {
-                        VStack(spacing: 12) {
+                    // MARK: - Active Status Banner Card
+                    GlassCard(title: "SDK Status", icon: "antenna.radiowaves.left.and.right") {
+                        VStack(alignment: .leading, spacing: 10) {
                             HStack {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Authentication & Gateway")
-                                        .font(.system(size: 15, weight: .semibold))
-                                    Text(config.isInitialized ? "Active & Ready" : (config.initErrorMessage ?? "Not Initialized"))
-                                        .font(.system(size: 13))
-                                        .foregroundColor(config.isInitialized ? .secondary : AppTheme.errorColor)
-                                }
+                                Text("Connection")
+                                    .font(.system(size: 14, weight: .medium))
                                 Spacer()
                                 StatusBadge(
-                                    title: config.isInitialized ? "Ready" : (config.isInitializing ? "Initializing" : "Unverified"),
-                                    style: config.isInitialized ? .success : (config.isInitializing ? .warning : .error)
+                                    title: config.isInitialized ? "Initialized & Validated" : (config.isInitializing ? "Initializing..." : "Not Configured"),
+                                    style: config.isInitialized ? .success : (config.isInitializing ? .info : .warning)
                                 )
-                            }
-                            
-                            Divider()
-                            
-                            // Environment & Mode Badges
-                            HStack(spacing: 8) {
-                                Label(config.environmentOption.rawValue, systemImage: "globe")
-                                    .font(.system(size: 12, weight: .medium))
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 4)
-                                    .background(Color.blue.opacity(0.12))
-                                    .foregroundColor(.blue)
-                                    .cornerRadius(6)
-                                
-                                Label(config.isWhiteLabel ? "White-Label" : "Standard", systemImage: config.isWhiteLabel ? "tag.fill" : "cube.fill")
-                                    .font(.system(size: 12, weight: .medium))
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 4)
-                                    .background(Color.purple.opacity(0.12))
-                                    .foregroundColor(.purple)
-                                    .cornerRadius(6)
-                                
-                                Spacer()
                             }
                             
                             if let secret = config.resolvedSecretKey {
@@ -83,6 +56,55 @@ public struct SettingsView: View {
                         }
                     }
                     
+                    // MARK: - Apple Pay Companion Configuration
+                    GlassCard(title: "Apple Pay (uInterfaceNative)", icon: "applelogo") {
+                        VStack(spacing: 14) {
+                            HStack {
+                                Text("PassKit Device Status:")
+                                    .font(.system(size: 13, weight: .medium))
+                                    .foregroundColor(.secondary)
+                                Spacer()
+                                StatusBadge(
+                                    title: viewModel.isApplePaySupported ? (viewModel.isApplePayActiveWithCards ? "Ready • Cards Active" : "Ready • No Cards") : "Unsupported / Sim",
+                                    style: viewModel.isApplePaySupported ? .success : .warning
+                                )
+                            }
+                            
+                            Divider()
+                            
+                            FormInputField(
+                                label: "Apple Merchant Identifier",
+                                placeholder: "e.g. merchant.com.upayments.test",
+                                text: $viewModel.appleMerchantIdInput
+                            )
+                            
+                            FormInputField(
+                                label: "Store / Merchant Display Name",
+                                placeholder: "e.g. UPayments Store",
+                                text: $viewModel.applePayMerchantNameInput
+                            )
+                            
+                            FormInputField(
+                                label: "Country Code (2-letter ISO)",
+                                placeholder: "e.g. KW",
+                                text: $viewModel.applePayCountryCodeInput
+                            )
+                            
+                            Divider()
+                            
+                            Toggle(isOn: $viewModel.requiresActiveCardsInput) {
+                                VStack(alignment: .leading, spacing: 3) {
+                                    Text("Require Active Cards in Wallet")
+                                        .font(.system(size: 14, weight: .medium))
+                                    Text("If disabled, PassKit presents the sheet even with 0 cards, allowing on-the-fly enrollment.")
+                                        .font(.system(size: 11))
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            .tint(AppTheme.brandPrimary)
+                        }
+                    }
+
                     // MARK: - Integration Mode & Quick Presets
                     GlassCard(title: "Integration Mode & Presets", icon: "slider.horizontal.3") {
                         VStack(spacing: 14) {
@@ -171,6 +193,8 @@ public struct SettingsView: View {
                             )
                         }
                     }
+                    
+
                     
                     // MARK: - Customer Identifier
                     GlassCard(title: "Customer Tokenization", icon: "person.crop.circle.badge.checkmark") {

@@ -20,10 +20,24 @@ public final class SettingsViewModel: ObservableObject {
     @Published public var isWhiteLabel: Bool = true
     @Published public var selectedEnvironment: AppEnvironmentOption = .sandbox
     
+    // Apple Pay Configuration Inputs
+    @Published public var appleMerchantIdInput: String = ""
+    @Published public var applePayCountryCodeInput: String = ""
+    @Published public var applePayMerchantNameInput: String = ""
+    @Published public var requiresActiveCardsInput: Bool = false
+    
     @Published public var alertMessage: String? = nil
     @Published public var showAlert: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
+    
+    public var isApplePaySupported: Bool {
+        ApplePayProcessor(configuration: config.currentApplePayConfiguration).canMakePayments()
+    }
+    
+    public var isApplePayActiveWithCards: Bool {
+        ApplePayProcessor(configuration: config.currentApplePayConfiguration).canMakePaymentsWithActiveCards()
+    }
     
     public init() {
         self.customKeyInput = config.apiKey
@@ -32,6 +46,10 @@ public final class SettingsViewModel: ObservableObject {
         self.customerTokenInput = config.customerUniqueToken
         self.isWhiteLabel = config.isWhiteLabel
         self.selectedEnvironment = config.environmentOption
+        self.appleMerchantIdInput = config.appleMerchantId
+        self.applePayCountryCodeInput = config.applePayCountryCode
+        self.applePayMerchantNameInput = config.applePayMerchantName
+        self.requiresActiveCardsInput = config.applePayRequiresActiveCards
         
         // Sync with config changes
         config.$apiKey
@@ -57,6 +75,30 @@ public final class SettingsViewModel: ObservableObject {
                 self?.selectedEnvironment = env
             }
             .store(in: &cancellables)
+            
+        config.$appleMerchantId
+            .sink { [weak self] id in
+                self?.appleMerchantIdInput = id
+            }
+            .store(in: &cancellables)
+            
+        config.$applePayCountryCode
+            .sink { [weak self] code in
+                self?.applePayCountryCodeInput = code
+            }
+            .store(in: &cancellables)
+            
+        config.$applePayMerchantName
+            .sink { [weak self] name in
+                self?.applePayMerchantNameInput = name
+            }
+            .store(in: &cancellables)
+
+        config.$applePayRequiresActiveCards
+            .sink { [weak self] req in
+                self?.requiresActiveCardsInput = req
+            }
+            .store(in: &cancellables)
     }
     
     public func applyPreset(isWhiteLabel: Bool) {
@@ -80,6 +122,11 @@ public final class SettingsViewModel: ObservableObject {
         config.customerUniqueToken = customerTokenInput
         config.isWhiteLabel = isWhiteLabel
         config.environmentOption = selectedEnvironment
+        let resolvedMerchantId = appleMerchantIdInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? AppConfiguration.defaultAppleMerchantId : appleMerchantIdInput
+        config.appleMerchantId = resolvedMerchantId
+        config.applePayCountryCode = applePayCountryCodeInput
+        config.applePayMerchantName = applePayMerchantNameInput
+        config.applePayRequiresActiveCards = requiresActiveCardsInput
         
         reinitialize()
     }
