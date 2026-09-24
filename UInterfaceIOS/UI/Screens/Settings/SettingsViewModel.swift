@@ -15,7 +15,6 @@ public final class SettingsViewModel: ObservableObject {
     
     @Published public var customKeyInput: String = ""
     @Published public var customSecretKeyInput: String = ""
-    @Published public var customURLInput: String = ""
     @Published public var customerTokenInput: String = ""
     @Published public var isWhiteLabel: Bool = true
     @Published public var selectedEnvironment: AppEnvironmentOption = .sandbox
@@ -42,7 +41,6 @@ public final class SettingsViewModel: ObservableObject {
     public init() {
         self.customKeyInput = config.apiKey
         self.customSecretKeyInput = config.secretKey
-        self.customURLInput = config.customBaseURL
         self.customerTokenInput = config.customerUniqueToken
         self.isWhiteLabel = config.isWhiteLabel
         self.selectedEnvironment = config.environmentOption
@@ -118,7 +116,6 @@ public final class SettingsViewModel: ObservableObject {
     public func saveAndInitialize() {
         config.apiKey = customKeyInput
         config.secretKey = customSecretKeyInput
-        config.customBaseURL = customURLInput
         config.customerUniqueToken = customerTokenInput
         config.isWhiteLabel = isWhiteLabel
         config.environmentOption = selectedEnvironment

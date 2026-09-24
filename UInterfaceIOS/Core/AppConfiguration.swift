@@ -13,8 +13,6 @@ import uInterfaceSDK
 public enum AppEnvironmentOption: String, CaseIterable, Identifiable {
     case sandbox = "Sandbox"
     case production = "Production"
-    case defaultEnv = "Default (Live)"
-    case custom = "Custom"
     
     public var id: String { rawValue }
     
@@ -24,10 +22,6 @@ public enum AppEnvironmentOption: String, CaseIterable, Identifiable {
             return .sandbox
         case .production:
             return .production
-        case .defaultEnv:
-            return .defaultEnvironment
-        case .custom:
-            return .custom(baseURL: customURL.isEmpty ? "https://sandboxapi.upayments.com/api/v1/" : customURL)
         }
     }
 }
@@ -51,7 +45,6 @@ public final class AppConfiguration: ObservableObject {
     private let secretKeyStorageKey = "com.upayments.example.secretKey"
     private let isWhiteLabelStorageKey = "com.upayments.example.isWhiteLabel"
     private let environmentStorageKey = "com.upayments.example.environmentOption"
-    private let customURLStorageKey = "com.upayments.example.customBaseURL"
     private let appleMerchantIdStorageKey = "com.upayments.example.appleMerchantId"
     private let applePayCountryCodeStorageKey = "com.upayments.example.applePayCountryCode"
     private let applePayMerchantNameStorageKey = "com.upayments.example.applePayMerchantName"
@@ -79,12 +72,6 @@ public final class AppConfiguration: ObservableObject {
     @Published public var environmentOption: AppEnvironmentOption {
         didSet {
             UserDefaults.standard.set(environmentOption.rawValue, forKey: environmentStorageKey)
-        }
-    }
-    
-    @Published public var customBaseURL: String {
-        didSet {
-            UserDefaults.standard.set(customBaseURL, forKey: customURLStorageKey)
         }
     }
     
@@ -126,7 +113,7 @@ public final class AppConfiguration: ObservableObject {
     
     // MARK: - Computed Properties
     public var currentEnvironment: Environment {
-        environmentOption.toSDKEnvironment(customURL: customBaseURL)
+        environmentOption.toSDKEnvironment()
     }
     
     public var isProduction: Bool {
@@ -155,7 +142,6 @@ public final class AppConfiguration: ObservableObject {
         let savedSecretKey = UserDefaults.standard.string(forKey: secretKeyStorageKey) ?? ""
         let savedEnvRaw = UserDefaults.standard.string(forKey: environmentStorageKey) ?? AppEnvironmentOption.sandbox.rawValue
         let savedEnv = AppEnvironmentOption(rawValue: savedEnvRaw) ?? .sandbox
-        let savedCustomURL = UserDefaults.standard.string(forKey: customURLStorageKey) ?? "https://sandboxapi.upayments.com/api/v1/"
         let savedCustomerToken = UserDefaults.standard.string(forKey: customerTokenKey) ?? "1234567890845"
         var savedAppleMerchantId = UserDefaults.standard.string(forKey: appleMerchantIdStorageKey) ?? Self.defaultAppleMerchantId
         if savedAppleMerchantId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || savedAppleMerchantId == "merchant.com.upayments.test" {
@@ -170,7 +156,6 @@ public final class AppConfiguration: ObservableObject {
         self.apiKey = savedKey
         self.secretKey = savedSecretKey
         self.environmentOption = savedEnv
-        self.customBaseURL = savedCustomURL
         self.customerUniqueToken = savedCustomerToken
         self.appleMerchantId = savedAppleMerchantId
         self.applePayCountryCode = savedAppleCountry

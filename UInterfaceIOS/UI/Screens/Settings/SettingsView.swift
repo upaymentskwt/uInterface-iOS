@@ -161,16 +161,7 @@ public struct SettingsView: View {
                             }
                             .pickerStyle(SegmentedPickerStyle())
                             
-                            if viewModel.selectedEnvironment == .custom {
-                                FormInputField(
-                                    label: "Custom API Base URL",
-                                    placeholder: "https://custom-gateway.upayments.com/api/v1/",
-                                    text: $viewModel.customURLInput,
-                                    keyboardType: .URL
-                                )
-                            }
-                            
-                            Text("Base URL: \(viewModel.selectedEnvironment.toSDKEnvironment(customURL: viewModel.customURLInput).baseURL)")
+                            Text("Base URL: \(viewModel.selectedEnvironment.toSDKEnvironment().baseURL)")
                                 .font(.system(size: 11, design: .monospaced))
                                 .foregroundColor(.secondary)
                                 .frame(maxWidth: .infinity, alignment: .leading)
