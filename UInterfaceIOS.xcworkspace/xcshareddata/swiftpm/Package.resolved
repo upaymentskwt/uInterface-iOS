@@ -1,0 +1,15 @@
+{
+  "originHash" : "2db1c2b314e5761e2ab191e15f431bb3d77fbda3ad54968169a4c72a72765d34",
+  "pins" : [
+    {
+      "identity" : "uinterface-native-ios-public",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/upaymentskwt/uinterface-native-ios-public.git",
+      "state" : {
+        "revision" : "567b22e5515980e9ff2e2e91ad1f78be488c37ab",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

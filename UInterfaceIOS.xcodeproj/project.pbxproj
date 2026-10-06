@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,8 +11,7 @@
 		CE8F8E342C91C5AE00A01EEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F8E332C91C5AE00A01EEE /* SceneDelegate.swift */; };
 		CE8F8E3B2C91C5AF00A01EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8F8E3A2C91C5AF00A01EEE /* Assets.xcassets */; };
 		CE8F8E3E2C91C5AF00A01EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F8E3C2C91C5AF00A01EEE /* LaunchScreen.storyboard */; };
-		D3363A0530657D0D000AD1EE /* uInterfaceSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33639F9306539B5000AD1EE /* uInterfaceSDK.xcframework */; };
-		D3363A0630657D0D000AD1EE /* uInterfaceSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D33639F9306539B5000AD1EE /* uInterfaceSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3DB4CB53074BB72006549AD /* uInterfaceSDK in Frameworks */ = {isa = PBXBuildFile; productRef = D3DB4CB43074BB72006549AD /* uInterfaceSDK */; };
 		EB0C48B8268B129933E6F9 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C48B8268B129933E6F9 /* CheckoutView.swift */; };
 		EB178538311EE8662796D5 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF178538311EE8662796D5 /* CheckoutViewModel.swift */; };
 		EB1ABABDD33B9361B76402 /* InvoicingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1ABABDD33B9361B76402 /* InvoicingView.swift */; };
@@ -39,20 +38,6 @@
 		EBEE95E830A7862F237CA2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE95E830A7862F237CA2 /* AppConfiguration.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D3363A0730657D0D000AD1EE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D3363A0630657D0D000AD1EE /* uInterfaceSDK.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		0A7E94F72CC90727002A5627 /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A28E93CFFFFA0D5C1F632DD /* Pods-UInterfaceIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UInterfaceIOS.debug.xcconfig"; path = "Target Support Files/Pods-UInterfaceIOS/Pods-UInterfaceIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,10 +49,6 @@
 		CE8F8E3A2C91C5AF00A01EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8F8E3D2C91C5AF00A01EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE8F8E3F2C91C5AF00A01EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D33639F9306539B5000AD1EE /* uInterfaceSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uInterfaceSDK.xcframework; sourceTree = "<group>"; };
-		D3363A0930653A00000AD1EE /* uInterfaceNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = uInterfaceNative.xcframework; sourceTree = "<group>"; };
-		D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uInterfaceSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D397EB622FA7120000BC6F43 /* uInterfaceNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uInterfaceNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A94D2F30625E0900025CCD /* UInterfaceIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UInterfaceIOS.entitlements; sourceTree = "<group>"; };
 		EF0C48B8268B129933E6F9 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		EF178538311EE8662796D5 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
@@ -100,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3363A0530657D0D000AD1EE /* uInterfaceSDK.xcframework in Frameworks */,
+				D3DB4CB53074BB72006549AD /* uInterfaceSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,10 +91,6 @@
 		6406DFFDF7C7BCE43D005C46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D33639F9306539B5000AD1EE /* uInterfaceSDK.xcframework */,
-				D3363A0930653A00000AD1EE /* uInterfaceNative.xcframework */,
-				D397EB522FA711FF00BC6F43 /* uInterfaceSDK.framework */,
-				D397EB622FA7120000BC6F43 /* uInterfaceNative.framework */,
 				0A7E94F72CC90727002A5627 /* DropDown.framework */,
 				A3039FE5F4D406345853CFE3 /* Pods_UInterfaceIOS.framework */,
 			);
@@ -300,13 +277,15 @@
 				CE8F8E2C2C91C5AE00A01EEE /* Resources */,
 				E6C2F0609B204BB94FE56A27 /* Frameworks */,
 				F9C6A8EDD23BB3A7F8B2D9DF /* [CP] Embed Pods Frameworks */,
-				D3363A0730657D0D000AD1EE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = UInterfaceIOS;
+			packageProductDependencies = (
+				D3DB4CB43074BB72006549AD /* uInterfaceSDK */,
+			);
 			productName = UInterfaceIOS;
 			productReference = CE8F8E2E2C91C5AE00A01EEE /* UInterfaceIOS.app */;
 			productType = "com.apple.product-type.application";
@@ -341,6 +320,9 @@
 				Base,
 			);
 			mainGroup = CE8F8E252C91C5AE00A01EEE;
+			packageReferences = (
+				D3DB4CB33074BB72006549AD /* XCLocalSwiftPackageReference "../iOS-SDK" */,
+			);
 			productRefGroup = CE8F8E2F2C91C5AE00A01EEE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -665,6 +647,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D3DB4CB33074BB72006549AD /* XCLocalSwiftPackageReference "../iOS-SDK" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../iOS-SDK";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3DB4CB43074BB72006549AD /* uInterfaceSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = uInterfaceSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE8F8E262C91C5AE00A01EEE /* Project object */;
 }
