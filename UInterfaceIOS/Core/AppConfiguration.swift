@@ -11,6 +11,7 @@ import uInterfaceSDK
 
 /// Represents selectable environments in the example application.
 public enum AppEnvironmentOption: String, CaseIterable, Identifiable {
+    case dev = "Dev"
     case sandbox = "Sandbox"
     case production = "Production"
     
@@ -18,6 +19,8 @@ public enum AppEnvironmentOption: String, CaseIterable, Identifiable {
     
     public func toSDKEnvironment(customURL: String = "") -> Environment {
         switch self {
+        case .dev:
+            return .dev
         case .sandbox:
             return .sandbox
         case .production:
