@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "uInterfaceNative",
+        "repositoryURL": "https://github.com/upaymentskwt/uinterface-native-ios-public.git",
+        "state": {
+          "branch": null,
+          "revision": "30eb9e536971ece671937a3a9c8dceb740af795f",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -7,7 +7,6 @@ Podfile.lock
 *.dSYM
 
 .build/
-
+.swiftpm/
 Pods/
-
 .DS_Store
