@@ -19,8 +19,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "uInterfaceSDK",
-            url: "https://github.com/upaymentskwt/uInterface-iOS/releases/download/2.0.0/uInterfaceSDK.xcframework.zip",
-            checksum: "0dc212bedca39d853750761049a68802796768050de7c4818e4f1cd18a0d806f"
+            url: "https://github.com/upaymentskwt/uInterface-iOS/releases/download/2.0.1/uInterfaceSDK.xcframework.zip",
+            checksum: "4fa42ac5425120b1a3b4da6ee9daf1fdb4b4b67e775176a8ea9ee3f40fd0f7dd"
         ),
         // Stub to carry the transitive uInterfaceNative dependency
         .target(

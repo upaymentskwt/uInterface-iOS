@@ -164,7 +164,7 @@ let package = Package(
 | Environment       | Base URL                                   | Purpose                                              |
 | :---------------- | :----------------------------------------- | :--------------------------------------------------- |
 | **`.sandbox`**    | `https://sandboxapi.upayments.com/api/v1/` | Development, sandbox testing, test card transactions |
-| **`.production`** | `https://api.upayments.com/api/v1/`        | Live merchant production transactions                |
+| **`.production`** | `https://uapi.upayments.com/api/v1/`        | Live merchant production transactions                |
 
 > [!IMPORTANT]
 > UPayments strictly supports standard `.sandbox` and `.production` environments. Custom or development endpoints are not supported for merchant production releases.
